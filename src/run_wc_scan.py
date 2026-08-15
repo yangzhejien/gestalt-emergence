@@ -28,11 +28,13 @@
 import json, subprocess, sys, time, os, urllib.request
 from pathlib import Path
 
-OUT = Path(r"C:/Users/11409/WorkBuddy/2026-07-28-21-49-24/gestalt_live")
-ROOT = Path(r"D:/方程验证")
-SCRIPT = ROOT / "scripts" / "verify_stage2.py"
-BENCH = ROOT / "benchmark" / "mcq_medium_clean.jsonl"
-PY = r"C:/Users/11409/.workbuddy/binaries/python/versions/3.13.12/python.exe"
+# 仓库根 = 本脚本上级目录 (src/ 的父目录)
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+SCRIPT = HERE / "verify_stage2.py"                       # 与编排器同目录
+BENCH = ROOT / "data" / "mcq_medium_clean.jsonl"
+OUT = ROOT / "results" / "live"                         # 默认输出到仓库内, 可复现不依赖本机路径
+PY = sys.executable                                      # 用当前 python 解释器(无需硬编码路径)
 
 # ===== 可调参数 =====
 FIXED_K = 10                                  # 固定专家数 (已验证 bug3 稳定且 done)
@@ -209,6 +211,17 @@ def report():
 
 
 def main():
+    global OUT, BENCH, PY, SCRIPT, LOCK
+    ap = argparse.ArgumentParser(description="格式塔方程 Wc 补扫编排器")
+    ap.add_argument("--out", default=str(OUT), help="输出目录(默认仓库内 results/live)")
+    ap.add_argument("--bench", default=str(BENCH), help="主基准 jsonl 路径")
+    ap.add_argument("--py", default=PY, help="python 解释器路径(默认 sys.executable)")
+    args = ap.parse_args()
+    OUT = Path(args.out)
+    BENCH = Path(args.bench)
+    PY = args.py
+    SCRIPT = HERE / "verify_stage2.py"
+    LOCK = OUT / "wc_scan.lock"
     acquire_lock()
     try:
         wait_k20_done()
