@@ -19,14 +19,16 @@
   - 各 k 独立 --live 文件名隔离
 结果写 OUT/density_scan_summary.json
 """
-import json, subprocess, sys, time, os, urllib.request
+import json, subprocess, sys, time, os, urllib.request, argparse
 from pathlib import Path
 
-OUT = Path(r"C:/Users/11409/WorkBuddy/2026-07-28-21-49-24/gestalt_live")
-ROOT = Path(r"D:/方程验证")
-SCRIPT = ROOT / "scripts" / "verify_stage2.py"
-BENCH = ROOT / "benchmark" / "mcq_medium_clean.jsonl"   # 主基准 clean 500, 与 k3/k5/k7 同基准可比
-PY = r"C:/Users/11409/.workbuddy/binaries/python/versions/3.13.12/python.exe"
+# 仓库根 = 本脚本上级目录 (src/ 的父目录)
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+SCRIPT = HERE / "verify_stage2.py"                       # 与编排器同目录
+BENCH = ROOT / "data" / "mcq_medium_clean.jsonl"        # 主基准 clean 500, 与 k3/k5/k7 同基准可比
+OUT = ROOT / "results" / "live"                         # 默认输出到仓库内, 可复现不依赖本机路径
+PY = sys.executable                                      # 用当前 python 解释器(无需硬编码路径)
 
 DENSITY_KS = [8, 10, 12, 15, 20]
 N = 500
@@ -112,6 +114,16 @@ def wait_prior():
 
 
 def main():
+    global OUT, BENCH, PY, SCRIPT
+    ap = argparse.ArgumentParser(description="格式塔方程密度扫描编排器")
+    ap.add_argument("--out", default=str(OUT), help="输出目录(默认仓库内 results/live)")
+    ap.add_argument("--bench", default=str(BENCH), help="主基准 jsonl 路径")
+    ap.add_argument("--py", default=PY, help="python 解释器路径(默认 sys.executable)")
+    args = ap.parse_args()
+    OUT = Path(args.out)
+    BENCH = Path(args.bench)
+    PY = args.py
+    SCRIPT = HERE / "verify_stage2.py"
     if not ollama_ok():
         print("[density] Ollama 探活失败, 中止", flush=True)
         sys.exit(1)
