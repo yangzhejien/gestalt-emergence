@@ -77,13 +77,32 @@ gestalt-emergence/
 
 ## 如何复现
 
-1. **依赖**：Python 3.13、Ollama、Qwen2.5 系列模型（1.5B / 3B / 7B）。
-2. **模型权重不入库**（见 `.gitignore`，约 15 GB）：请从 Ollama 拉取 Qwen2.5 并遵守其许可。
-3. **运行**：
-   - 密度扫描：`src/run_density_scan.py`
-   - 单点验证：`src/verify_stage2.py`
-   - W 轴补扫（钉 Wc）：`src/run_wc_scan.py`
-4. 结果 JSON 在 `results/`，可视化在 `reports/`、`visualizations/`。
+```bash
+# 1) 克隆并安装依赖
+git clone https://github.com/yangzhejien/gestalt-emergence.git
+cd gestalt-emergence
+pip install -r requirements.txt
+
+# 2) 安装并启动 Ollama, 拉取模型权重(约 15GB, 不入库)
+#    见 .gitignore; 权重许可归 Qwen2.5 原作者
+ollama serve            # 或启动桌面客户端
+ollama pull qwen2.5:1.5b
+ollama pull qwen2.5:3b
+ollama pull qwen2.5:7b
+
+# 3) 跑实验 (输出默认写到仓库内 results/live/)
+#    单点验证(默认 k=3, N=500):
+python src/verify_stage2.py
+#    密度扫描(k=8,10,12,15,20, 固定 Ẇ=1.0):
+python src/run_density_scan.py
+#    W 轴补扫(钉 Wc, 固定 k=10, 扫 Ẇ 七档):
+python src/run_wc_scan.py
+```
+
+- 脚本路径全部相对仓库根，**无需任何本机绝对路径**；可用 `--out` / `--bench` / `--py` 覆盖。
+- 主基准 `data/mcq_medium_clean.jsonl`（500 题，确定性模板生成、种子固定）随仓库提供，可 100% 复现。
+- 已有真实结果在 `results/density/`（k8–15 done）与 `results/core/`，供复现者直接比对。
+- 说明：本机为 CPU 推理，k20 单块约数十小时；复现者可按需减小 `--n` 或减小 k 做快速验证。
 
 ---
 
