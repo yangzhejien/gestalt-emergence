@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
+<title>Stage4 拓扑密度扫描 · G vs Ẇ</title>
+<style>
+body{font-family:system-ui,'Segoe UI',Arial;margin:0;padding:24px;background:#fafafa;color:#1f2937}
+h1{font-size:20px;margin:0 0 4px} .sub{color:#6b7280;font-size:13px;margin-bottom:16px}
+.banner{background:#fff7ed;border:1px solid #fdba74;color:#9a3412;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px}
+table{border-collapse:collapse;width:100%;font-size:13px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden}
+th,td{padding:8px 10px;text-align:center;border-bottom:1px solid #f0f0f0}
+th{background:#f3f4f6;color:#374151;font-weight:600}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px}
+.legend{font-size:12px;color:#555;margin-top:8px}
+.legend b{color:#2563eb} .legend i{color:#d97706;font-style:normal}
+.note{font-size:12px;color:#6b7280;margin-top:10px;line-height:1.5}
+</style></head><body>
+<h1>Stage4 拓扑密度扫描 · 涌现 vs 密度 (G vs Ẇ)</h1>
+<div class="sub">自检方程 M = Σsᵢ + Σ(αₘ−βₘ)Ẇ²ᵐ · 数据随扫描实时刷新 · solo 7B 基线 = 0.74</div>
+<div class="banner">🟢 已完成 1 档 · 进行中 1 档 · 待跑 4 档。
+亚临界下边界已钉死(tree@12: Δ=−0.16 &lt; 0)。上边界(full@20) + 随机拓扑基线 + C-Eval 待补, 方圈住 Wc。</div>
+<div class="card">
+<svg viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,Segoe UI,Arial"><line x1="60" y1="320.0" x2="650" y2="320.0" stroke="#eee"/><text x="52.0" y="324.0" text-anchor="end" font-size="11" fill="#666">-0.21</text><line x1="60" y1="180.0" x2="650" y2="180.0" stroke="#eee"/><text x="52.0" y="184.0" text-anchor="end" font-size="11" fill="#666">+0.02</text><line x1="60" y1="40.0" x2="650" y2="40.0" stroke="#eee"/><text x="52.0" y="44.0" text-anchor="end" font-size="11" fill="#666">+0.25</text><line x1="60" y1="192.0" x2="650" y2="192.0" stroke="#9ca3af" stroke-dasharray="5,4"/><text x="650" y="187.0" text-anchor="end" font-size="10" fill="#6b7280">solo 等值线 (Δ=0)</text><rect x="60" y="40" width="236.0" height="280" fill="#f0f9ff" opacity="0.5"/><text x="68.0" y="56.0" font-size="10" fill="#0369a1">亚临界区 (Δ<0, 无涌现)</text><text x="60.0" y="338.0" text-anchor="middle" font-size="10" fill="#444">tree
+12</text><text x="178.0" y="338.0" text-anchor="middle" font-size="10" fill="#444">mesh
+12</text><text x="296.0" y="338.0" text-anchor="middle" font-size="10" fill="#444">full
+12</text><text x="414.0" y="338.0" text-anchor="middle" font-size="10" fill="#444">tree
+20</text><text x="532.0" y="338.0" text-anchor="middle" font-size="10" fill="#444">mesh
+20</text><text x="650.0" y="338.0" text-anchor="middle" font-size="10" fill="#444">full
+20</text><text x="355.0" y="372.0" text-anchor="middle" font-size="11" fill="#333">拓扑密度 Ẇ 递增 → (tree &lt; mesh &lt; full, 12→20 节点)</text><polyline points="60.0,287.7 178.0,156.1" fill="none" stroke="#2563eb" stroke-width="2.5"/><polyline points="60.0,144.1 178.0,72.3" fill="none" stroke="#d97706" stroke-width="2.5"/><circle cx="60.0" cy="287.7" r="5" fill="#2563eb" stroke="#2563eb" stroke-width="2"/><text x="60.0" y="277.7" text-anchor="middle" font-size="9" fill="#222">-0.160</text><circle cx="178.0" cy="156.1" r="5" fill="#fff" stroke="#2563eb" stroke-width="2"/><text x="178.0" y="146.1" text-anchor="middle" font-size="9" fill="#222">+0.060</text></svg>
+<div class="legend">实线 <b>Δ(solo)</b> = 集体−7B基线(负=亚临界/无涌现, 正=后临界/涌现)；虚线 <i>G</i> = 集体−委员会0(结构增量)。空心点=进行中。</div>
+</div>
+<div class="card"><table>
+<tr><th>档位</th><th>状态</th><th>集体</th><th>委员会0</th><th>G</th><th>Δ vs 7B</th></tr>
+<tr><td>tree@12</td><td>done</td><td>0.580</td><td>0.500</td><td>+0.080</td><td>-0.160</td></tr><tr><td>mesh@12</td><td>in-progress 5/50</td><td>0.800</td><td>0.600</td><td>+0.200</td><td>+0.060</td></tr>
+</table>
+<div class="note">说明: 横轴按拓扑密度递增排序(tree&lt;mesh&lt;full, 节点数 12→20)。当前仅 tree@12 为终态;
+mesh@12 进行中(前3题小样本, 不计)。Wc 拐点需三档@12 与 @20 全出 + 随机拓扑基线对照方可见非单调峰。</div>
+</div></body></html>

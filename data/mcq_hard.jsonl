@@ -1,0 +1,25 @@
+{"question": "A train travels 60 km in 1.5 hours, then stops for 30 minutes, then travels 90 km in 2 hours. What is the AVERAGE speed (km/h) for the ENTIRE trip including the stop?", "A": "42.0", "B": "50.0", "C": "60.0", "D": "75.0", "answer": "A"}
+{"question": "If 3 workers can build a wall in 12 days, how many days would 4 workers take (assuming constant rate and no interference)?", "A": "8", "B": "9", "C": "10", "D": "16", "answer": "B"}
+{"question": "A shirt costs $40 after a 20% discount. What was its original price?", "A": "48", "B": "50", "C": "60", "D": "32", "answer": "B"}
+{"question": "Which number does NOT belong with the others: 2, 3, 5, 9, 11, 13?", "A": "2", "B": "9", "C": "11", "D": "13", "answer": "B"}
+{"question": "A rectangle has perimeter 30 cm and length 2 cm more than its width. What is its area in cm^2?", "A": "54", "B": "56", "C": "50", "D": "60", "answer": "A"}
+{"question": "If a=2, b=3, what is the value of (a+b)^2 - (a^2 + b^2)?", "A": "6", "B": "12", "C": "10", "D": "13", "answer": "B"}
+{"question": "A jar has 5 red, 3 blue, and 2 green marbles. If you draw one at random, what is the probability it is NOT blue?", "A": "0.7", "B": "0.3", "C": "0.5", "D": "0.8", "answer": "A"}
+{"question": "Which statement is logically the contrapositive of 'If it rains, the ground is wet'?", "A": "If the ground is wet, it rained.", "B": "If the ground is not wet, it did not rain.", "C": "If it does not rain, the ground is not wet.", "D": "The ground is wet only if it rains.", "answer": "B"}
+{"question": "A car's value drops 10% each year. If it is worth $18,000 now, what was it worth 1 year ago?", "A": "19,800", "B": "20,000", "C": "16,200", "D": "19,000", "answer": "B"}
+{"question": "What is 17 x 19?", "A": "323", "B": "342", "C": "361", "D": "306", "answer": "A"}
+{"question": "A clock shows 3:15. What is the angle (degrees) between the hour and minute hands?", "A": "0", "B": "7.5", "C": "90", "D": "82.5", "answer": "B"}
+{"question": "If x^2 = 49 and x < 0, what is x?", "A": "7", "B": "-7", "C": "49", "D": "-49", "answer": "B"}
+{"question": "A recipe needs 2.5 cups of flour for 10 cookies. How many cups for 25 cookies?", "A": "5.0", "B": "6.0", "C": "6.25", "D": "7.5", "answer": "C"}
+{"question": "Which is the smallest: 3/4, 5/8, 2/3, 7/12?", "A": "3/4", "B": "5/8", "C": "2/3", "D": "7/12", "answer": "D"}
+{"question": "A bacterial culture doubles every 20 minutes. Starting from 1 cell, how many cells after 2 hours?", "A": "64", "B": "128", "C": "256", "D": "512", "answer": "C"}
+{"question": "What is the next number: 1, 1, 2, 3, 5, 8, ?", "A": "11", "B": "13", "C": "12", "D": "15", "answer": "B"}
+{"question": "A book has 300 pages. You read 1/3 on day 1 and 1/4 of the REMAINDER on day 2. How many pages left?", "A": "150", "B": "175", "C": "125", "D": "200", "answer": "A"}
+{"question": "If 6x - 4 = 2x + 12, what is x?", "A": "2", "B": "3", "C": "4", "D": "5", "answer": "C"}
+{"question": "A triangle has angles 50 and 60 degrees. What is the third angle?", "A": "60", "B": "70", "C": "80", "D": "90", "answer": "B"}
+{"question": "You flip a fair coin twice. What is the probability of exactly one head?", "A": "0.25", "B": "0.5", "C": "0.75", "D": "0.33", "answer": "B"}
+{"question": "Which of these is a prime number: 51, 57, 59, 63?", "A": "51", "B": "57", "C": "59", "D": "63", "answer": "C"}
+{"question": "A store buys an item for $80 and sells at 25% profit. What is the selling price?", "A": "95", "B": "100", "C": "105", "D": "90", "answer": "B"}
+{"question": "If 2^a = 8 and 3^b = 9, what is a + b?", "A": "4", "B": "5", "C": "6", "D": "7", "answer": "B"}
+{"question": "A person walks 3 km north, then 4 km east. What is the straight-line distance back to start?", "A": "5", "B": "7", "C": "12", "D": "3.5", "answer": "A"}
+{"question": "What is 15% of 240?", "A": "30", "B": "36", "C": "40", "D": "48", "answer": "B"}

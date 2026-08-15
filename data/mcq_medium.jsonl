@@ -1,0 +1,500 @@
+{"question": "A car travels 150 km in 3 hours. What is its average speed in km/h?", "A": "30", "B": "45", "C": "50", "D": "60", "answer": "C"}
+{"question": "Solve for x: 3x + 7 = 22.", "A": "3", "B": "5", "C": "7", "D": "15", "answer": "A"}
+{"question": "A rectangle has length 8 and width 5. What is its area?", "A": "13", "B": "26", "C": "45", "D": "40", "answer": "D"}
+{"question": "What is 15% of 240?", "A": "30", "B": "36", "C": "40", "D": "45", "answer": "B"}
+{"question": "A shirt costs $40 after a 20% discount. What was the original price?", "A": "32", "B": "48", "C": "50", "D": "60", "answer": "C"}
+{"question": "A cube has side length 3. What is its volume?", "A": "27", "B": "9", "C": "18", "D": "81", "answer": "A"}
+{"question": "Solve: 2(x - 3) = 4x - 10.", "A": "1", "B": "2", "C": "3", "D": "4", "answer": "B"}
+{"question": "Two fair dice are rolled. What is the probability of a sum of 7?", "A": "5/36", "B": "1/12", "C": "1/9", "D": "1/6", "answer": "D"}
+{"question": "A number is increased by 25% then decreased by 20%. What is the net change?", "A": "0%", "B": "+5%", "C": "-5%", "D": "+10%", "answer": "A"}
+{"question": "$1000 invested at 10% annual interest compounded annually for 2 years. Final amount?", "A": "$1100", "B": "$1200", "C": "$1210", "D": "$2100", "answer": "C"}
+{"question": "A worker earns $15/hour, works 40 hours, and is taxed 20%. Take-home pay?", "A": "$600", "B": "$480", "C": "$560", "D": "$500", "answer": "B"}
+{"question": "A quantity is split in ratio 3:5. If the total is 64, what is the larger part?", "A": "24", "B": "32", "C": "36", "D": "40", "answer": "D"}
+{"question": "A triangle has base 10 and height 6. What is its area?", "A": "30", "B": "60", "C": "16", "D": "20", "answer": "A"}
+{"question": "Simplify 2^3 * 2^4.", "A": "2^6", "B": "4^7", "C": "2^7", "D": "2^12", "answer": "C"}
+{"question": "What is a 20% tip on a $65 bill?", "A": "$11", "B": "$13", "C": "$12", "D": "$15", "answer": "B"}
+{"question": "40% of a number is 60. What is the number?", "A": "100", "B": "120", "C": "240", "D": "150", "answer": "D"}
+{"question": "Three consecutive integers sum to 51. What is the middle integer?", "A": "17", "B": "16", "C": "18", "D": "15", "answer": "A"}
+{"question": "At 60 km/h, how far do you travel in 2.5 hours?", "A": "120", "B": "160", "C": "150", "D": "180", "answer": "C"}
+{"question": "Compute 7! / (5! * 2!).", "A": "42", "B": "21", "C": "14", "D": "84", "answer": "B"}
+{"question": "If x^2 = 49 and x > 0, what is x?", "A": "-7", "B": "49", "C": "±7", "D": "7", "answer": "D"}
+{"question": "All Bloops are Razzies. All Razzies are Lazzies. Therefore all Bloops are Lazzies?", "A": "Yes", "B": "No", "C": "Maybe", "D": "Only some", "answer": "A"}
+{"question": "It is not true that 'all swans are white'. Which must be true?", "A": "No swans are white", "B": "All swans are black", "C": "Some swans are not white", "D": "Some swans are white", "answer": "C"}
+{"question": "What comes next: 2, 4, 8, 16, ?", "A": "18", "B": "24", "C": "32", "D": "20", "answer": "C"}
+{"question": "A is taller than B, B than C, C than D, D than E. Who is shortest?", "A": "A", "B": "C", "C": "D", "D": "E", "answer": "D"}
+{"question": "All roses are flowers. Some flowers fade quickly. Which is certainly true?", "A": "Some roses fade quickly", "B": "All roses fade quickly", "C": "Some flowers are roses", "D": "No roses fade quickly", "answer": "C"}
+{"question": "If 'if p then q' is true and q is false, then p is:", "A": "false", "B": "true", "C": "unknown", "D": "both true and false", "answer": "A"}
+{"question": "Next in sequence 1, 1, 2, 3, 5, 8, ?", "A": "11", "B": "13", "C": "12", "D": "15", "answer": "B"}
+{"question": "Some A are B. No B are C. Which follows?", "A": "Some A are C", "B": "No A are C", "C": "All A are C", "D": "Some A are not C", "answer": "D"}
+{"question": "What is the chemical symbol for gold?", "A": "Go", "B": "Gd", "C": "Au", "D": "Ag", "answer": "C"}
+{"question": "What gas do plants primarily absorb for photosynthesis?", "A": "Oxygen", "B": "Nitrogen", "C": "Hydrogen", "D": "Carbon dioxide", "answer": "D"}
+{"question": "Approximate speed of light in vacuum?", "A": "3e8 m/s", "B": "3e6 m/s", "C": "3e10 m/s", "D": "3e5 m/s", "answer": "A"}
+{"question": "What is the 'powerhouse of the cell'?", "A": "Nucleus", "B": "Mitochondria", "C": "Ribosome", "D": "Golgi apparatus", "answer": "B"}
+{"question": "Boiling point of water at sea level in Celsius?", "A": "90", "B": "110", "C": "100", "D": "80", "answer": "C"}
+{"question": "What is the atomic number of carbon?", "A": "8", "B": "12", "C": "4", "D": "6", "answer": "D"}
+{"question": "Which of these is a noble gas?", "A": "Neon", "B": "Oxygen", "C": "Chlorine", "D": "Hydrogen", "answer": "A"}
+{"question": "Which substance has the highest pH?", "A": "Lemon juice", "B": "Pure water", "C": "Bleach", "D": "Vinegar", "answer": "C"}
+{"question": "What is the SI unit of force?", "A": "Joule", "B": "Watt", "C": "Newton", "D": "Pascal", "answer": "C"}
+{"question": "Which data structure uses LIFO (last-in-first-out)?", "A": "Queue", "B": "Array", "C": "Tree", "D": "Stack", "answer": "D"}
+{"question": "What is the decimal value of binary 1010?", "A": "10", "B": "8", "C": "12", "D": "20", "answer": "A"}
+{"question": "What is the time complexity of binary search on a sorted array?", "A": "O(n)", "B": "O(n^2)", "C": "O(1)", "D": "O(log n)", "answer": "D"}
+{"question": "A $80 item is on sale for 15% off. What is the sale price in dollars?", "A": "12", "B": "92", "C": "68", "D": "94.1", "answer": "C"}
+{"question": "A $50 item is on sale for 20% off. What is the sale price in dollars?", "A": "60", "B": "62.5", "C": "40", "D": "10", "answer": "C"}
+{"question": "A $50 item is on sale for 30% off. What is the sale price in dollars?", "A": "15", "B": "71.4", "C": "35", "D": "65", "answer": "C"}
+{"question": "A $40 item is on sale for 10% off. What is the sale price in dollars?", "A": "44.4", "B": "36", "C": "4", "D": "44", "answer": "B"}
+{"question": "A $150 item is on sale for 30% off. What is the sale price in dollars?", "A": "195", "B": "214.3", "C": "45", "D": "105", "answer": "D"}
+{"question": "A $60 item is on sale for 30% off. What is the sale price in dollars?", "A": "42", "B": "78", "C": "85.7", "D": "18", "answer": "A"}
+{"question": "A $200 item is on sale for 20% off. What is the sale price in dollars?", "A": "250", "B": "160", "C": "240", "D": "40", "answer": "B"}
+{"question": "A $40 item is on sale for 15% off. What is the sale price in dollars?", "A": "6", "B": "47.1", "C": "46", "D": "34", "answer": "D"}
+{"question": "A $40 item is on sale for 30% off. What is the sale price in dollars?", "A": "57.1", "B": "12", "C": "28", "D": "52", "answer": "C"}
+{"question": "A $200 item is on sale for 15% off. What is the sale price in dollars?", "A": "30", "B": "230", "C": "235.3", "D": "170", "answer": "D"}
+{"question": "A car travels 320 km in 4 hours. What is its average speed in km/h?", "A": "__DUMMY3", "B": "324", "C": "1280", "D": "80", "answer": "D"}
+{"question": "A car travels 320 km in 4 hours. What is its average speed in km/h?", "A": "__DUMMY3", "B": "324", "C": "80", "D": "1280", "answer": "C"}
+{"question": "A car travels 140 km in 2 hours. What is its average speed in km/h?", "A": "280", "B": "__DUMMY3", "C": "70", "D": "142", "answer": "C"}
+{"question": "A car travels 240 km in 6 hours. What is its average speed in km/h?", "A": "1440", "B": "40", "C": "__DUMMY3", "D": "246", "answer": "B"}
+{"question": "A car travels 240 km in 4 hours. What is its average speed in km/h?", "A": "60", "B": "__DUMMY3", "C": "960", "D": "244", "answer": "A"}
+{"question": "A car travels 420 km in 6 hours. What is its average speed in km/h?", "A": "426", "B": "__DUMMY3", "C": "2520", "D": "70", "answer": "D"}
+{"question": "A car travels 480 km in 6 hours. What is its average speed in km/h?", "A": "80", "B": "486", "C": "__DUMMY3", "D": "2880", "answer": "A"}
+{"question": "A car travels 180 km in 6 hours. What is its average speed in km/h?", "A": "186", "B": "30", "C": "1080", "D": "__DUMMY3", "answer": "B"}
+{"question": "A car travels 480 km in 6 hours. What is its average speed in km/h?", "A": "80", "B": "__DUMMY3", "C": "2880", "D": "486", "answer": "A"}
+{"question": "A car travels 300 km in 5 hours. What is its average speed in km/h?", "A": "1500", "B": "305", "C": "60", "D": "__DUMMY3", "answer": "C"}
+{"question": "Solve for x: 2x + 3 = 19.", "A": "8", "B": "16", "C": "6", "D": "11", "answer": "A"}
+{"question": "Solve for x: 2x + 3 = 15.", "A": "12", "B": "4", "C": "6", "D": "9", "answer": "C"}
+{"question": "Solve for x: 2x + 11 = 25.", "A": "7", "B": "1", "C": "18", "D": "14", "answer": "A"}
+{"question": "Solve for x: 2x + 3 = 11.", "A": "7", "B": "2", "C": "8", "D": "4", "answer": "D"}
+{"question": "Solve for x: 2x + 5 = 9.", "A": "-1", "B": "4", "C": "2", "D": "7", "answer": "C"}
+{"question": "Solve for x: 2x + 11 = 15.", "A": "-4", "B": "4", "C": "13", "D": "2", "answer": "D"}
+{"question": "Solve for x: 2x + 1 = 9.", "A": "5", "B": "8", "C": "3", "D": "4", "answer": "D"}
+{"question": "Solve for x: 2x + 1 = 9.", "A": "4", "B": "3", "C": "8", "D": "5", "answer": "A"}
+{"question": "Solve for x: 2x + 7 = 17.", "A": "12", "B": "1", "C": "5", "D": "10", "answer": "C"}
+{"question": "Solve for x: 2x + 9 = 25.", "A": "8", "B": "3", "C": "17", "D": "16", "answer": "A"}
+{"question": "A rectangle has length 9 and width 7. What is its area?", "A": "63", "B": "32", "C": "31.5", "D": "16", "answer": "A"}
+{"question": "A rectangle has length 6 and width 7. What is its area?", "A": "42", "B": "26", "C": "21", "D": "13", "answer": "A"}
+{"question": "A rectangle has length 9 and width 6. What is its area?", "A": "15", "B": "30", "C": "54", "D": "27", "answer": "C"}
+{"question": "A rectangle has length 7 and width 5. What is its area?", "A": "12", "B": "35", "C": "24", "D": "17.5", "answer": "B"}
+{"question": "A rectangle has length 7 and width 5. What is its area?", "A": "12", "B": "24", "C": "35", "D": "17.5", "answer": "C"}
+{"question": "A rectangle has length 9 and width 5. What is its area?", "A": "28", "B": "22.5", "C": "14", "D": "45", "answer": "D"}
+{"question": "A rectangle has length 8 and width 5. What is its area?", "A": "20", "B": "13", "C": "26", "D": "40", "answer": "D"}
+{"question": "A rectangle has length 6 and width 7. What is its area?", "A": "42", "B": "21", "C": "26", "D": "13", "answer": "A"}
+{"question": "A rectangle has length 8 and width 5. What is its area?", "A": "40", "B": "13", "C": "20", "D": "26", "answer": "A"}
+{"question": "A rectangle has length 6 and width 5. What is its area?", "A": "30", "B": "11", "C": "22", "D": "15", "answer": "A"}
+{"question": "What is 25% of 300?", "A": "225", "B": "75", "C": "275", "D": "325", "answer": "B"}
+{"question": "What is 40% of 300?", "A": "120", "B": "180", "C": "340", "D": "260", "answer": "A"}
+{"question": "What is 10% of 300?", "A": "270", "B": "30", "C": "290", "D": "310", "answer": "B"}
+{"question": "What is 15% of 300?", "A": "285", "B": "315", "C": "45", "D": "255", "answer": "C"}
+{"question": "What is 40% of 120?", "A": "80", "B": "72", "C": "48", "D": "160", "answer": "C"}
+{"question": "What is 40% of 250?", "A": "210", "B": "150", "C": "290", "D": "100", "answer": "D"}
+{"question": "What is 20% of 250?", "A": "270", "B": "50", "C": "200", "D": "230", "answer": "B"}
+{"question": "What is 10% of 80?", "A": "72", "B": "90", "C": "70", "D": "8", "answer": "D"}
+{"question": "What is 15% of 250?", "A": "265", "B": "212.5", "C": "235", "D": "37.5", "answer": "D"}
+{"question": "What is 10% of 200?", "A": "20", "B": "190", "C": "180", "D": "210", "answer": "A"}
+{"question": "What is the average of 15, 30, and 36?", "A": "36", "B": "40.5", "C": "27", "D": "81", "answer": "C"}
+{"question": "What is the average of 12, 24, and 35?", "A": "35", "B": "71", "C": "23.7", "D": "35.5", "answer": "C"}
+{"question": "What is the average of 18, 22, and 32?", "A": "36", "B": "24", "C": "32", "D": "72", "answer": "B"}
+{"question": "What is the average of 10, 22, and 32?", "A": "21.3", "B": "32", "C": "64", "D": "__DUMMY3", "answer": "A"}
+{"question": "What is the average of 20, 24, and 40?", "A": "42", "B": "28", "C": "40", "D": "84", "answer": "B"}
+{"question": "What is the average of 18, 22, and 36?", "A": "36", "B": "25.3", "C": "38", "D": "76", "answer": "B"}
+{"question": "What is the average of 12, 22, and 36?", "A": "35", "B": "36", "C": "70", "D": "23.3", "answer": "D"}
+{"question": "What is the average of 10, 25, and 40?", "A": "75", "B": "25", "C": "37.5", "D": "40", "answer": "B"}
+{"question": "What is the average of 14, 30, and 32?", "A": "76", "B": "38", "C": "32", "D": "25.3", "answer": "D"}
+{"question": "What is the average of 18, 30, and 40?", "A": "29.3", "B": "40", "C": "44", "D": "88", "answer": "A"}
+{"question": "A $240 item is on sale for 40% off. What is the sale price in dollars?", "A": "336", "B": "144", "C": "400", "D": "96", "answer": "B"}
+{"question": "A car travels 360 km in 6 hours. What is its average speed in km/h?", "A": "2160", "B": "60", "C": "81", "D": "366", "answer": "B"}
+{"question": "Solve for x: 2x + 11 = 17.", "A": "3", "B": "14", "C": "6", "D": "-3", "answer": "A"}
+{"question": "A rectangle has length 6 and width 4. What is its area?", "A": "24", "B": "10", "C": "12", "D": "20", "answer": "A"}
+{"question": "What is 50% of 120?", "A": "170", "B": "70", "C": "60", "D": "81", "answer": "C"}
+{"question": "What is the average of 20, 25, and 42?", "A": "87", "B": "29", "C": "43.5", "D": "42", "answer": "B"}
+{"question": "How many ways are there to choose 2 items from 7 distinct items?", "A": "48", "B": "42", "C": "28", "D": "21", "answer": "D"}
+{"question": "What is 4^5?", "A": "20", "B": "9", "C": "1024", "D": "19", "answer": "C"}
+{"question": "How many centimeters are in 3 meters?", "A": "30", "B": "3000", "C": "3", "D": "300", "answer": "D"}
+{"question": "A sum of $200 is invested at 5% simple interest per year for 1 years. What is the total interest earned in dollars?", "A": "10", "B": "31", "C": "1000", "D": "200", "answer": "A"}
+{"question": "If 5 apples cost $20, how much do 7 apples cost at the same rate?", "A": "27", "B": "35", "C": "4", "D": "28", "answer": "D"}
+{"question": "Worker A can finish a job in 4 days. Worker B can finish it in 8 days. Working together, how many days do they need?", "A": "6", "B": "32", "C": "2.7", "D": "12", "answer": "C"}
+{"question": "What is the next number in the sequence [3, 5, 7, 9]?", "A": "11", "B": "13", "C": "5", "D": "7", "answer": "A"}
+{"question": "Tom is 3 years older than Lily. Lily is 10 years older than Max. How many years older is Tom than Max?", "A": "13", "B": "3", "C": "10", "D": "-7", "answer": "A"}
+{"question": "A rectangle has length 9 and width 6. What is its perimeter?", "A": "54", "B": "15", "C": "60", "D": "30", "answer": "D"}
+{"question": "A rectangular box has length 6, width 4, height 2. What is its volume?", "A": "12", "B": "69", "C": "24", "D": "48", "answer": "D"}
+{"question": "A price of $120 increases by 20%. What is the new price?", "A": "24", "B": "165", "C": "144", "D": "96", "answer": "C"}
+{"question": "A bag has 3 red and 5 blue marbles. What is the percent chance of drawing a red marble?", "A": "37.5", "B": "60", "C": "62.5", "D": "266.7", "answer": "A"}
+{"question": "What is the integer quotient when 20 is divided by 6 (ignore remainder)?", "A": "2", "B": "14", "C": "120", "D": "3", "answer": "D"}
+{"question": "A $40 item is on sale for 40% off. What is the sale price in dollars?", "A": "66.7", "B": "24", "C": "16", "D": "56", "answer": "B"}
+{"question": "A car travels 320 km in 8 hours. What is its average speed in km/h?", "A": "40", "B": "61", "C": "2560", "D": "328", "answer": "A"}
+{"question": "Solve for x: 2x + 5 = 21.", "A": "8", "B": "5", "C": "13", "D": "16", "answer": "A"}
+{"question": "A rectangle has length 6 and width 10. What is its area?", "A": "16", "B": "30", "C": "60", "D": "32", "answer": "C"}
+{"question": "What is 50% of 250?", "A": "200", "B": "146", "C": "125", "D": "300", "answer": "C"}
+{"question": "How many ways are there to choose 2 items from 6 distinct items?", "A": "15", "B": "30", "C": "35", "D": "21", "answer": "A"}
+{"question": "What is 3^3?", "A": "8", "B": "9", "C": "27", "D": "6", "answer": "C"}
+{"question": "How many centimeters are in 15 meters?", "A": "150", "B": "15", "C": "1500", "D": "15000", "answer": "C"}
+{"question": "A sum of $500 is invested at 15% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "22500", "B": "225", "C": "1500", "D": "75", "answer": "B"}
+{"question": "If 5 apples cost $24, how much do 12 apples cost at the same rate?", "A": "60", "B": "36", "C": "57.6", "D": "4.8", "answer": "C"}
+{"question": "Worker A can finish a job in 6 days. Worker B can finish it in 12 days. Working together, how many days do they need?", "A": "4", "B": "18", "C": "9", "D": "72", "answer": "A"}
+{"question": "What is the next number in the sequence [3, 8, 13, 18]?", "A": "23", "B": "8", "C": "28", "D": "13", "answer": "A"}
+{"question": "Tom is 11 years older than Lily. Lily is 8 years older than Max. How many years older is Tom than Max?", "A": "11", "B": "8", "C": "3", "D": "19", "answer": "D"}
+{"question": "A rectangle has length 10 and width 7. What is its perimeter?", "A": "17", "B": "34", "C": "68", "D": "70", "answer": "B"}
+{"question": "A rectangular box has length 5, width 4, height 3. What is its volume?", "A": "20", "B": "60", "C": "12", "D": "24", "answer": "B"}
+{"question": "A price of $100 increases by 20%. What is the new price?", "A": "80", "B": "20", "C": "120", "D": "141", "answer": "C"}
+{"question": "A bag has 2 red and 6 blue marbles. What is the percent chance of drawing a red marble?", "A": "25", "B": "400", "C": "33.3", "D": "75", "answer": "A"}
+{"question": "What is the integer quotient when 42 is divided by 5 (ignore remainder)?", "A": "37", "B": "210", "C": "8", "D": "2", "answer": "C"}
+{"question": "A $60 item is on sale for 30% off. What is the sale price in dollars?", "A": "78", "B": "85.7", "C": "18", "D": "42", "answer": "D"}
+{"question": "A car travels 240 km in 4 hours. What is its average speed in km/h?", "A": "960", "B": "60", "C": "244", "D": "81", "answer": "B"}
+{"question": "Solve for x: 2x + 7 = 19.", "A": "6", "B": "12", "C": "13", "D": "2", "answer": "A"}
+{"question": "A rectangle has length 8 and width 8. What is its area?", "A": "16", "B": "32", "C": "64", "D": "85", "answer": "C"}
+{"question": "What is 25% of 200?", "A": "175", "B": "150", "C": "50", "D": "225", "answer": "C"}
+{"question": "What is the average of 15, 28, and 40?", "A": "83", "B": "27.7", "C": "41.5", "D": "40", "answer": "B"}
+{"question": "How many ways are there to choose 2 items from 8 distinct items?", "A": "28", "B": "36", "C": "56", "D": "63", "answer": "A"}
+{"question": "How many meters are in 9 kilometers?", "A": "9000", "B": "900", "C": "9", "D": "90", "answer": "A"}
+{"question": "A sum of $200 is invested at 15% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "400", "B": "6000", "C": "30", "D": "60", "answer": "D"}
+{"question": "If 3 apples cost $20, how much do 7 apples cost at the same rate?", "A": "6.7", "B": "46.7", "C": "27", "D": "21", "answer": "B"}
+{"question": "Worker A can finish a job in 10 days. Worker B can finish it in 10 days. Working together, how many days do they need?", "A": "100", "B": "10", "C": "5", "D": "20", "answer": "C"}
+{"question": "Tom is 7 years older than Lily. Lily is 8 years older than Max. How many years older is Tom than Max?", "A": "-1", "B": "8", "C": "15", "D": "7", "answer": "C"}
+{"question": "A price of $100 increases by 25%. What is the new price?", "A": "146", "B": "25", "C": "75", "D": "125", "answer": "D"}
+{"question": "A bag has 5 red and 4 blue marbles. What is the percent chance of drawing a red marble?", "A": "44.4", "B": "180", "C": "55.6", "D": "125", "answer": "C"}
+{"question": "What is the integer quotient when 42 is divided by 3 (ignore remainder)?", "A": "126", "B": "0", "C": "14", "D": "39", "answer": "C"}
+{"question": "A $80 item is on sale for 25% off. What is the sale price in dollars?", "A": "106.7", "B": "60", "C": "100", "D": "20", "answer": "B"}
+{"question": "A car travels 560 km in 8 hours. What is its average speed in km/h?", "A": "70", "B": "568", "C": "91", "D": "4480", "answer": "A"}
+{"question": "Solve for x: 2x + 9 = 17.", "A": "-1", "B": "13", "C": "8", "D": "4", "answer": "D"}
+{"question": "A rectangle has length 18 and width 5. What is its area?", "A": "46", "B": "23", "C": "90", "D": "45", "answer": "C"}
+{"question": "What is 25% of 300?", "A": "75", "B": "275", "C": "225", "D": "325", "answer": "A"}
+{"question": "What is the average of 18, 35, and 42?", "A": "95", "B": "31.7", "C": "42", "D": "47.5", "answer": "B"}
+{"question": "How many ways are there to choose 2 items from 4 distinct items?", "A": "12", "B": "10", "C": "6", "D": "15", "answer": "C"}
+{"question": "What is 2^3?", "A": "8", "B": "6", "C": "5", "D": "29", "answer": "A"}
+{"question": "How many meters are in 3 kilometers?", "A": "3", "B": "3000", "C": "300", "D": "30", "answer": "B"}
+{"question": "A sum of $100 is invested at 15% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "200", "B": "3000", "C": "15", "D": "30", "answer": "D"}
+{"question": "If 4 apples cost $15, how much do 7 apples cost at the same rate?", "A": "26.2", "B": "28", "C": "3.8", "D": "22", "answer": "A"}
+{"question": "Worker A can finish a job in 6 days. Worker B can finish it in 10 days. Working together, how many days do they need?", "A": "16", "B": "3.8", "C": "60", "D": "8", "answer": "B"}
+{"question": "What is the next number in the sequence [7, 9, 11, 13]?", "A": "11", "B": "9", "C": "17", "D": "15", "answer": "D"}
+{"question": "Tom is 9 years older than Lily. Lily is 8 years older than Max. How many years older is Tom than Max?", "A": "1", "B": "17", "C": "8", "D": "9", "answer": "B"}
+{"question": "A rectangle has length 12 and width 6. What is its perimeter?", "A": "36", "B": "57", "C": "18", "D": "72", "answer": "A"}
+{"question": "A rectangular box has length 3, width 3, height 5. What is its volume?", "A": "11", "B": "22", "C": "45", "D": "9", "answer": "C"}
+{"question": "What is the integer quotient when 42 is divided by 4 (ignore remainder)?", "A": "38", "B": "10", "C": "2", "D": "168", "answer": "B"}
+{"question": "A $40 item is on sale for 20% off. What is the sale price in dollars?", "A": "8", "B": "32", "C": "48", "D": "50", "answer": "B"}
+{"question": "A car travels 120 km in 4 hours. What is its average speed in km/h?", "A": "124", "B": "30", "C": "51", "D": "480", "answer": "B"}
+{"question": "Solve for x: 2x + 5 = 9.", "A": "2", "B": "7", "C": "-1", "D": "4", "answer": "A"}
+{"question": "A rectangle has length 12 and width 9. What is its area?", "A": "108", "B": "42", "C": "21", "D": "54", "answer": "A"}
+{"question": "What is 25% of 250?", "A": "187.5", "B": "275", "C": "225", "D": "62.5", "answer": "D"}
+{"question": "What is the average of 25, 22, and 42?", "A": "44.5", "B": "29.7", "C": "89", "D": "42", "answer": "B"}
+{"question": "How many ways are there to choose 2 items from 9 distinct items?", "A": "72", "B": "45", "C": "80", "D": "36", "answer": "D"}
+{"question": "How many grams are in 8 kilograms?", "A": "800", "B": "8", "C": "8000", "D": "80", "answer": "C"}
+{"question": "A sum of $200 is invested at 20% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "600", "B": "120", "C": "40", "D": "12000", "answer": "B"}
+{"question": "If 3 apples cost $24, how much do 9 apples cost at the same rate?", "A": "8", "B": "72", "C": "33", "D": "27", "answer": "B"}
+{"question": "What is the next number in the sequence [5, 8, 11, 14]?", "A": "11", "B": "20", "C": "8", "D": "17", "answer": "D"}
+{"question": "A rectangle has length 10 and width 9. What is its perimeter?", "A": "19", "B": "90", "C": "38", "D": "76", "answer": "C"}
+{"question": "A rectangular box has length 6, width 3, height 3. What is its volume?", "A": "12", "B": "24", "C": "54", "D": "18", "answer": "C"}
+{"question": "A price of $120 increases by 50%. What is the new price?", "A": "201", "B": "60", "C": "180", "D": "194", "answer": "C"}
+{"question": "A bag has 2 red and 3 blue marbles. What is the percent chance of drawing a red marble?", "A": "250", "B": "66.7", "C": "40", "D": "60", "answer": "C"}
+{"question": "What is the integer quotient when 36 is divided by 8 (ignore remainder)?", "A": "25", "B": "4", "C": "28", "D": "288", "answer": "B"}
+{"question": "A $200 item is on sale for 10% off. What is the sale price in dollars?", "A": "222.2", "B": "220", "C": "20", "D": "180", "answer": "D"}
+{"question": "A car travels 630 km in 7 hours. What is its average speed in km/h?", "A": "4410", "B": "637", "C": "111", "D": "90", "answer": "D"}
+{"question": "Solve for x: 2x + 7 = 25.", "A": "18", "B": "16", "C": "9", "D": "5", "answer": "C"}
+{"question": "A rectangle has length 18 and width 6. What is its area?", "A": "24", "B": "108", "C": "48", "D": "54", "answer": "B"}
+{"question": "What is 15% of 120?", "A": "102", "B": "105", "C": "18", "D": "135", "answer": "C"}
+{"question": "What is the average of 20, 30, and 42?", "A": "42", "B": "30.7", "C": "92", "D": "46", "answer": "B"}
+{"question": "How many ways are there to choose 2 items from 5 distinct items?", "A": "24", "B": "20", "C": "15", "D": "10", "answer": "D"}
+{"question": "What is 4^4?", "A": "8", "B": "15", "C": "256", "D": "16", "answer": "C"}
+{"question": "A sum of $100 is invested at 5% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "200", "B": "5", "C": "1000", "D": "10", "answer": "D"}
+{"question": "If 6 apples cost $9, how much do 12 apples cost at the same rate?", "A": "72", "B": "1.5", "C": "21", "D": "18", "answer": "D"}
+{"question": "Worker A can finish a job in 10 days. Worker B can finish it in 15 days. Working together, how many days do they need?", "A": "6", "B": "25", "C": "12.5", "D": "150", "answer": "A"}
+{"question": "What is the next number in the sequence [7, 11, 15, 19]?", "A": "27", "B": "23", "C": "11", "D": "15", "answer": "B"}
+{"question": "Tom is 9 years older than Lily. Lily is 4 years older than Max. How many years older is Tom than Max?", "A": "9", "B": "5", "C": "4", "D": "13", "answer": "D"}
+{"question": "A rectangle has length 8 and width 4. What is its perimeter?", "A": "12", "B": "32", "C": "48", "D": "24", "answer": "D"}
+{"question": "A price of $80 increases by 20%. What is the new price?", "A": "117", "B": "64", "C": "96", "D": "16", "answer": "C"}
+{"question": "A bag has 4 red and 6 blue marbles. What is the percent chance of drawing a red marble?", "A": "66.7", "B": "60", "C": "40", "D": "250", "answer": "C"}
+{"question": "What is the integer quotient when 42 is divided by 8 (ignore remainder)?", "A": "336", "B": "34", "C": "2", "D": "5", "answer": "D"}
+{"question": "A $300 item is on sale for 20% off. What is the sale price in dollars?", "A": "360", "B": "240", "C": "375", "D": "60", "answer": "B"}
+{"question": "A car travels 180 km in 3 hours. What is its average speed in km/h?", "A": "540", "B": "183", "C": "60", "D": "81", "answer": "C"}
+{"question": "Solve for x: 2x + 3 = 13.", "A": "3", "B": "10", "C": "8", "D": "5", "answer": "D"}
+{"question": "A rectangle has length 7 and width 10. What is its area?", "A": "17", "B": "35", "C": "70", "D": "34", "answer": "C"}
+{"question": "What is 20% of 80?", "A": "64", "B": "60", "C": "100", "D": "16", "answer": "D"}
+{"question": "What is the average of 20, 24, and 32?", "A": "32", "B": "25.3", "C": "76", "D": "38", "answer": "B"}
+{"question": "A sum of $200 is invested at 10% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "600", "B": "20", "C": "6000", "D": "60", "answer": "D"}
+{"question": "Worker A can finish a job in 10 days. Worker B can finish it in 8 days. Working together, how many days do they need?", "A": "4.4", "B": "80", "C": "18", "D": "9", "answer": "A"}
+{"question": "What is the next number in the sequence [1, 4, 7, 10]?", "A": "13", "B": "4", "C": "16", "D": "7", "answer": "A"}
+{"question": "Tom is 3 years older than Lily. Lily is 4 years older than Max. How many years older is Tom than Max?", "A": "4", "B": "3", "C": "7", "D": "-1", "answer": "C"}
+{"question": "A rectangle has length 12 and width 8. What is its perimeter?", "A": "96", "B": "40", "C": "20", "D": "80", "answer": "B"}
+{"question": "A rectangular box has length 3, width 4, height 3. What is its volume?", "A": "12", "B": "36", "C": "10", "D": "20", "answer": "B"}
+{"question": "A price of $200 increases by 50%. What is the new price?", "A": "321", "B": "100", "C": "314", "D": "300", "answer": "D"}
+{"question": "A bag has 4 red and 5 blue marbles. What is the percent chance of drawing a red marble?", "A": "55.6", "B": "44.4", "C": "80", "D": "225", "answer": "B"}
+{"question": "What is the integer quotient when 36 is divided by 4 (ignore remainder)?", "A": "144", "B": "9", "C": "32", "D": "0", "answer": "B"}
+{"question": "A $100 item is on sale for 25% off. What is the sale price in dollars?", "A": "75", "B": "125", "C": "25", "D": "133.3", "answer": "A"}
+{"question": "Solve for x: 2x + 3 = 7.", "A": "5", "B": "2", "C": "4", "D": "0", "answer": "B"}
+{"question": "A rectangle has length 15 and width 7. What is its area?", "A": "22", "B": "44", "C": "52.5", "D": "105", "answer": "D"}
+{"question": "What is 40% of 80?", "A": "120", "B": "40", "C": "32", "D": "48", "answer": "C"}
+{"question": "What is the average of 12, 24, and 45?", "A": "45", "B": "81", "C": "40.5", "D": "27", "answer": "D"}
+{"question": "How many milliliters are in 3 liters?", "A": "3000", "B": "30", "C": "3", "D": "300", "answer": "A"}
+{"question": "A sum of $1000 is invested at 10% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "300", "B": "100", "C": "30000", "D": "3000", "answer": "A"}
+{"question": "If 4 apples cost $9, how much do 9 apples cost at the same rate?", "A": "18", "B": "2.2", "C": "36", "D": "20.2", "answer": "D"}
+{"question": "Worker A can finish a job in 10 days. Worker B can finish it in 12 days. Working together, how many days do they need?", "A": "5.5", "B": "120", "C": "22", "D": "11", "answer": "A"}
+{"question": "What is the next number in the sequence [5, 9, 13, 17]?", "A": "9", "B": "13", "C": "21", "D": "25", "answer": "C"}
+{"question": "A rectangle has length 6 and width 4. What is its perimeter?", "A": "20", "B": "24", "C": "10", "D": "40", "answer": "A"}
+{"question": "A rectangular box has length 3, width 5, height 3. What is its volume?", "A": "15", "B": "45", "C": "11", "D": "22", "answer": "B"}
+{"question": "A price of $100 increases by 10%. What is the new price?", "A": "90", "B": "131", "C": "110", "D": "10", "answer": "C"}
+{"question": "A $120 item is on sale for 40% off. What is the sale price in dollars?", "A": "48", "B": "168", "C": "72", "D": "200", "answer": "C"}
+{"question": "A car travels 300 km in 5 hours. What is its average speed in km/h?", "A": "60", "B": "305", "C": "81", "D": "1500", "answer": "A"}
+{"question": "Solve for x: 2x + 7 = 11.", "A": "9", "B": "2", "C": "4", "D": "-2", "answer": "B"}
+{"question": "A rectangle has length 6 and width 9. What is its area?", "A": "54", "B": "30", "C": "15", "D": "27", "answer": "A"}
+{"question": "What is 20% of 360?", "A": "72", "B": "340", "C": "288", "D": "380", "answer": "A"}
+{"question": "What is the average of 15, 25, and 32?", "A": "24", "B": "72", "C": "36", "D": "32", "answer": "A"}
+{"question": "A sum of $100 is invested at 10% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "10", "B": "200", "C": "20", "D": "2000", "answer": "C"}
+{"question": "If 4 apples cost $15, how much do 12 apples cost at the same rate?", "A": "45", "B": "27", "C": "3.8", "D": "48", "answer": "A"}
+{"question": "What is the next number in the sequence [5, 10, 15, 20]?", "A": "25", "B": "15", "C": "30", "D": "10", "answer": "A"}
+{"question": "Tom is 5 years older than Lily. Lily is 4 years older than Max. How many years older is Tom than Max?", "A": "9", "B": "5", "C": "4", "D": "1", "answer": "A"}
+{"question": "A rectangle has length 6 and width 5. What is its perimeter?", "A": "22", "B": "44", "C": "11", "D": "30", "answer": "A"}
+{"question": "A rectangular box has length 4, width 5, height 3. What is its volume?", "A": "12", "B": "20", "C": "24", "D": "60", "answer": "D"}
+{"question": "What is the integer quotient when 48 is divided by 5 (ignore remainder)?", "A": "240", "B": "3", "C": "9", "D": "43", "answer": "C"}
+{"question": "A $60 item is on sale for 15% off. What is the sale price in dollars?", "A": "51", "B": "70.6", "C": "9", "D": "69", "answer": "A"}
+{"question": "A car travels 240 km in 8 hours. What is its average speed in km/h?", "A": "51", "B": "30", "C": "1920", "D": "248", "answer": "B"}
+{"question": "What is 15% of 150?", "A": "165", "B": "127.5", "C": "135", "D": "22.5", "answer": "D"}
+{"question": "What is the average of 25, 28, and 40?", "A": "93", "B": "40", "C": "31", "D": "46.5", "answer": "C"}
+{"question": "What is 3^5?", "A": "243", "B": "14", "C": "8", "D": "15", "answer": "A"}
+{"question": "How many centimeters are in 12 meters?", "A": "1200", "B": "120", "C": "12000", "D": "12", "answer": "A"}
+{"question": "A sum of $200 is invested at 5% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "10", "B": "2000", "C": "400", "D": "20", "answer": "D"}
+{"question": "If 3 apples cost $12, how much do 7 apples cost at the same rate?", "A": "28", "B": "19", "C": "21", "D": "4", "answer": "A"}
+{"question": "What is the next number in the sequence [1, 3, 5, 7]?", "A": "3", "B": "9", "C": "11", "D": "5", "answer": "B"}
+{"question": "Tom is 11 years older than Lily. Lily is 2 years older than Max. How many years older is Tom than Max?", "A": "2", "B": "11", "C": "13", "D": "9", "answer": "C"}
+{"question": "What is the integer quotient when 48 is divided by 7 (ignore remainder)?", "A": "336", "B": "41", "C": "27", "D": "6", "answer": "D"}
+{"question": "A $40 item is on sale for 30% off. What is the sale price in dollars?", "A": "57.1", "B": "12", "C": "52", "D": "28", "answer": "D"}
+{"question": "A car travels 320 km in 4 hours. What is its average speed in km/h?", "A": "324", "B": "101", "C": "80", "D": "1280", "answer": "C"}
+{"question": "Solve for x: 2x + 5 = 11.", "A": "6", "B": "8", "C": "3", "D": "0", "answer": "C"}
+{"question": "A rectangle has length 7 and width 9. What is its area?", "A": "32", "B": "63", "C": "16", "D": "31.5", "answer": "B"}
+{"question": "What is 10% of 80?", "A": "90", "B": "8", "C": "70", "D": "72", "answer": "B"}
+{"question": "What is the average of 18, 24, and 36?", "A": "26", "B": "36", "C": "39", "D": "78", "answer": "A"}
+{"question": "How many grams are in 2 kilograms?", "A": "2", "B": "2000", "C": "20", "D": "200", "answer": "B"}
+{"question": "A sum of $500 is invested at 5% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "75", "B": "7500", "C": "1500", "D": "25", "answer": "A"}
+{"question": "If 4 apples cost $9, how much do 8 apples cost at the same rate?", "A": "18", "B": "32", "C": "17", "D": "2.2", "answer": "A"}
+{"question": "Worker A can finish a job in 6 days. Worker B can finish it in 15 days. Working together, how many days do they need?", "A": "4.3", "B": "90", "C": "10.5", "D": "21", "answer": "A"}
+{"question": "Tom is 3 years older than Lily. Lily is 2 years older than Max. How many years older is Tom than Max?", "A": "1", "B": "3", "C": "5", "D": "2", "answer": "C"}
+{"question": "A rectangular box has length 5, width 5, height 2. What is its volume?", "A": "24", "B": "12", "C": "50", "D": "25", "answer": "C"}
+{"question": "A $200 item is on sale for 25% off. What is the sale price in dollars?", "A": "150", "B": "266.7", "C": "250", "D": "50", "answer": "A"}
+{"question": "A car travels 280 km in 4 hours. What is its average speed in km/h?", "A": "70", "B": "284", "C": "91", "D": "1120", "answer": "A"}
+{"question": "Solve for x: 2x + 3 = 17.", "A": "7", "B": "14", "C": "10", "D": "5", "answer": "A"}
+{"question": "A rectangle has length 6 and width 8. What is its area?", "A": "14", "B": "48", "C": "28", "D": "24", "answer": "B"}
+{"question": "What is 10% of 300?", "A": "310", "B": "270", "C": "30", "D": "290", "answer": "C"}
+{"question": "What is the average of 14, 22, and 42?", "A": "78", "B": "39", "C": "26", "D": "42", "answer": "C"}
+{"question": "A sum of $1000 is invested at 5% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "100", "B": "50", "C": "10000", "D": "2000", "answer": "A"}
+{"question": "If 6 apples cost $9, how much do 9 apples cost at the same rate?", "A": "18", "B": "1.5", "C": "54", "D": "13.5", "answer": "D"}
+{"question": "Worker A can finish a job in 4 days. Worker B can finish it in 6 days. Working together, how many days do they need?", "A": "5", "B": "2.4", "C": "10", "D": "24", "answer": "B"}
+{"question": "Tom is 11 years older than Lily. Lily is 4 years older than Max. How many years older is Tom than Max?", "A": "11", "B": "15", "C": "7", "D": "4", "answer": "B"}
+{"question": "A rectangle has length 7 and width 6. What is its perimeter?", "A": "26", "B": "52", "C": "13", "D": "42", "answer": "A"}
+{"question": "A rectangular box has length 4, width 3, height 3. What is its volume?", "A": "12", "B": "20", "C": "36", "D": "10", "answer": "C"}
+{"question": "A bag has 5 red and 6 blue marbles. What is the percent chance of drawing a red marble?", "A": "45.5", "B": "83.3", "C": "54.5", "D": "220", "answer": "A"}
+{"question": "What is the integer quotient when 24 is divided by 8 (ignore remainder)?", "A": "0", "B": "16", "C": "192", "D": "3", "answer": "D"}
+{"question": "A $240 item is on sale for 10% off. What is the sale price in dollars?", "A": "264", "B": "266.7", "C": "24", "D": "216", "answer": "D"}
+{"question": "A car travels 400 km in 5 hours. What is its average speed in km/h?", "A": "101", "B": "80", "C": "2000", "D": "405", "answer": "B"}
+{"question": "A rectangle has length 7 and width 7. What is its area?", "A": "14", "B": "28", "C": "49", "D": "24.5", "answer": "C"}
+{"question": "What is 50% of 200?", "A": "150", "B": "121", "C": "250", "D": "100", "answer": "D"}
+{"question": "What is the average of 12, 22, and 45?", "A": "79", "B": "45", "C": "39.5", "D": "26.3", "answer": "D"}
+{"question": "A sum of $1000 is invested at 15% simple interest per year for 1 years. What is the total interest earned in dollars?", "A": "150", "B": "171", "C": "15000", "D": "1000", "answer": "A"}
+{"question": "If 6 apples cost $9, how much do 10 apples cost at the same rate?", "A": "1.5", "B": "15", "C": "19", "D": "60", "answer": "B"}
+{"question": "Worker A can finish a job in 8 days. Worker B can finish it in 8 days. Working together, how many days do they need?", "A": "16", "B": "8", "C": "64", "D": "4", "answer": "D"}
+{"question": "Tom is 5 years older than Lily. Lily is 2 years older than Max. How many years older is Tom than Max?", "A": "7", "B": "2", "C": "3", "D": "5", "answer": "A"}
+{"question": "A rectangle has length 9 and width 5. What is its perimeter?", "A": "28", "B": "14", "C": "56", "D": "45", "answer": "A"}
+{"question": "A rectangular box has length 4, width 3, height 4. What is its volume?", "A": "11", "B": "48", "C": "12", "D": "22", "answer": "B"}
+{"question": "A bag has 5 red and 3 blue marbles. What is the percent chance of drawing a red marble?", "A": "160", "B": "37.5", "C": "62.5", "D": "166.7", "answer": "C"}
+{"question": "What is the integer quotient when 24 is divided by 7 (ignore remainder)?", "A": "168", "B": "24", "C": "17", "D": "3", "answer": "D"}
+{"question": "A $150 item is on sale for 40% off. What is the sale price in dollars?", "A": "90", "B": "250", "C": "210", "D": "60", "answer": "A"}
+{"question": "A car travels 200 km in 5 hours. What is its average speed in km/h?", "A": "40", "B": "61", "C": "205", "D": "1000", "answer": "A"}
+{"question": "A rectangle has length 8 and width 6. What is its area?", "A": "48", "B": "14", "C": "24", "D": "28", "answer": "A"}
+{"question": "What is the average of 10, 30, and 32?", "A": "72", "B": "36", "C": "32", "D": "24", "answer": "D"}
+{"question": "A sum of $100 is invested at 10% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "300", "B": "3000", "C": "10", "D": "30", "answer": "D"}
+{"question": "If 5 apples cost $12, how much do 9 apples cost at the same rate?", "A": "45", "B": "2.4", "C": "21.6", "D": "21", "answer": "C"}
+{"question": "A rectangle has length 7 and width 7. What is its perimeter?", "A": "49", "B": "14", "C": "56", "D": "28", "answer": "D"}
+{"question": "A rectangular box has length 5, width 3, height 4. What is its volume?", "A": "15", "B": "24", "C": "12", "D": "60", "answer": "D"}
+{"question": "A bag has 2 red and 5 blue marbles. What is the percent chance of drawing a red marble?", "A": "40", "B": "28.6", "C": "71.4", "D": "350", "answer": "B"}
+{"question": "What is the integer quotient when 42 is divided by 7 (ignore remainder)?", "A": "35", "B": "294", "C": "6", "D": "0", "answer": "C"}
+{"question": "A $80 item is on sale for 30% off. What is the sale price in dollars?", "A": "24", "B": "114.3", "C": "104", "D": "56", "answer": "D"}
+{"question": "A car travels 210 km in 3 hours. What is its average speed in km/h?", "A": "630", "B": "70", "C": "213", "D": "91", "answer": "B"}
+{"question": "What is 40% of 300?", "A": "120", "B": "260", "C": "340", "D": "180", "answer": "A"}
+{"question": "What is the average of 20, 22, and 32?", "A": "37", "B": "32", "C": "74", "D": "24.7", "answer": "D"}
+{"question": "A sum of $1000 is invested at 10% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "20000", "B": "100", "C": "200", "D": "2000", "answer": "C"}
+{"question": "If 6 apples cost $12, how much do 9 apples cost at the same rate?", "A": "18", "B": "2", "C": "21", "D": "54", "answer": "A"}
+{"question": "Tom is 9 years older than Lily. Lily is 10 years older than Max. How many years older is Tom than Max?", "A": "-1", "B": "19", "C": "9", "D": "10", "answer": "B"}
+{"question": "A rectangle has length 6 and width 8. What is its perimeter?", "A": "56", "B": "28", "C": "48", "D": "14", "answer": "B"}
+{"question": "A rectangular box has length 3, width 3, height 2. What is its volume?", "A": "8", "B": "9", "C": "18", "D": "16", "answer": "C"}
+{"question": "A price of $80 increases by 50%. What is the new price?", "A": "120", "B": "141", "C": "134", "D": "40", "answer": "A"}
+{"question": "What is the integer quotient when 48 is divided by 3 (ignore remainder)?", "A": "16", "B": "0", "C": "144", "D": "45", "answer": "A"}
+{"question": "A car travels 100 km in 2 hours. What is its average speed in km/h?", "A": "200", "B": "102", "C": "50", "D": "71", "answer": "C"}
+{"question": "Solve for x: 2x + 9 = 15.", "A": "-2", "B": "3", "C": "6", "D": "12", "answer": "B"}
+{"question": "A rectangle has length 12 and width 8. What is its area?", "A": "20", "B": "48", "C": "40", "D": "96", "answer": "D"}
+{"question": "What is 40% of 150?", "A": "190", "B": "110", "C": "60", "D": "90", "answer": "C"}
+{"question": "What is the average of 20, 25, and 36?", "A": "40.5", "B": "36", "C": "27", "D": "81", "answer": "C"}
+{"question": "How many centimeters are in 7 meters?", "A": "700", "B": "7000", "C": "7", "D": "70", "answer": "A"}
+{"question": "A sum of $500 is invested at 5% simple interest per year for 1 years. What is the total interest earned in dollars?", "A": "2500", "B": "46", "C": "25", "D": "500", "answer": "C"}
+{"question": "If 3 apples cost $9, how much do 10 apples cost at the same rate?", "A": "30", "B": "19", "C": "51", "D": "3", "answer": "A"}
+{"question": "Worker A can finish a job in 12 days. Worker B can finish it in 15 days. Working together, how many days do they need?", "A": "6.7", "B": "13.5", "C": "180", "D": "27", "answer": "A"}
+{"question": "A rectangle has length 6 and width 6. What is its perimeter?", "A": "12", "B": "24", "C": "48", "D": "36", "answer": "B"}
+{"question": "A rectangular box has length 3, width 5, height 2. What is its volume?", "A": "20", "B": "10", "C": "30", "D": "15", "answer": "C"}
+{"question": "What is the integer quotient when 20 is divided by 8 (ignore remainder)?", "A": "12", "B": "160", "C": "4", "D": "2", "answer": "D"}
+{"question": "A $120 item is on sale for 20% off. What is the sale price in dollars?", "A": "96", "B": "144", "C": "24", "D": "150", "answer": "A"}
+{"question": "A car travels 350 km in 5 hours. What is its average speed in km/h?", "A": "355", "B": "1750", "C": "91", "D": "70", "answer": "D"}
+{"question": "Solve for x: 2x + 3 = 11.", "A": "2", "B": "4", "C": "8", "D": "7", "answer": "B"}
+{"question": "A rectangle has length 9 and width 9. What is its area?", "A": "40.5", "B": "18", "C": "81", "D": "36", "answer": "C"}
+{"question": "What is 10% of 150?", "A": "135", "B": "160", "C": "140", "D": "15", "answer": "D"}
+{"question": "What is the average of 18, 24, and 45?", "A": "87", "B": "29", "C": "43.5", "D": "45", "answer": "B"}
+{"question": "What is 2^4?", "A": "6", "B": "16", "C": "8", "D": "7", "answer": "B"}
+{"question": "A sum of $200 is invested at 5% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "30", "B": "10", "C": "600", "D": "3000", "answer": "A"}
+{"question": "If 3 apples cost $9, how much do 12 apples cost at the same rate?", "A": "3", "B": "36", "C": "21", "D": "57", "answer": "B"}
+{"question": "Worker A can finish a job in 8 days. Worker B can finish it in 15 days. Working together, how many days do they need?", "A": "23", "B": "5.2", "C": "11.5", "D": "120", "answer": "B"}
+{"question": "What is the next number in the sequence [7, 12, 17, 22]?", "A": "32", "B": "12", "C": "27", "D": "17", "answer": "C"}
+{"question": "A rectangle has length 9 and width 7. What is its perimeter?", "A": "16", "B": "63", "C": "64", "D": "32", "answer": "D"}
+{"question": "A price of $200 increases by 25%. What is the new price?", "A": "250", "B": "271", "C": "150", "D": "50", "answer": "A"}
+{"question": "A $50 item is on sale for 10% off. What is the sale price in dollars?", "A": "55.6", "B": "5", "C": "45", "D": "55", "answer": "C"}
+{"question": "Solve for x: 2x + 7 = 15.", "A": "4", "B": "8", "C": "11", "D": "0", "answer": "A"}
+{"question": "A rectangle has length 8 and width 5. What is its area?", "A": "26", "B": "40", "C": "20", "D": "13", "answer": "B"}
+{"question": "What is the average of 18, 25, and 45?", "A": "44", "B": "45", "C": "88", "D": "29.3", "answer": "D"}
+{"question": "A sum of $500 is invested at 20% simple interest per year for 1 years. What is the total interest earned in dollars?", "A": "500", "B": "10000", "C": "100", "D": "121", "answer": "C"}
+{"question": "If 4 apples cost $15, how much do 9 apples cost at the same rate?", "A": "36", "B": "3.8", "C": "33.8", "D": "24", "answer": "C"}
+{"question": "A rectangle has length 8 and width 9. What is its perimeter?", "A": "34", "B": "17", "C": "68", "D": "72", "answer": "A"}
+{"question": "A rectangular box has length 3, width 5, height 4. What is its volume?", "A": "12", "B": "60", "C": "24", "D": "15", "answer": "B"}
+{"question": "A bag has 3 red and 4 blue marbles. What is the percent chance of drawing a red marble?", "A": "75", "B": "233.3", "C": "42.9", "D": "57.1", "answer": "C"}
+{"question": "A $300 item is on sale for 15% off. What is the sale price in dollars?", "A": "255", "B": "45", "C": "352.9", "D": "345", "answer": "A"}
+{"question": "Solve for x: 2x + 13 = 19.", "A": "3", "B": "-4", "C": "16", "D": "6", "answer": "A"}
+{"question": "What is 50% of 360?", "A": "201", "B": "180", "C": "310", "D": "410", "answer": "B"}
+{"question": "What is the average of 14, 28, and 45?", "A": "43.5", "B": "45", "C": "29", "D": "87", "answer": "C"}
+{"question": "A sum of $500 is invested at 15% simple interest per year for 1 years. What is the total interest earned in dollars?", "A": "500", "B": "96", "C": "75", "D": "7500", "answer": "C"}
+{"question": "If 6 apples cost $9, how much do 7 apples cost at the same rate?", "A": "16", "B": "1.5", "C": "42", "D": "10.5", "answer": "D"}
+{"question": "Tom is 9 years older than Lily. Lily is 2 years older than Max. How many years older is Tom than Max?", "A": "7", "B": "9", "C": "2", "D": "11", "answer": "D"}
+{"question": "A price of $200 increases by 10%. What is the new price?", "A": "241", "B": "220", "C": "180", "D": "20", "answer": "B"}
+{"question": "What is the integer quotient when 30 is divided by 8 (ignore remainder)?", "A": "6", "B": "240", "C": "22", "D": "3", "answer": "D"}
+{"question": "A $80 item is on sale for 15% off. What is the sale price in dollars?", "A": "94.1", "B": "68", "C": "92", "D": "12", "answer": "B"}
+{"question": "A car travels 60 km in 2 hours. What is its average speed in km/h?", "A": "62", "B": "51", "C": "30", "D": "120", "answer": "C"}
+{"question": "A rectangle has length 9 and width 7. What is its area?", "A": "63", "B": "32", "C": "16", "D": "31.5", "answer": "A"}
+{"question": "What is the average of 10, 25, and 42?", "A": "77", "B": "42", "C": "38.5", "D": "25.7", "answer": "D"}
+{"question": "Worker A can finish a job in 12 days. Worker B can finish it in 10 days. Working together, how many days do they need?", "A": "5.5", "B": "22", "C": "11", "D": "120", "answer": "A"}
+{"question": "Tom is 3 years older than Lily. Lily is 6 years older than Max. How many years older is Tom than Max?", "A": "3", "B": "-3", "C": "6", "D": "9", "answer": "D"}
+{"question": "A rectangle has length 8 and width 6. What is its perimeter?", "A": "28", "B": "56", "C": "48", "D": "14", "answer": "A"}
+{"question": "What is the integer quotient when 20 is divided by 4 (ignore remainder)?", "A": "0", "B": "5", "C": "16", "D": "80", "answer": "B"}
+{"question": "What is 20% of 150?", "A": "30", "B": "120", "C": "170", "D": "130", "answer": "A"}
+{"question": "What is the average of 15, 25, and 36?", "A": "25.3", "B": "36", "C": "38", "D": "76", "answer": "A"}
+{"question": "If 5 apples cost $12, how much do 12 apples cost at the same rate?", "A": "28.8", "B": "24", "C": "2.4", "D": "60", "answer": "A"}
+{"question": "What is the next number in the sequence [1, 6, 11, 16]?", "A": "26", "B": "6", "C": "21", "D": "11", "answer": "C"}
+{"question": "Tom is 11 years older than Lily. Lily is 6 years older than Max. How many years older is Tom than Max?", "A": "6", "B": "5", "C": "11", "D": "17", "answer": "D"}
+{"question": "A rectangle has length 10 and width 6. What is its perimeter?", "A": "60", "B": "16", "C": "32", "D": "64", "answer": "C"}
+{"question": "A price of $100 increases by 50%. What is the new price?", "A": "50", "B": "171", "C": "164", "D": "150", "answer": "D"}
+{"question": "What is the integer quotient when 48 is divided by 8 (ignore remainder)?", "A": "384", "B": "6", "C": "0", "D": "40", "answer": "B"}
+{"question": "A $300 item is on sale for 25% off. What is the sale price in dollars?", "A": "375", "B": "225", "C": "75", "D": "400", "answer": "B"}
+{"question": "A car travels 560 km in 7 hours. What is its average speed in km/h?", "A": "567", "B": "3920", "C": "80", "D": "101", "answer": "C"}
+{"question": "Solve for x: 2x + 13 = 17.", "A": "15", "B": "4", "C": "2", "D": "-5", "answer": "C"}
+{"question": "A rectangle has length 9 and width 8. What is its area?", "A": "36", "B": "72", "C": "17", "D": "34", "answer": "B"}
+{"question": "What is 40% of 250?", "A": "290", "B": "150", "C": "100", "D": "210", "answer": "C"}
+{"question": "What is the average of 20, 28, and 35?", "A": "83", "B": "41.5", "C": "27.7", "D": "35", "answer": "C"}
+{"question": "A sum of $500 is invested at 10% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "50", "B": "1000", "C": "10000", "D": "100", "answer": "D"}
+{"question": "If 4 apples cost $20, how much do 10 apples cost at the same rate?", "A": "30", "B": "40", "C": "50", "D": "5", "answer": "C"}
+{"question": "Worker A can finish a job in 8 days. Worker B can finish it in 6 days. Working together, how many days do they need?", "A": "7", "B": "14", "C": "3.4", "D": "48", "answer": "C"}
+{"question": "Tom is 7 years older than Lily. Lily is 6 years older than Max. How many years older is Tom than Max?", "A": "13", "B": "1", "C": "6", "D": "7", "answer": "A"}
+{"question": "A rectangle has length 8 and width 7. What is its perimeter?", "A": "30", "B": "56", "C": "15", "D": "60", "answer": "A"}
+{"question": "What is the integer quotient when 24 is divided by 6 (ignore remainder)?", "A": "0", "B": "144", "C": "18", "D": "4", "answer": "D"}
+{"question": "A $60 item is on sale for 20% off. What is the sale price in dollars?", "A": "12", "B": "48", "C": "75", "D": "72", "answer": "B"}
+{"question": "A car travels 420 km in 7 hours. What is its average speed in km/h?", "A": "81", "B": "60", "C": "2940", "D": "427", "answer": "B"}
+{"question": "What is 25% of 150?", "A": "125", "B": "112.5", "C": "175", "D": "37.5", "answer": "D"}
+{"question": "What is the average of 10, 28, and 42?", "A": "80", "B": "40", "C": "42", "D": "26.7", "answer": "D"}
+{"question": "What is 2^5?", "A": "7", "B": "10", "C": "9", "D": "32", "answer": "D"}
+{"question": "A sum of $1000 is invested at 20% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "40000", "B": "2000", "C": "400", "D": "200", "answer": "C"}
+{"question": "Worker A can finish a job in 8 days. Worker B can finish it in 12 days. Working together, how many days do they need?", "A": "10", "B": "4.8", "C": "96", "D": "20", "answer": "B"}
+{"question": "What is the next number in the sequence [1, 5, 9, 13]?", "A": "5", "B": "21", "C": "17", "D": "9", "answer": "C"}
+{"question": "A rectangle has length 10 and width 5. What is its perimeter?", "A": "50", "B": "60", "C": "30", "D": "15", "answer": "C"}
+{"question": "A rectangular box has length 6, width 5, height 4. What is its volume?", "A": "120", "B": "15", "C": "30", "D": "141", "answer": "A"}
+{"question": "A $50 item is on sale for 20% off. What is the sale price in dollars?", "A": "62.5", "B": "60", "C": "10", "D": "40", "answer": "D"}
+{"question": "A car travels 250 km in 5 hours. What is its average speed in km/h?", "A": "1250", "B": "71", "C": "255", "D": "50", "answer": "D"}
+{"question": "Solve for x: 2x + 13 = 21.", "A": "-3", "B": "8", "C": "17", "D": "4", "answer": "D"}
+{"question": "A rectangle has length 8 and width 10. What is its area?", "A": "40", "B": "18", "C": "80", "D": "36", "answer": "C"}
+{"question": "What is the average of 15, 24, and 40?", "A": "79", "B": "26.3", "C": "39.5", "D": "40", "answer": "B"}
+{"question": "How many meters are in 5 kilometers?", "A": "500", "B": "5", "C": "50", "D": "5000", "answer": "D"}
+{"question": "If 5 apples cost $9, how much do 8 apples cost at the same rate?", "A": "1.8", "B": "14.4", "C": "40", "D": "17", "answer": "B"}
+{"question": "A rectangle has length 7 and width 5. What is its perimeter?", "A": "48", "B": "12", "C": "24", "D": "35", "answer": "C"}
+{"question": "A bag has 3 red and 3 blue marbles. What is the percent chance of drawing a red marble?", "A": "50", "B": "100", "C": "71", "D": "200", "answer": "A"}
+{"question": "A $300 item is on sale for 30% off. What is the sale price in dollars?", "A": "210", "B": "428.6", "C": "390", "D": "90", "answer": "A"}
+{"question": "A car travels 180 km in 2 hours. What is its average speed in km/h?", "A": "90", "B": "111", "C": "182", "D": "360", "answer": "A"}
+{"question": "Solve for x: 2x + 9 = 13.", "A": "4", "B": "-3", "C": "2", "D": "11", "answer": "C"}
+{"question": "A rectangle has length 12 and width 5. What is its area?", "A": "34", "B": "60", "C": "30", "D": "17", "answer": "B"}
+{"question": "What is the average of 20, 28, and 36?", "A": "42", "B": "28", "C": "36", "D": "84", "answer": "B"}
+{"question": "How many milliliters are in 5 liters?", "A": "500", "B": "5000", "C": "50", "D": "5", "answer": "B"}
+{"question": "A sum of $200 is invested at 20% simple interest per year for 1 years. What is the total interest earned in dollars?", "A": "40", "B": "4000", "C": "61", "D": "200", "answer": "A"}
+{"question": "If 6 apples cost $12, how much do 12 apples cost at the same rate?", "A": "2", "B": "24", "C": "45", "D": "72", "answer": "B"}
+{"question": "Tom is 11 years older than Lily. Lily is 10 years older than Max. How many years older is Tom than Max?", "A": "10", "B": "21", "C": "11", "D": "1", "answer": "B"}
+{"question": "A rectangular box has length 6, width 4, height 4. What is its volume?", "A": "28", "B": "24", "C": "14", "D": "96", "answer": "D"}
+{"question": "What is the average of 15, 24, and 35?", "A": "74", "B": "24.7", "C": "35", "D": "37", "answer": "B"}
+{"question": "A sum of $1000 is invested at 20% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "3000", "B": "200", "C": "600", "D": "60000", "answer": "C"}
+{"question": "If 5 apples cost $20, how much do 12 apples cost at the same rate?", "A": "60", "B": "4", "C": "32", "D": "48", "answer": "D"}
+{"question": "Tom is 7 years older than Lily. Lily is 2 years older than Max. How many years older is Tom than Max?", "A": "9", "B": "5", "C": "2", "D": "7", "answer": "A"}
+{"question": "A price of $120 increases by 10%. What is the new price?", "A": "153", "B": "132", "C": "12", "D": "108", "answer": "B"}
+{"question": "Solve for x: 2x + 9 = 19.", "A": "0", "B": "10", "C": "5", "D": "14", "answer": "C"}
+{"question": "A rectangle has length 6 and width 5. What is its area?", "A": "22", "B": "15", "C": "30", "D": "11", "answer": "C"}
+{"question": "What is 25% of 360?", "A": "90", "B": "270", "C": "335", "D": "385", "answer": "A"}
+{"question": "What is the average of 12, 25, and 32?", "A": "23", "B": "32", "C": "34.5", "D": "69", "answer": "A"}
+{"question": "A sum of $1000 is invested at 5% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "150", "B": "50", "C": "15000", "D": "3000", "answer": "A"}
+{"question": "A rectangular box has length 6, width 5, height 2. What is its volume?", "A": "60", "B": "26", "C": "13", "D": "30", "answer": "A"}
+{"question": "A $120 item is on sale for 25% off. What is the sale price in dollars?", "A": "150", "B": "90", "C": "160", "D": "30", "answer": "B"}
+{"question": "A car travels 640 km in 8 hours. What is its average speed in km/h?", "A": "101", "B": "5120", "C": "80", "D": "648", "answer": "C"}
+{"question": "A rectangle has length 18 and width 9. What is its area?", "A": "54", "B": "27", "C": "81", "D": "162", "answer": "D"}
+{"question": "What is 10% of 200?", "A": "210", "B": "180", "C": "190", "D": "20", "answer": "D"}
+{"question": "What is the average of 14, 24, and 40?", "A": "39", "B": "78", "C": "40", "D": "26", "answer": "D"}
+{"question": "A sum of $200 is invested at 10% simple interest per year for 2 years. What is the total interest earned in dollars?", "A": "400", "B": "20", "C": "40", "D": "4000", "answer": "C"}
+{"question": "Worker A can finish a job in 4 days. Worker B can finish it in 12 days. Working together, how many days do they need?", "A": "16", "B": "3", "C": "8", "D": "48", "answer": "B"}
+{"question": "A rectangle has length 10 and width 8. What is its perimeter?", "A": "36", "B": "72", "C": "18", "D": "80", "answer": "A"}
+{"question": "A price of $200 increases by 20%. What is the new price?", "A": "160", "B": "240", "C": "40", "D": "261", "answer": "B"}
+{"question": "A bag has 4 red and 4 blue marbles. What is the percent chance of drawing a red marble?", "A": "71", "B": "50", "C": "200", "D": "100", "answer": "B"}
+{"question": "What is the integer quotient when 20 is divided by 3 (ignore remainder)?", "A": "6", "B": "60", "C": "2", "D": "17", "answer": "A"}
+{"question": "A car travels 480 km in 8 hours. What is its average speed in km/h?", "A": "3840", "B": "60", "C": "488", "D": "81", "answer": "B"}
+{"question": "Solve for x: 2x + 1 = 13.", "A": "7", "B": "12", "C": "5", "D": "6", "answer": "D"}
+{"question": "A rectangle has length 7 and width 4. What is its area?", "A": "11", "B": "28", "C": "22", "D": "14", "answer": "B"}
+{"question": "What is the average of 14, 30, and 42?", "A": "43", "B": "42", "C": "28.7", "D": "86", "answer": "C"}
+{"question": "If 5 apples cost $24, how much do 7 apples cost at the same rate?", "A": "33.6", "B": "31", "C": "35", "D": "4.8", "answer": "A"}
+{"question": "Worker A can finish a job in 12 days. Worker B can finish it in 6 days. Working together, how many days do they need?", "A": "4", "B": "18", "C": "9", "D": "72", "answer": "A"}
+{"question": "A rectangular box has length 3, width 3, height 4. What is its volume?", "A": "36", "B": "9", "C": "20", "D": "10", "answer": "A"}
+{"question": "A bag has 5 red and 5 blue marbles. What is the percent chance of drawing a red marble?", "A": "71", "B": "100", "C": "50", "D": "200", "answer": "C"}
+{"question": "What is the integer quotient when 24 is divided by 5 (ignore remainder)?", "A": "19", "B": "4", "C": "120", "D": "25", "answer": "B"}
+{"question": "A $150 item is on sale for 15% off. What is the sale price in dollars?", "A": "127.5", "B": "176.5", "C": "22.5", "D": "172.5", "answer": "A"}
+{"question": "Solve for x: 2x + 5 = 15.", "A": "2", "B": "10", "C": "5", "D": "26", "answer": "C"}
+{"question": "What is the average of 25, 28, and 36?", "A": "36", "B": "89", "C": "44.5", "D": "29.7", "answer": "D"}
+{"question": "How many meters are in 2 kilometers?", "A": "2", "B": "2000", "C": "20", "D": "200", "answer": "B"}
+{"question": "If 4 apples cost $12, how much do 12 apples cost at the same rate?", "A": "48", "B": "3", "C": "36", "D": "24", "answer": "C"}
+{"question": "A rectangular box has length 3, width 5, height 5. What is its volume?", "A": "15", "B": "75", "C": "13", "D": "26", "answer": "B"}
+{"question": "A $80 item is on sale for 40% off. What is the sale price in dollars?", "A": "32", "B": "133.3", "C": "112", "D": "48", "answer": "D"}
+{"question": "A car travels 270 km in 3 hours. What is its average speed in km/h?", "A": "90", "B": "111", "C": "810", "D": "273", "answer": "A"}
+{"question": "Solve for x: 2x + 7 = 23.", "A": "4", "B": "16", "C": "8", "D": "15", "answer": "C"}
+{"question": "A rectangle has length 18 and width 4. What is its area?", "A": "72", "B": "36", "C": "22", "D": "44", "answer": "A"}
+{"question": "What is the average of 14, 22, and 40?", "A": "38", "B": "40", "C": "76", "D": "25.3", "answer": "D"}
+{"question": "How many milliliters are in 2 liters?", "A": "200", "B": "20", "C": "2", "D": "2000", "answer": "D"}
+{"question": "A sum of $100 is invested at 20% simple interest per year for 3 years. What is the total interest earned in dollars?", "A": "300", "B": "60", "C": "6000", "D": "20", "answer": "B"}
+{"question": "If 6 apples cost $24, how much do 8 apples cost at the same rate?", "A": "53", "B": "4", "C": "32", "D": "48", "answer": "C"}
+{"question": "Worker A can finish a job in 4 days. Worker B can finish it in 15 days. Working together, how many days do they need?", "A": "60", "B": "3.2", "C": "9.5", "D": "19", "answer": "B"}
+{"question": "A rectangle has length 12 and width 5. What is its perimeter?", "A": "17", "B": "60", "C": "68", "D": "34", "answer": "D"}
+{"question": "A price of $80 increases by 25%. What is the new price?", "A": "20", "B": "60", "C": "121", "D": "100", "answer": "D"}
+{"question": "A car travels 420 km in 6 hours. What is its average speed in km/h?", "A": "2520", "B": "91", "C": "426", "D": "70", "answer": "D"}
+{"question": "Solve for x: 2x + 5 = 17.", "A": "6", "B": "12", "C": "11", "D": "3", "answer": "A"}
+{"question": "What is the average of 10, 30, and 35?", "A": "75", "B": "35", "C": "25", "D": "37.5", "answer": "C"}
+{"question": "If 3 apples cost $9, how much do 9 apples cost at the same rate?", "A": "18", "B": "27", "C": "48", "D": "3", "answer": "B"}
+{"question": "Worker A can finish a job in 6 days. Worker B can finish it in 8 days. Working together, how many days do they need?", "A": "7", "B": "48", "C": "3.4", "D": "14", "answer": "C"}
+{"question": "A rectangular box has length 5, width 4, height 5. What is its volume?", "A": "100", "B": "28", "C": "20", "D": "14", "answer": "A"}
+{"question": "What is the integer quotient when 36 is divided by 3 (ignore remainder)?", "A": "0", "B": "33", "C": "108", "D": "12", "answer": "D"}
+{"question": "A car travels 240 km in 6 hours. What is its average speed in km/h?", "A": "40", "B": "246", "C": "1440", "D": "61", "answer": "A"}
+{"question": "What is 40% of 200?", "A": "80", "B": "120", "C": "160", "D": "240", "answer": "A"}
+{"question": "What is the average of 15, 30, and 42?", "A": "42", "B": "87", "C": "29", "D": "43.5", "answer": "C"}
+{"question": "How many grams are in 6 kilograms?", "A": "6", "B": "60", "C": "600", "D": "6000", "answer": "D"}
+{"question": "If 5 apples cost $9, how much do 7 apples cost at the same rate?", "A": "35", "B": "1.8", "C": "12.6", "D": "16", "answer": "C"}
+{"question": "Worker A can finish a job in 8 days. Worker B can finish it in 10 days. Working together, how many days do they need?", "A": "80", "B": "18", "C": "4.4", "D": "9", "answer": "C"}
+{"question": "A rectangular box has length 3, width 4, height 5. What is its volume?", "A": "24", "B": "12", "C": "60", "D": "81", "answer": "C"}
+{"question": "A price of $120 increases by 25%. What is the new price?", "A": "171", "B": "30", "C": "150", "D": "90", "answer": "C"}
+{"question": "A car travels 280 km in 7 hours. What is its average speed in km/h?", "A": "40", "B": "61", "C": "1960", "D": "287", "answer": "A"}
+{"question": "A rectangle has length 12 and width 4. What is its area?", "A": "16", "B": "24", "C": "48", "D": "32", "answer": "C"}
+{"question": "What is the average of 15, 30, and 36?", "A": "81", "B": "27", "C": "36", "D": "40.5", "answer": "B"}
+{"question": "How many grams are in 4 kilograms?", "A": "400", "B": "4000", "C": "40", "D": "4", "answer": "B"}
+{"question": "If 6 apples cost $15, how much do 12 apples cost at the same rate?", "A": "2.5", "B": "30", "C": "72", "D": "27", "answer": "B"}
+{"question": "A rectangular box has length 6, width 3, height 2. What is its volume?", "A": "18", "B": "11", "C": "36", "D": "22", "answer": "C"}
+{"question": "A $150 item is on sale for 20% off. What is the sale price in dollars?", "A": "30", "B": "120", "C": "180", "D": "187.5", "answer": "B"}
+{"question": "A car travels 360 km in 4 hours. What is its average speed in km/h?", "A": "364", "B": "111", "C": "1440", "D": "90", "answer": "D"}
+{"question": "Solve for x: 2x + 7 = 21.", "A": "14", "B": "28", "C": "7", "D": "3", "answer": "C"}
+{"question": "What is the average of 14, 30, and 45?", "A": "89", "B": "44.5", "C": "45", "D": "29.7", "answer": "D"}
+{"question": "A sum of $200 is invested at 15% simple interest per year for 1 years. What is the total interest earned in dollars?", "A": "30", "B": "200", "C": "3000", "D": "51", "answer": "A"}
+{"question": "If 4 apples cost $20, how much do 8 apples cost at the same rate?", "A": "32", "B": "5", "C": "40", "D": "28", "answer": "C"}
+{"question": "Worker A can finish a job in 10 days. Worker B can finish it in 6 days. Working together, how many days do they need?", "A": "16", "B": "8", "C": "3.8", "D": "60", "answer": "C"}
+{"question": "What is the next number in the sequence [3, 6, 9, 12]?", "A": "6", "B": "9", "C": "18", "D": "15", "answer": "D"}
+{"question": "A rectangular box has length 4, width 3, height 2. What is its volume?", "A": "18", "B": "12", "C": "9", "D": "24", "answer": "D"}
+{"question": "A bag has 3 red and 6 blue marbles. What is the percent chance of drawing a red marble?", "A": "300", "B": "50", "C": "66.7", "D": "33.3", "answer": "D"}
+{"question": "A car travels 90 km in 3 hours. What is its average speed in km/h?", "A": "30", "B": "270", "C": "93", "D": "51", "answer": "A"}
+{"question": "Solve for x: 2x + 3 = 19.", "A": "11", "B": "16", "C": "6", "D": "8", "answer": "D"}
+{"question": "A rectangle has length 15 and width 10. What is its area?", "A": "25", "B": "50", "C": "150", "D": "75", "answer": "C"}
+{"question": "What is 50% of 150?", "A": "75", "B": "100", "C": "96", "D": "200", "answer": "A"}
+{"question": "What is the average of 15, 22, and 40?", "A": "38.5", "B": "25.7", "C": "40", "D": "77", "answer": "B"}
+{"question": "What is 4^3?", "A": "12", "B": "11", "C": "64", "D": "7", "answer": "C"}
+{"question": "How many centimeters are in 5 meters?", "A": "50", "B": "500", "C": "5000", "D": "5", "answer": "B"}

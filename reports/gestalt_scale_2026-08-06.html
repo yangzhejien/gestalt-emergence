@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<title>格式塔规模实验 · 3节点 vs 20节点</title>
+<style>
+ body{background:#0e1116;color:#e6edf3;font:14px/1.6 -apple-system,Segoe UI,Roboto,monospace;margin:0;padding:24px}
+ h1{font-size:20px;margin:0 0 4px} .sub{color:#8b949e;font-size:12px;margin-bottom:18px}
+ .card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px 18px;margin-bottom:16px}
+ .k{color:#58a6ff} b.hl{color:#7ee787} .warn{color:#ffa657}
+ table{border-collapse:collapse;width:100%} td,th{border:1px solid #30363d;padding:8px 10px;text-align:center}
+ th{color:#58a6ff;background:#0d1117}
+ .verdict{border-left:4px solid #ffa657;background:#211a0e;padding:12px 16px;border-radius:6px}
+ .bars{display:flex;align-items:flex-end;gap:10px;margin:10px 0}
+</style></head><body>
+<h1>格式塔规模实验对照 · 3节点 vs 20节点</h1>
+<div class="sub">Gestalt Scaling Experiment — stage2 (3-node N=500) vs stage3 (20-node N=50) · 2026-08-06</div>
+
+<div class="card">
+ <h2 class="k">① 两配置核心读数</h2>
+ <table>
+  <tr><th>配置</th><th>节点数(L3→L2→L1)</th><th>集体准确率</th><th>7B单体基线</th><th>Δ(集体−7B)</th><th>显著性</th></tr>
+  <tr><td>3节点 (N=500)</td><td>3×1.5B → 1 L2(3B) → 1 L1(7B)</td><td><b class="hl">0.932</b></td><td>0.838</td><td>+0.094</td><td>z=4.71, p=2.5e-6 强显著</td></tr>
+  <tr><td>20节点 (N=50)</td><td>20×1.5B → 7 L2(3B) → 1 L1(7B)</td><td><b class="hl">0.94</b></td><td>0.86</td><td>+0.080</td><td>z=1.35, p=0.179 不显著</td></tr>
+ </table>
+ <div class="bars">
+  <div><div class="k">3节点集体</div><div style="display:inline-block;width:70px;text-align:center;vertical-align:bottom;margin:0 6px"><div style="height:111px;background:#7ee787;border-radius:4px 4px 0 0"></div><div style="font-size:12px;margin-top:4px">93.2%</div></div></div>
+  <div><div class="k">20节点集体</div><div style="display:inline-block;width:70px;text-align:center;vertical-align:bottom;margin:0 6px"><div style="height:112px;background:#7ee787;border-radius:4px 4px 0 0"></div><div style="font-size:12px;margin-top:4px">94.0%</div></div></div>
+  <div><div class="k">3节点7B</div><div style="display:inline-block;width:70px;text-align:center;vertical-align:bottom;margin:0 6px"><div style="height:100px;background:#58a6ff;border-radius:4px 4px 0 0"></div><div style="font-size:12px;margin-top:4px">83.8%</div></div></div>
+  <div><div class="k">20节点7B</div><div style="display:inline-block;width:70px;text-align:center;vertical-align:bottom;margin:0 6px"><div style="height:103px;background:#58a6ff;border-radius:4px 4px 0 0"></div><div style="font-size:12px;margin-top:4px">86.0%</div></div></div>
+ </div>
+</div>
+
+<div class="card">
+ <h2 class="k">② 规模跃迁检验（是否出现超线性涌现）</h2>
+ <table>
+  <tr><th>检验</th><th>结果</th><th>判读</th></tr>
+  <tr><td>20节点 vs 3节点 集体准确率</td><td>0.94 vs 0.932 · z=0.23 · p=0.821</td><td><span class="warn">持平，无跳升</span></td></tr>
+  <tr><td>20节点 集体 vs 7B (N=50)</td><td>+0.080 · p=0.179</td><td>方向一致但不显著（N 太小）</td></tr>
+ </table>
+</div>
+
+<div class="card verdict">
+ <h2 class="warn">③ 诚实结论（请向导师如实汇报）</h2>
+ <p><b>超线性涌现签名 <span class="warn">未出现</span>。</b> 把节点从 3 扩到 20，集体准确率没有跳升（0.94 ≈ 0.932，统计不可分），
+ 没有观测到方程后半段 ΣαₘẆ²ᵐ 的超线性增益拐点。</p>
+ <p><b>为什么是这个结果（两种可能，都诚实）：</b></p>
+ <ol>
+  <li>本基准 MCQ 准确率已近天花板（3 节点已达 0.93+）。加性项 Σsᵢ 把准确率推到顶后，
+      任何内部超线性增益都<b>没有"显示空间"</b>——准确率有界，封顶即看不见。涌现需要"余量"。</li>
+  <li>或：本实验仍待在 Ẇ&lt;Wc 加性区。仅增节点数而不增<b>跨层/跨组连接密度</b> Ẇ，未必能跨临界。
+      方程是 Ẇ（连接密度）的幂，不是节点数的幂。</li>
+ </ol>
+ <p><b>正面价值：</b>20 节点分层管线（每3专家→1副脑，7 组→主脑）端到端跑通、未崩（50题 47 正确、3 错含1空正确排除）。
+ 架构可扩展工程已验证，检测涌现的"仪器"就绪——只是本基准测不出。</p>
+ <p><b>下一步建议（给导师）：</b>要真测 ΣαₘẆ²ᵐ，须二选一——
+  (a) 换<b>高天花板基准</b>（强模型单体也只 ~0.5–0.6，留出超线性上升空间）；
+  (b) 提<b>连接密度</b> Ẇ（跨组直连、主脑多跳），而非仅堆节点数，直指 Wc=√(α₁/α₂)。</p>
+</div>
+</body></html>

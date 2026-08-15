@@ -1,0 +1,147 @@
+<html><head><meta charset="utf-8"><title>OSF Preregistration — Gestalt Equation</title>
+<script>
+  MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+body{font-family:system-ui,'Segoe UI',Arial,sans-serif;max-width:920px;margin:40px auto;padding:0 24px;line-height:1.65;color:#1a2027;background:#fff;}
+h1{font-size:24px;border-bottom:3px solid #2563eb;padding-bottom:8px;}
+h2{font-size:19px;color:#1d4ed8;margin-top:28px;}
+h3{font-size:16px;color:#374151;margin-top:20px;}
+blockquote{background:#f1f5f9;border-left:4px solid #2563eb;margin:12px 0;padding:8px 16px;color:#334155;}
+code{background:#f1f5f9;padding:1px 5px;border-radius:3px;font-size:13px;}
+ul{margin:8px 0;padding-left:24px;}
+li{margin:4px 0;}
+table{border-collapse:collapse;margin:14px 0;width:100%;font-size:14px;}
+th,td{border:1px solid #cbd5e1;padding:7px 10px;text-align:left;vertical-align:top;}
+th{background:#e2e8f0;font-weight:600;}
+tbody tr:nth-child(even){background:#f8fafc;}
+.note{background:#fffbeb;border:1px solid #fcd34d;padding:12px 16px;border-radius:6px;color:#92400e;margin:16px 0;}
+.MathJax_Display{margin:6px 0;}
+</style></head><body>
+<div class="note"><strong>说明：</strong>作者名已填（杨智杰 / Yang Zhijie）。方程现已用 LaTeX 渲染（预览需联网加载 MathJax；上传 OSF 后由 OSF 原生渲染）。本预览含完整的方程推导（§4，整合自作者 v1.2.0 草稿并经实验数据修正）。下一步：上传到 osf.io 并 <strong>Make Public</strong> 即可锁定时间戳。无需 Word / 付费软件。</div>
+<h1>OSF Preregistration — Topologically-Induced Critical Phase Transition in Layered Multi-Model Systems</h1>
+<p><strong>Preregistration date:</strong> 2026-08-07</p>
+<p><strong>Status:</strong> This document is uploaded to the Open Science Framework (OSF) on the date above to establish a public, time-stamped record of the research protocol, hypotheses, and analysis plan. All subsequent data collection and analysis are performed per this plan. Any deviation will be disclosed as a registered report update.</p>
+<p>---</p>
+<h2>1. Title</h2>
+<p>Topology-Induced Critical Phase Transition in Layered Multi-Model Systems: An Empirical Test of the Gestalt Equation</p>
+<h2>2. Authors</h2>
+<p>杨智杰 (Yang Zhijie) — corresponding author; affiliation pending</p>
+<h2>3. Abstract</h2>
+<p>We test whether a layered multi-model system exhibits a <strong>topology-induced critical phase transition</strong> in collective accuracy, as predicted by the Gestalt Equation</p>
+<blockquote>$$ M = \sum_i s_i + \sum_m (\alpha_m - \beta_m)\,\hat{W}^{2m} $$</blockquote>
+<p>The equation posits two distinct emergence mechanisms:</p>
+<ul>
+<li><strong>(i) Structural cross-layer multiplication</strong> — $H_{\text{total}} = H(L3) \times H(L2\,|\,L3) \times H(L1\,|\,L2)$ — which monotonically yields collective &gt; best single model wherever the layered pipeline is intact.</li>
+<li><strong>(ii) A density-dependent super-linear term</strong> whose *net* gain is <strong>non-monotonic</strong> in connection density $\hat{W}$: it is near zero in the sub-critical regime ($\hat{W} < W_c$), rises and peaks at a critical density $W_c = \sqrt{\alpha_1/\alpha_2}$, then decays in the over-dense regime as the negative-interference term ($\beta$) dominates.</li>
+</ul>
+<p>We report a controlled density-sweep experiment (tree → mesh → full topologies, n_l3 ∈ {12, 20}) using Qwen2.5 (1.5B / 3B / 7B) on a curated medium-hard MCQ benchmark, with committee-0 (L3 majority vote) and solo-7B controls, plus planned random-topology and C-Eval cross-validation baselines. The central claim is that *how models are wired* — not merely how many parameters they sum to — can induce a critical emergence gain, offering a topology-based path distinct from pure parameter/capability scaling.</p>
+<h2>4. Background</h2>
+<h3>4.1 The Gestalt Equation (core form)</h3>
+<p>The system capability <strong>M</strong> decomposes into an additive baseline $\sum_i s_i$ (each layer's standalone capability; requires $s_i > 0$, i.e. every layer clears a random-performance floor) plus a density-dependent super-linear emergence gain:</p>
+<blockquote>$$ M = \sum_i s_i + \sum_m (\alpha_m - \beta_m)\,\hat{W}^{2m} $$</blockquote>
+<p>where $\hat{W}$ is the normalized cross-layer connection density and $(\alpha_m - \beta_m)$ is the *signed* emergence coefficient at order 2m. The negative term $\beta_m$ is the symmetry-forced correction to the original single-sign form (see §4.8). We adopt the signed form throughout; the prior draft (v1.2.0, §2.2) used $\sum \alpha_m \hat{W}^{2m}$ and is superseded for all empirical claims.</p>
+<h3>4.2 Notation</h3>
+<table><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>$s_i$</td><td>Standalone capability of layer i (must satisfy $s_i > 0$).</td></tr><tr><td>$\hat{W}$</td><td>Normalized cross-layer connection density ($W/\lambda$, dimensionless).</td></tr><tr><td>$\alpha_m$</td><td>Positive-emergence coefficient at order 2m.</td></tr><tr><td>$\beta_m$</td><td>Negative-interference coefficient at order 2m (redundancy / conformism / mis-coupling).</td></tr><tr><td>$\lambda$</td><td>Characteristic scale (natural unit of connection strength).</td></tr><tr><td>$W_c^*$</td><td>Optimal density where net emergence peaks: $W_c^* = \sqrt{\alpha_1/\alpha_2}$.</td></tr></tbody></table>
+<h3>4.3 Why only even powers</h3>
+<p>The emergence series contains only even powers ($\hat{W}^2, \hat{W}^4, \hat{W}^6, \dots$) by three independent arguments:</p>
+<p>1. <strong>Symmetry of exchange</strong> — A↔B influence is bidirectional; under symmetric averaging, odd-order interaction terms vanish, leaving only even orders.</p>
+<p>2. <strong>Mutual-information product structure</strong> — $I(X_A;X_B)$ is a KL divergence, inherently a second-order quantity, yielding the $\hat{W}^2$ term; higher-order interactions yield $\hat{W}^4, \hat{W}^6, \dots$.</p>
+<p>3. <strong>Landau / phase-transition analogy</strong> — identical to the even-power Landau free-energy expansion; odd powers are symmetry-forbidden in a symmetric-breaking system.</p>
+<h3>4.4 Derivation I — Information-theoretic path</h3>
+<p>Start from two independent models A, B with internal representations $X_A, X_B$. Independent, total information is $I(X_A)+I(X_B)$. On connecting them with strength $w_{AB}$, joint information becomes $I(X_A,X_B)=I(X_A)+I(X_B)+I(X_A;X_B)$, where the mutual information $I(X_A;X_B)=D_{\mathrm{KL}}\!\big(p(x_A,x_B)\,\|\,p(x_A)p(x_B)\big)$ is the *extra* information from collaboration. Because the KL divergence is a second-order quantity, the deviation from independence is bounded by $w_{AB}^2$, giving the $\hat{W}^2$ term its strict information-theoretic basis.</p>
+<p>For k models, total mutual information expands as $\sum I(X_i;X_j) + \sum I(X_i;X_j;X_\ell;X_m) + \dots$: pairwise ($\hat{W}^2$), four-body ($\hat{W}^4$), six-body ($\hat{W}^6$). Under the symmetry of §4.3 odd orders vanish, matching the equation form exactly. Convergence holds because $\alpha_m$ decays (typically exponentially) and normalized $\hat{W}/\lambda < 1$ below criticality, so $\sum \alpha_m(\hat{W}/\lambda)^{2m}$ converges.</p>
+<h3>4.5 Derivation II — Statistical-physics path and the critical point</h3>
+<p>The Ising Hamiltonian $H = -J \sum_{\langle ij\rangle} s_i s_j - h \sum_i s_i$, under mean-field approximation, expands in the order parameter as $F(m)=F_0 + a\,m^2 + b\,m^4 + c\,m^6 + \dots$ — structurally isomorphic to the Gestalt equation: $m \leftrightarrow \hat{W}$, $m^2 \leftrightarrow \hat{W}^2$, $m^4 \leftrightarrow \hat{W}^4$, $m^6 \leftrightarrow \hat{W}^6$.</p>
+<p><strong>Phase-transition equivalence:</strong> below $W_c$ the system is in the "disordered phase" (models work near-independently, weak emergence); at $W = W_c$ the quartic and quadratic coefficients become comparable and the system "hesitates"; above $W_c$ the quartic/sixth orders fully activate and the system enters the "ordered phase" of non-linear emergence gain.</p>
+<p><strong>Critical point.</strong> In mean field, the transition is set by competition of the lowest orders: $\alpha_1 \hat{W}^2 \approx \alpha_2 \hat{W}^4 \;\Rightarrow\; W_c = \sqrt{\alpha_1/\alpha_2}$. This gives an operational prediction: measure (or bound) the first two coefficients and predict the critical density at which emergence bursts. (Under the signed form of §4.1, $W_c^* = \sqrt{\alpha_1/\alpha_2}$ is the *net-gain peak*; see §4.8.)</p>
+<h3>4.6 Dimensional analysis &amp; normalization</h3>
+<p>For dimensional consistency, introduce the characteristic scale $\lambda$ and normalize:</p>
+<blockquote>$$ M = \sum_i s_i + \sum_m \alpha_m \left(\frac{\hat{W}}{\lambda}\right)^{2m} $$</blockquote>
+<p>after normalization $\hat{W}/\lambda$ is dimensionless and every emergence term is dimensionally consistent. $\lambda$ is fixed by physical network parameters (mean degree, bandwidth, representation dimension) and is calibrated empirically.</p>
+<h3>4.7 Hierarchical cross-layer multiplication (structural emergence)</h3>
+<p>The Gestalt network is not flat but layered (L3 expert cluster → L2 → L1). Emergence here is multiplicative across layers, not additive:</p>
+<blockquote>$$ H_{\text{total}} = H(L3)\times H(L2\,|\,L3)\times H(L1\,|\,L2) $$</blockquote>
+<p>Each layer processes the previous layer's output and increases information density, so the collective can exceed any single constituent wherever the pipeline is intact. This is <strong>Layer A</strong> (monotonic, structure-dependent, *not* density-critical) and is distinct from the density-critical <strong>Layer B</strong> of §4.1. Prior experiments (C / D / stage3) confirm collective &gt; single-model and are attributed chiefly to Layer A.</p>
+<h3>4.8 Signed correction ($\alpha_m - \beta_m$): the symmetry constraint  ← update vs v1.2.0</h3>
+<p>The original draft (v1.2.0, §2.2) wrote a *single-sign* positive-emergence form $M = \sum_i N_i + \sum_m \alpha_m W^{2m}$. Statistical-physics symmetry shows this is structurally asymmetric: couplings J may be ferromagnetic <strong>or antiferromagnetic</strong>, and fluctuations are sign-symmetric, so a positive emergence term must be opposed by a negative-interference term $\beta_m$ from redundant / conformist / mis-coupled connections, which rises *faster* than $\alpha_m$ at high density. The corrected signed form $M = \sum_i s_i + \sum_m (\alpha_m - \beta_m)\,\hat{W}^{2m}$ makes the *net* gain non-monotonic with a finite optimal density $W_c^* = \sqrt{\alpha_1/\alpha_2}$: piling on connections beyond $W_c^*$ yields *diminishing then negative* net gain. This is precisely why "more connections" alone fails to produce emergence and why a density *sweep* (not a single density) is required to locate the peak.</p>
+<h3>4.9 Preconditions validated by experiment</h3>
+<p>Two preconditions are non-optional and were empirically tested:</p>
+<ul>
+<li>**$s_i > 0$ (real-valued layer capability).** If any layer falls at/below the random floor, $M \approx 0 + \text{interference}$ and connecting it *worsens* the system. This was directly validated when the 3B layer died on over-hard questions ($s_i \to \sim 0$), collapsing collective accuracy — a controlled confirmation of the precondition, not a failure.</li>
+<li><strong>Dual-channel aggregation.</strong> The aggregation layer must pass *both* the aggregated brief *and* the unaggregated residual/disagreement. Dropping the residual discards the equation's second term and prevents emergence; only transmitting the aggregate is equivalent to deleting the $(\alpha_m-\beta_m)$ term.</li>
+</ul>
+<h3>4.10 Why this matters (empirical operationalization)</h3>
+<p>If topology — not just scale — can induce a critical emergence gain, it challenges the implicit "scale is the only lever" premise and suggests a path for resource-constrained / on-device multi-model systems. The present preregistration operationalizes this via a controlled density sweep (tree → mesh → full at n_l3 ∈ {12,20}) on a difficulty-banded benchmark, with sub-critical (tree@12, mesh@12: G_solo −16pp / −22pp, locked) and post-critical (stage3 full@20: +8pp) anchors already in hand, and a pending random-topology baseline to isolate topology from raw compute.</p>
+<h2>5. Hypotheses</h2>
+<ul>
+<li><strong>H1 (structural emergence):</strong> Under any non-trivial topology, collective accuracy &gt; committee-0 (L3 majority vote), confirming cross-layer multiplication is active.</li>
+<li><strong>H2 (critical phase transition):</strong> The net gain <strong>G_solo = acc_collective − acc_solo7B</strong> is **non-monotonic in $\hat{W}$**: negative in the sub-critical regime (low density), rising toward / above zero near Wc, then declining in the over-dense regime ($\beta$ dominates). The peak locates Wc.</li>
+<li><strong>H3 (topology, not compute):</strong> At matched total parameter count, the full topology shows emergence gain while a *random* topology of equal density does not — isolating topology from raw compute scaling.</li>
+</ul>
+<h2>6. Methods</h2>
+<h3>6.1 Models</h3>
+<p>Qwen2.5 (original, non-abliterated) at 1.5B (L3 expert cluster), 3B (L2), 7B (L1). Served locally via Ollama.</p>
+<h3>6.2 Architecture</h3>
+<p>L3 (1.5B expert cluster, n_l3 nodes) → aggregation layer (dual-channel: aggregated brief + unaggregated residual/disagreement) → L2 (3B) → L1 (7B orchestration) → verification layer (per-position). The dual-channel aggregation is essential: dropping the residual discards the equation's second term and prevents emergence.</p>
+<h3>6.3 Topologies &amp; density sweep</h3>
+<ul>
+<li><strong>tree</strong> — low $\hat{W}$ (sub-critical reference)</li>
+<li><strong>mesh</strong> — mid $\hat{W}$ (transition probe)</li>
+<li><strong>full</strong> — high $\hat{W}$ (L2 full-connect + multi-hop L1 + L3 intra-cluster full-connect; post-critical probe)</li>
+<li><strong>n_l3 ∈ {12, 20}</strong>; <strong>n = 50 questions per bracket</strong>. Arm A = n_l3=12 (tree/mesh/full); Arm B = n_l3=20 (full only, chains after Arm A, matching the prior stage3 post-critical density).</li>
+</ul>
+<h3>6.4 Benchmark</h3>
+<p><code>mcq_midhard_clean.jsonl</code> (250 curated MCQs). Difficulty band verified: 7B = 0.65, 3B = 0.79, 1.5B = 0.51 — each layer $s_i >$ random floor (0.25), satisfying the equation precondition. Mid-hard difficulty is chosen so the strongest single model stays below 100% (headroom for the emergence term to show) while every layer clears the floor.</p>
+<h3>6.5 Controls</h3>
+<ul>
+<li><strong>committee-0:</strong> L3 cluster majority vote (no cross-layer synthesis) — isolates structural increment.</li>
+<li><strong>solo-7B:</strong> single 7B model with identical context — strongest single-model ceiling.</li>
+<li><strong>Planned random-topology baseline:</strong> same density, randomized edges — tests H3.</li>
+<li><strong>Planned C-Eval cross-validation:</strong> standard public benchmark (52 subjects) — defends against researcher degrees of freedom.</li>
+</ul>
+<h3>6.6 Metrics</h3>
+<ul>
+<li><code>acc_collective</code>, <code>acc_committee0</code>, <code>acc_solo7B</code></li>
+<li><strong>G_solo = acc_collective − acc_solo7B</strong> (primary: net emergence vs strongest single)</li>
+<li><strong>G_comm = acc_collective − acc_committee0</strong> (structural increment from cross-layer synthesis)</li>
+</ul>
+<h2>7. Analysis Plan</h2>
+<p>1. <strong>Density sweep:</strong> Report G_solo across tree / mesh / full at n_l3 = 12 and 20.</p>
+<p>2. <strong>Primary test of H2:</strong> Fit G_solo($\hat{W}$); test for <strong>non-monotonicity (a peak)</strong> and locate Wc. Sub-critical brackets predicted G_solo &lt; 0; the post-critical anchor (prior stage3 full@20) predicted G_solo &gt; 0.</p>
+<p>3. <strong>H1 test:</strong> G_comm &gt; 0 across topologies.</p>
+<p>4. <strong>H3 test:</strong> Random-topology baseline at full density shows no emergence gain vs compute-matched solo; full topology does.</p>
+<p>5. <strong>Cross-validation:</strong> Replicate the primary effect on C-Eval.</p>
+<p>6. <strong>Decision rule:</strong></p>
+<p>   - *Support H2* if full@20 reproduces the prior +8pp post-critical gain AND the density sweep shows a non-monotonic peak.</p>
+<p>   - *If all full brackets ≤ solo:* revisit the $s_i$ precondition / model assumptions (diagnostic, not auto-failure).</p>
+<p>7. <strong>Statistics:</strong> Per-bracket n = 50; report 95% confidence intervals. Non-monotonicity assessed via piecewise / quadratic fit with density as regressor.</p>
+<h2>8. Current Status (as of 2026-08-07, preregistration upload)</h2>
+<ul>
+<li><strong>Completed &amp; locked:</strong></li>
+</ul>
+<p>  - tree@12 — 50/50, acc 58.0%, G_solo −16.0pp, G_comm +8.0pp</p>
+<p>  - mesh@12 — 50/50, acc 52.0%, G_solo −22.0pp, G_comm +2.0pp</p>
+<p>  - Both sub-critical, consistent with the H2 left flank (no emergence below Wc).</p>
+<ul>
+<li><strong>In progress:</strong> full@12 — 36/50 at upload (acc 61.1% interim; final locked at 50/50).</li>
+<li><strong>Queued:</strong> full@20 (Arm B, chains after full@12).</li>
+<li><strong>Planned:</strong> random-topology baseline; C-Eval probe.</li>
+<li><strong>Prior anchored result (stage3, separate run):</strong> full@20 collective &gt; solo by +8pp — post-critical anchor for H2.</li>
+</ul>
+<h2>9. Reproducibility &amp; Operations</h2>
+<ul>
+<li><strong>Scripts:</strong> <code>D:\方程验证\scripts\run_stage4_scan.py</code> (density-sweep wrapper; checkpoint resume; single-instance lock; serial tree→mesh→full) · <code>verify_stage2.py</code> (Ollama generate; <code>ollama_url</code> hardcoded to <code>127.0.0.1</code> to avoid an IPv6 <code>localhost</code>→<code>::1</code> deadlock on this host) · <code>analyze_stage4.py</code> (report generator).</li>
+<li><strong>Environment:</strong> Managed Python 3.13 venv; Ollama local; models <code>qwen2.5:1.5b</code> / <code>:3b</code> / <code>:7b</code>.</li>
+<li><strong>Known pitfall:</strong> This host resolves <code>localhost</code> → <code>::1</code> (IPv6) but Ollama listens only on <code>127.0.0.1</code>. All URLs are hardcoded IPv4; using <code>localhost</code> causes a silent permanent hang.</li>
+<li><strong>Checkpoints:</strong> <code>stage4_{topo}_ckpt_nl3{N}.json</code>, namespaced by n_l3 to prevent cross-arm corruption.</li>
+<li><strong>Data integrity:</strong> Every bracket is checkpointed per question and resumable; no re-run is required to recover from interruption.</li>
+</ul>
+<h2>10. References</h2>
+<ul>
+<li>[1] Yang, Z. (2026). *格式塔方程：多智能体协同涌现能力的数学描述 / A Mathematical Description of Emergent Capability in Multi-Agent Gestalt Architectures* (draft v1.2.0, 2026-08-01). Source of the core equation and the two-path derivation (information-theoretic &amp; statistical-physics); the present preregistration adopts the <strong>signed correction</strong> ($\alpha_m-\beta_m$) and empirical density-sweep results, superseding v1.2.0 for all empirical claims.</li>
+<li>[2] Prior anchored result: stage3 full@20 density run — collective &gt; solo by +8pp (post-critical anchor for H2).</li>
+<li>[Additional references to be completed before submission.]</li>
+</ul>
+</body></html>

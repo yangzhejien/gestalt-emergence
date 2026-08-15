@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格式塔方程验证 · 实验数据总览 (2026-08-07)</title>
+<style>
+  :root{
+    --bg:#0f1320; --card:#171c2e; --card2:#1d2438; --line:#2a3350;
+    --txt:#e8ecf6; --dim:#9aa6c4; --blue:#4f8cff; --green:#39d98a;
+    --orange:#ffb454; --red:#ff5d6c; --purple:#a78bfa;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.55;padding:28px 18px 60px}
+  .wrap{max-width:1040px;margin:0 auto}
+  h1{font-size:23px;margin:0 0 4px}
+  .sub{color:var(--dim);font-size:13px;margin-bottom:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin-bottom:18px}
+  .card h2{font-size:16px;margin:0 0 14px;display:flex;align-items:center;gap:8px}
+  .tag{font-size:11px;padding:2px 9px;border-radius:20px;font-weight:600}
+  .t-done{background:rgba(57,217,138,.16);color:var(--green)}
+  .t-run{background:rgba(79,140,255,.18);color:var(--blue)}
+  .t-queue{background:rgba(167,139,250,.18);color:var(--purple)}
+  .t-pilot{background:rgba(255,180,84,.16);color:var(--orange)}
+  .t-miss{background:rgba(255,93,108,.16);color:var(--red)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);font-weight:600;font-size:12px}
+  td.num{font-variant-numeric:tabular-nums;font-weight:600}
+  .bar-row{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+  .bar-label{width:150px;flex-shrink:0;color:var(--dim)}
+  .bar-track{flex:1;background:var(--card2);border-radius:7px;height:22px;position:relative;overflow:hidden}
+  .bar-fill{height:100%;border-radius:7px;display:flex;align-items:center;
+    justify-content:flex-end;padding-right:8px;font-size:12px;font-weight:700;color:#0c1020}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--dim);margin-top:10px}
+  .dot{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:middle}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:var(--card2);
+    border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:13px;margin:6px 6px 0 0}
+  .chk{font-size:15px}
+  .banner{background:rgba(255,180,84,.10);border:1px solid rgba(255,180,84,.4);
+    border-radius:12px;padding:13px 16px;font-size:13px;color:#ffd9a0;margin-bottom:18px}
+  .banner b{color:#ffe6c2}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}.bar-label{width:110px}}
+  .small{font-size:11px;color:var(--dim)}
+  svg text{fill:var(--dim);font-size:11px}
+  code{background:var(--card2);padding:1px 6px;border-radius:5px;font-size:12px;color:var(--green)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>格式塔方程验证 · 实验数据总览</h1>
+  <div class="sub">生成时间 2026-08-07 15:17 · 数据截至本时刻后台实跑状态 · 模型均为原版 qwen2.5 (1.5b / 3b / 7b)</div>
+
+  <div class="banner">
+    ⚠️ <b>核心诚实声明</b>：本页所有"已出"数据均来自<strong>单一密度（full 拓扑 Ẇ=1.0）</strong>实验，
+    仅能证明「跨层流水线 &gt; 最强单体」这一<strong>结构性现象</strong>；论文主轴「拓扑诱导的临界相变（无涌现区 → 跨 Wc → 过密回落）」
+    目前<strong>仅有 1 个低密度点（tree 0.645）</strong>，<strong>尚未构成验证</strong>。前面 C/D 数据<strong>不能</strong>当作「无涌现区」证据（单密度且显涌现，与自身标准矛盾）。
+  </div>
+
+  <!-- 1. 总览表 -->
+  <div class="card">
+    <h2>① 全部实验数据总览 <span class="tag t-done">8 个数据源</span></h2>
+    <table>
+      <thead><tr><th>实验</th><th>N</th><th>拓扑/密度</th><th>集体</th><th>最强单体</th><th>委员会0</th><th>原始G*</th><th>状态</th></tr></thead>
+      <tbody>
+        <tr><td>C · clean<br><span class="small">7B 主编排</span></td><td class="num">500</td><td>full Ẇ=1.0</td><td class="num" style="color:var(--green)">0.932</td><td class="num">0.838</td><td class="num">0.576</td><td class="num">+0.356</td><td><span class="tag t-done">完成</span></td></tr>
+        <tr><td>D · demote<br><span class="small">3B主/7B降级</span></td><td class="num">500</td><td>full Ẇ=1.0</td><td class="num" style="color:var(--green)">0.864</td><td class="num">0.838</td><td class="num">0.576</td><td class="num">+0.288</td><td><span class="tag t-done">完成</span></td></tr>
+        <tr><td>stage3 · scale</td><td class="num">50</td><td>full n_l3=20</td><td class="num" style="color:var(--green)">0.94</td><td class="num">0.86</td><td class="num">—</td><td class="num">—</td><td><span class="tag t-done">完成</span></td></tr>
+        <tr><td>stage4 · 冒烟</td><td class="num">6</td><td>full n_l3=20</td><td class="num" style="color:var(--green)">1.0</td><td class="num">0.833</td><td class="num">0.5</td><td class="num">+0.5</td><td><span class="tag t-pilot">Pilot N=6</span></td></tr>
+        <tr><td>band_ok 校准</td><td class="num">250</td><td>单模型</td><td class="num">—</td><td class="num" colspan="3">7B=0.65 · 3B=0.79 · 1.5B=0.51</td><td><span class="tag t-done">band_ok</span></td></tr>
+        <tr><td>扫描A · tree</td><td class="num">50</td><td>tree n_l3=12</td><td class="num" style="color:var(--blue)">0.645</td><td class="num">0.74</td><td class="num">0.516</td><td class="num">+0.129</td><td><span class="tag t-run">进行 31/50</span></td></tr>
+        <tr><td>扫描A · mesh</td><td class="num">50</td><td>mesh n_l3=12</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td><span class="tag t-queue">排队</span></td></tr>
+        <tr><td>扫描B · full</td><td class="num">50</td><td>full n_l3=20</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td><span class="tag t-queue">排队</span></td></tr>
+      </tbody>
+    </table>
+    <p class="small">*原始G = 集体 − 委员会0（非 JSON 内归一化 G）。C/D 的「集体&gt;单体」来自跨层乘法结构机制，不等于密度超线性涌现。</p>
+  </div>
+
+  <!-- 2. 主现象 -->
+  <div class="card">
+    <h2>② 主现象：集体 vs 最强单体 vs 委员会0</h2>
+    <div class="bar-row"><span class="bar-label">C · 集体</span><div class="bar-track"><div class="bar-fill" style="width:93.2%;background:var(--green)">0.932</div></div></div>
+    <div class="bar-row"><span class="bar-label">C · 最强单体(7B)</span><div class="bar-track"><div class="bar-fill" style="width:83.8%;background:var(--blue)">0.838</div></div></div>
+    <div class="bar-row"><span class="bar-label">C · 委员会0</span><div class="bar-track"><div class="bar-fill" style="width:57.6%;background:var(--orange)">0.576</div></div></div>
+
+    <div class="bar-row"><span class="bar-label">D · 集体</span><div class="bar-track"><div class="bar-fill" style="width:86.4%;background:var(--green)">0.864</div></div></div>
+    <div class="bar-row"><span class="bar-label">D · 最强单体(7B)</span><div class="bar-track"><div class="bar-fill" style="width:83.8%;background:var(--blue)">0.838</div></div></div>
+    <div class="bar-row"><span class="bar-label">D · 委员会0</span><div class="bar-track"><div class="bar-fill" style="width:57.6%;background:var(--orange)">0.576</div></div></div>
+
+    <div class="bar-row"><span class="bar-label">stage3 · 集体</span><div class="bar-track"><div class="bar-fill" style="width:94%;background:var(--green)">0.94</div></div></div>
+    <div class="bar-row"><span class="bar-label">stage3 · 最强单体</span><div class="bar-track"><div class="bar-fill" style="width:86%;background:var(--blue)">0.86</div></div></div>
+
+    <div class="bar-row"><span class="bar-label">扫描A · tree 集体</span><div class="bar-track"><div class="bar-fill" style="width:64.5%;background:var(--blue)">0.645</div></div></div>
+    <div class="bar-row"><span class="bar-label">扫描A · solo 7B</span><div class="bar-track"><div class="bar-fill" style="width:74%;background:var(--blue)">0.74</div></div></div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--green)"></span>集体（多层流水线）</span>
+      <span><span class="dot" style="background:var(--blue)"></span>最强单体 / solo</span>
+      <span><span class="dot" style="background:var(--orange)"></span>委员会0（L3 纯投票）</span>
+    </div>
+    <p class="small">关键观察：扫描A 的 tree（低密度）集体 0.645 <strong>低于</strong> solo 0.74 —— 低密度下群体反不如单模型，符合「无涌现区」预言。但仅 1 点、N=50 进行中。</p>
+  </div>
+
+  <div class="grid2">
+    <!-- 3. 难度带 -->
+    <div class="card">
+      <h2>③ 难度带校准 (band_ok)</h2>
+      <p class="small" style="margin-top:0">每层节点须 &gt; 随机(0.25) 且最强 &lt; 1.0，方程前提才成立。</p>
+      <div class="bar-row"><span class="bar-label">L1 · 7B</span><div class="bar-track"><div class="bar-fill" style="width:65%;background:var(--blue)">0.65</div></div></div>
+      <div class="bar-row"><span class="bar-label">L2 · 3B</span><div class="bar-track"><div class="bar-fill" style="width:79%;background:var(--blue)">0.79</div></div></div>
+      <div class="bar-row"><span class="bar-label">L3 · 1.5B</span><div class="bar-track"><div class="bar-fill" style="width:51%;background:var(--blue)">0.51</div></div></div>
+      <div class="bar-row"><span class="bar-label">随机地板</span><div class="bar-track"><div class="bar-fill" style="width:25%;background:var(--red)">0.25</div></div></div>
+      <p class="small" style="color:var(--green)">✅ band_ok = True（三层均 &gt; 0.25）。注意：此基准上 3B(0.79) &gt; 7B(0.65)，「最强单体」实测为中层 3B。</p>
+      <p class="small">⚠️ 1.5B 仅抽样 N=100，0.51 紧贴 0.5 随机，余量极小。</p>
+    </div>
+
+    <!-- 4. 对照缺口 -->
+    <div class="card">
+      <h2>④ 数据完整性 & 对照缺口</h2>
+      <div><span class="pill"><span class="chk" style="color:var(--green)">✅</span>C vs D · L1 角色消融</span>
+      <span class="pill"><span class="chk" style="color:var(--green)">✅</span>委员会0 投票基线</span>
+      <span class="pill"><span class="chk" style="color:var(--green)">✅</span>band_ok 难度带</span>
+      <span class="pill"><span class="chk" style="color:var(--orange)">🔶</span>密度扫描 (1/3)</span>
+      <span class="pill"><span class="chk" style="color:var(--red)">❌</span>随机拓扑基线</span>
+      <span class="pill"><span class="chk" style="color:var(--red)">❌</span>公开集交叉验证</span></div>
+      <p class="small" style="margin-bottom:0">公开集：C-Eval 候选已下 <b>1195</b> 题，<b>尚未探针/过滤 band_ok</b>。随机拓扑基线脚本未写。</p>
+    </div>
+  </div>
+
+  <!-- 5. Wc 概念图 -->
+  <div class="card">
+    <h2>⑤ 无涌现区 → Wc → 过密回落（概念图 + 当前实证点）</h2>
+    <svg viewBox="0 0 680 320" width="100%" style="max-width:680px;display:block;margin:0 auto">
+      <!-- axes -->
+      <line x1="60" y1="270" x2="640" y2="270" stroke="#2a3350" stroke-width="1.5"/>
+      <line x1="60" y1="30" x2="60" y2="270" stroke="#2a3350" stroke-width="1.5"/>
+      <!-- y ticks -->
+      <line x1="56" y1="270" x2="60" y2="270" stroke="#2a3350"/><text x="20" y="274">0</text>
+      <line x1="56" y1="212.5" x2="60" y2="212.5" stroke="#2a3350"/><text x="14" y="216">.25</text>
+      <line x1="56" y1="155" x2="60" y2="155" stroke="#2a3350"/><text x="14" y="159">.50</text>
+      <line x1="56" y1="99.8" x2="60" y2="99.8" stroke="#2a3350"/><text x="14" y="103">.74</text>
+      <line x1="56" y1="40" x2="60" y2="40" stroke="#2a3350"/><text x="14" y="44">1.0</text>
+      <!-- x ticks -->
+      <line x1="60" y1="270" x2="60" y2="274" stroke="#2a3350"/><text x="52" y="290">0</text>
+      <line x1="300" y1="270" x2="300" y2="274" stroke="#2a3350"/><text x="292" y="290">.5</text>
+      <line x1="540" y1="270" x2="540" y2="274" stroke="#2a3350"/><text x="532" y="290">1.0</text>
+      <text x="600" y="290">Ẇ →</text>
+      <text x="14" y="22" transform="rotate(-90 14 22)">准确率</text>
+
+      <!-- additive bound -->
+      <line x1="60" y1="99.8" x2="636" y2="99.8" stroke="#4f8cff" stroke-width="1.5" stroke-dasharray="6 4"/>
+      <text x="420" y="93" fill="#4f8cff">加性上限 Σsᵢ ≈ 0.74 (solo 7B)</text>
+
+      <!-- Wc vertical -->
+      <line x1="324" y1="20" x2="324" y2="270" stroke="#a78bfa" stroke-width="1.3" stroke-dasharray="3 4"/>
+      <text x="300" y="18" fill="#a78bfa">Wc 临界点</text>
+
+      <!-- theoretical expected curve (dashed gray) -->
+      <path d="M 60,99.8 L 204,98.65 L 324,95.2 L 405.6,74.5 L 501.6,83.7 L 588,92.9 L 636,96.35"
+            fill="none" stroke="#7c89b0" stroke-width="2" stroke-dasharray="2 5" opacity="0.7"/>
+      <text x="412" y="68" fill="#7c89b0" font-size="10">理论预期（非单调，待实证）</text>
+
+      <!-- real data: tree -->
+      <circle cx="132" cy="121.65" r="6" fill="#39d98a" stroke="#0c1020" stroke-width="1.5"/>
+      <text x="142" y="120" fill="#39d98a" font-size="10">tree 0.645</text>
+      <text x="80" y="138" fill="#39d98a" font-size="9">(低于加性上限)</text>
+
+      <!-- pending hollow markers -->
+      <circle cx="252" cy="100" r="5.5" fill="none" stroke="#ffb454" stroke-width="1.5"/>
+      <text x="262" y="98" fill="#ffb454" font-size="9">mesh 待跑</text>
+      <circle cx="396" cy="96" r="5.5" fill="none" stroke="#ffb454" stroke-width="1.5"/>
+      <text x="406" y="94" fill="#ffb454" font-size="9">full(12) 待跑</text>
+      <circle cx="516" cy="90" r="5.5" fill="none" stroke="#ffb454" stroke-width="1.5"/>
+      <text x="526" y="88" fill="#ffb454" font-size="9">full(20) 待跑</text>
+    </svg>
+    <p class="small">X 轴 = 连接密度 Ẇ（tree 低 → mesh → full 高）；Y 轴 = 集体准确率。灰色虚线为理论预期的非单调曲线（先贴加性上限、跨 Wc 后抬升、过密回落）。<b style="color:var(--green)">绿色实心点</b>是唯一实证点（tree，落在加性上限之下）。其余为待跑空心点。该图证明：要「验证无涌现区 + 观测 Wc 拐点」必须靠密度扫描补全，而非 C/D。</p>
+  </div>
+
+  <!-- 6. 后台状态 -->
+  <div class="card">
+    <h2>⑥ 当前后台任务（实时）</h2>
+    <div><span class="pill"><span class="chk" style="color:var(--blue)">●</span>扫描A (n_l3=12)：tree 31/50，acc 0.645，comm0 0.516，看板 8009</span></div>
+    <div><span class="pill"><span class="chk" style="color:var(--purple)">●</span>扫描B (n_l3=20)：链式排队，A 完后自动接</span></div>
+    <div><span class="pill"><span class="chk" style="color:var(--orange)">●</span>C-Eval 候选：1195 题已下载，待探针过滤 band_ok</span></div>
+    <p class="small" style="margin-bottom:0">⚠️ Ollama 桌面端曾静默自动更新强关 serve，导致扫描被杀；脚本已带 checkpoint + 锁自愈合，被杀可续跑不丢进度。长任务期间可能再来一次。</p>
+  </div>
+
+</div>
+</body>
+</html>

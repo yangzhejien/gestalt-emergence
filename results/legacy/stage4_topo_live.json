@@ -1,0 +1,91 @@
+{
+  "phase": "done",
+  "progress": "collective q 6/6",
+  "status": "done",
+  "node_model": "topo=full n_l3=20 gs=3",
+  "n_l3": 20,
+  "group_size": 3,
+  "n_groups": 7,
+  "topology": "full",
+  "topo_desc": {
+    "topology": "full",
+    "lateral_edges": 80,
+    "l2_lateral_edges": 42,
+    "l3_lateral_edges": 38,
+    "cross_layer_hops": 2,
+    "note": "L2副脑全连 + 主脑多跳(深度2) + L3集群内全连"
+  },
+  "current_w": 1.0,
+  "collective_acc": {
+    "cw1.00": 1.0
+  },
+  "node_acc": {
+    "best_single_7b": 0.8333333333333334
+  },
+  "committee0": 0.5,
+  "samples": [
+    {
+      "q": 0,
+      "l1": "D",
+      "gold": "D",
+      "ok": true,
+      "comm0": "B"
+    },
+    {
+      "q": 1,
+      "l1": "D",
+      "gold": "D",
+      "ok": true,
+      "comm0": "A"
+    },
+    {
+      "q": 2,
+      "l1": "A",
+      "gold": "A",
+      "ok": true,
+      "comm0": "B"
+    },
+    {
+      "q": 3,
+      "l1": "A",
+      "gold": "A",
+      "ok": true,
+      "comm0": "A"
+    },
+    {
+      "q": 4,
+      "l1": "D",
+      "gold": "D",
+      "ok": true,
+      "comm0": "D"
+    },
+    {
+      "q": 5,
+      "l1": "C",
+      "gold": "C",
+      "ok": true,
+      "comm0": "C"
+    }
+  ],
+  "A_net0": 0.5,
+  "summary": {
+    "topology": "full",
+    "topo_desc": {
+      "topology": "full",
+      "lateral_edges": 80,
+      "l2_lateral_edges": 42,
+      "l3_lateral_edges": 38,
+      "cross_layer_hops": 2,
+      "note": "L2副脑全连 + 主脑多跳(深度2) + L3集群内全连"
+    },
+    "collective": 1.0,
+    "committee0_L3vote": 0.5,
+    "G_collective_minus_comm0": 0.5,
+    "best_single_7b": 0.8333333333333334,
+    "delta_vs_7b": 0.16666666666666663,
+    "n_l3": 20,
+    "n_groups": 7,
+    "lateral_edges": 80,
+    "cross_layer_hops": 2
+  }
+}

@@ -1,0 +1,30 @@
+{"id":1,"question":"7 × 8 = ?","A":"56","B":"54","C":"63","D":"49","answer":"A"}
+{"id":2,"question":"What is the capital of France?","A":"London","B":"Paris","C":"Berlin","D":"Rome","answer":"B"}
+{"id":3,"question":"Which is the largest planet in the Solar System?","A":"Mars","B":"Earth","C":"Jupiter","D":"Venus","answer":"C"}
+{"id":4,"question":"How many continents are there on Earth?","A":"5","B":"6","C":"8","D":"7","answer":"D"}
+{"id":5,"question":"Approximate speed of light in vacuum?","A":"3×10^8 m/s","B":"3×10^5 m/s","C":"3×10^10 m/s","D":"3×10^6 m/s","answer":"A"}
+{"id":6,"question":"The chemical formula H2O represents?","A":"Carbon dioxide","B":"Water","C":"Oxygen","D":"Table salt","answer":"B"}
+{"id":7,"question":"15 + 27 = ?","A":"41","B":"43","C":"42","D":"40","answer":"C"}
+{"id":8,"question":"Which gas makes up the largest fraction of Earth's atmosphere?","A":"Oxygen","B":"Hydrogen","C":"Carbon dioxide","D":"Nitrogen","answer":"D"}
+{"id":9,"question":"Who wrote the play Romeo and Juliet?","A":"Shakespeare","B":"Dickens","C":"Twain","D":"Hemingway","answer":"A"}
+{"id":10,"question":"√64 = ?","A":"6","B":"8","C":"7","D":"9","answer":"B"}
+{"id":11,"question":"Boiling point of water at 1 atm?","A":"90°C","B":"110°C","C":"100°C","D":"80°C","answer":"C"}
+{"id":12,"question":"Which planet is the coldest on average?","A":"Mars","B":"Uranus","C":"Saturn","D":"Neptune","answer":"D"}
+{"id":13,"question":"100 ÷ 4 = ?","A":"25","B":"20","C":"30","D":"15","answer":"A"}
+{"id":14,"question":"RGB in color models stands for?","A":"Red Gray Black","B":"Red Green Blue","C":"Round Green Blue","D":"None of above","answer":"B"}
+{"id":15,"question":"How many legs does a spider have?","A":"6","B":"10","C":"8","D":"4","answer":"C"}
+{"id":16,"question":"Chemical symbol for gold?","A":"Go","B":"Ag","C":"Gd","D":"Au","answer":"D"}
+{"id":17,"question":"2^5 = ?","A":"32","B":"16","C":"64","D":"10","answer":"A"}
+{"id":18,"question":"Which is the largest ocean?","A":"Atlantic","B":"Pacific","C":"Indian","D":"Arctic","answer":"B"}
+{"id":19,"question":"Which gas do plants mainly absorb during photosynthesis?","A":"Oxygen","B":"Nitrogen","C":"Carbon dioxide","D":"Hydrogen","answer":"C"}
+{"id":20,"question":"9 × 9 = ?","A":"72","B":"90","C":"89","D":"81","answer":"D"}
+{"id":21,"question":"Who was the first President of the United States?","A":"Washington","B":"Lincoln","C":"Jefferson","D":"Adams","answer":"A"}
+{"id":22,"question":"Mammals primarily breathe using?","A":"Gills","B":"Lungs","C":"Skin","D":"None of above","answer":"B"}
+{"id":23,"question":"Approximate value of π?","A":"3.41","B":"4.13","C":"3.14","D":"1.34","answer":"C"}
+{"id":24,"question":"The hardest known natural material is?","A":"Iron","B":"Gold","C":"Quartz","D":"Diamond","answer":"D"}
+{"id":25,"question":"50% of 80 = ?","A":"40","B":"30","C":"45","D":"35","answer":"A"}
+{"id":26,"question":"How many colors are in a rainbow?","A":"5","B":"7","C":"6","D":"8","answer":"B"}
+{"id":27,"question":"What is the closest star to Earth?","A":"Sirius","B":"Proxima Centauri","C":"The Sun","D":"Polaris","answer":"C"}
+{"id":28,"question":"12 × 12 = ?","A":"124","B":"134","C":"154","D":"144","answer":"D"}
+{"id":29,"question":"The largest organ in the human body is the?","A":"Skin","B":"Heart","C":"Liver","D":"Brain","answer":"A"}
+{"id":30,"question":"3^3 = ?","A":"9","B":"27","C":"6","D":"81","answer":"B"}

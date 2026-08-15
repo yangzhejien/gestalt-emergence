@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实验数据存档清单 · 22 实验 → 原始文件映射</title>
+<style>
+  body{font-family:-apple-system,"Microsoft YaHei",sans-serif;max-width:1000px;margin:24px auto;padding:0 18px;color:#1a1a1a;background:#fafafa;line-height:1.55}
+  h1{font-size:21px;border-bottom:3px solid #2563eb;padding-bottom:8px}
+  h2{font-size:16px;margin-top:24px}
+  .verdict{border-left:5px solid #16a34a;background:#f0fdf4;padding:12px 16px;border-radius:8px;margin:14px 0}
+  .warn{border-left:5px solid #dc2626;background:#fef2f2;padding:12px 16px;border-radius:8px;margin:14px 0}
+  table{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+  td,th{border:1px solid #cbd5e1;padding:6px 8px;vertical-align:top;text-align:left}
+  th{background:#eef2ff;position:sticky;top:0}
+  .ok{background:#dcfce7;color:#166534;font-weight:600}
+  .sum{background:#fef9c3;color:#854d0e}
+  .thin{background:#fee2e2;color:#991b1b}
+  .run{background:#dbeafe;color:#1e40af}
+  code{background:#eef2ff;padding:1px 4px;border-radius:4px;font-size:12px}
+  .muted{color:#64748b;font-size:13px}
+  .legend{font-size:12px;margin:6px 0}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:middle}
+</style>
+</head>
+<body>
+<h1>实验数据存档清单 · 22 实验 → 原始文件映射</h1>
+<p class="muted">生成 2026-08-11 04:05 · 数据来源: <code>gestalt_live/</code>(34 json)、<code>D:\方程验证\benchmark\</code>(stage4/denscan)、<code>D:\方程验证\archive\2026-08-06_session_live_backup\</code>(24 json 冗余备份)</p>
+
+<div class="verdict">
+  <b>结论:不是"近似"。</b> 论文关键的 7 个大样本实验(#11/#14/#15/#18/#19/#20,含 #9/#12/#7/#8)每个都有<b>完整逐题 details 原始数据</b>(100~500 题/个),可逐题复算。数据真实存在于磁盘,未被覆盖。
+</div>
+
+<div class="legend">
+  状态色标:
+  <span class="dot" style="background:#dcfce7"></span><b>完整</b>(有逐题 details)
+  <span class="dot" style="background:#fef9c3"></span><b>汇总</b>(仅聚合值,无逐题,开发性实验)
+  <span class="dot" style="background:#fee2e2"></span><b>薄弱/缺失</b>
+  <span class="dot" style="background:#dbeafe"></span><b>收集中</b>
+</div>
+
+<table>
+<tr><th>#</th><th>实验(阶段)</th><th>原始文件(磁盘)</th><th>细节条数</th><th>状态</th><th>备注</th></tr>
+
+<tr><td>1</td><td>Stage1 头部验证(1.5B×3)</td><td><code>stage1_live.json</code></td><td>0</td><td class="sum">汇总</td><td>流程打通,仅聚合</td></tr>
+<tr><td>2–3</td><td>abliterate 异构模型</td><td><code>node_alt_live.json</code>(174B) / <code>benchmark/node_ablate3b.json</code></td><td>0</td><td class="thin">薄弱</td><td>近空壳,三档全平→当时判"不支持",数据本就不足</td></tr>
+<tr><td>4–5</td><td>Stage2 流程 + 协作首跑</td><td><code>stage2_live.json</code> / <code>stage2_live_original_backup.json</code></td><td>0</td><td class="sum">汇总</td><td>靠 *_original_backup 保住首版,否则被覆盖</td></tr>
+<tr><td>6</td><td>首次 beats_best(Ẇ=0.5, 0.85&gt;0.775)</td><td>无独立文件</td><td>—</td><td class="thin">缺失</td><td>并入 n=100 开发流程,无法单独还原</td></tr>
+<tr><td>7–8</td><td>默认 Qwen n=100</td><td><code>stage2_n100_live.json</code> / <code>stage2_n100_clean_live.json</code></td><td>各100</td><td class="ok">完整</td><td>三档全等 0.90</td></tr>
+<tr><td>9</td><td>demote 消融(3B 任主脑)</td><td><code>stage2_ablation_demote_live.json</code></td><td>100</td><td class="ok">完整</td><td>0.87,仍平</td></tr>
+<tr><td>11</td><td>n=500 默认 Qwen</td><td><code>stage2_n500_clean_live.json</code></td><td>500</td><td class="ok">完整</td><td>0.932 &gt; 0.838,单点平</td></tr>
+<tr><td>12</td><td>n=500 demote 大规模</td><td><code>stage2_n500_demote_live.json</code></td><td>500</td><td class="ok">完整</td><td>0.864</td></tr>
+<tr><td>13</td><td>Stage4 拓扑非单调</td><td><code>stage4_topo_live.json</code>(0细节) + <code>benchmark/stage4_*_ckpt*.json</code> / <code>denscan_*.json</code></td><td>真实(散落)</td><td class="ok">完整</td><td>gestalt_live 该文件无细节,真实数据在 benchmark/(有 phase/progress/n/done/rows)</td></tr>
+<tr><td>14</td><td>条件C(k=3, N=500)</td><td><code>condC_clean_relive.json</code></td><td>500</td><td class="ok">完整</td><td>0.924 &gt; 0.838, P=2.5e-6</td></tr>
+<tr><td>15</td><td>E1 k=1</td><td><code>stage2_E1_k1.json</code></td><td>500</td><td class="ok">完整</td><td>0.902 &gt; 0.834 (+6.8pp)</td></tr>
+<tr><td>18</td><td>E3 密度扫描 k=5/k=7</td><td><code>stage2_E3_k5.json</code> / <code>stage2_E3_k7.json</code></td><td>各500</td><td class="ok">完整</td><td>k5=0.942 / k7=0.928</td></tr>
+<tr><td>19</td><td>C-Eval k=1</td><td><code>stage2_ceval_k1.json</code></td><td>200</td><td class="ok">完整</td><td>0.66 &lt; 0.785 反例</td></tr>
+<tr><td>20</td><td>C-Eval k=3</td><td><code>stage2_ceval_k3.json</code></td><td>200</td><td class="ok">完整</td><td>0.61 &lt; 0.66 反例强化</td></tr>
+<tr><td>21</td><td>容量对照(L3=3B k=1)</td><td><code>D:\方程验证\stage2_ceval_ctrl_cap_k1.json</code></td><td>38/200</td><td class="run">收集中</td><td>14:05 进 Pipeline 阶段,判定反例根因</td></tr>
+<tr><td>22</td><td>语言对照(英文 C-Eval)</td><td>未生成</td><td>—</td><td class="run">排队</td><td>容量跑完接力</td></tr>
+</table>
+
+<h2>⚠️ 四个必须直说的风险</h2>
+<div class="warn">
+<ol>
+  <li><b>#2/#3 abliterate 是空壳</b>(174 字节 stub)——不是我漏记,是当时就没跑出东西,编年史已标"不支持"。若论文要引用此负结果,只能引用结论,无原始逐题数据。</li>
+  <li><b>#6 首次 beats_best 无法单独还原</b>——被合并进 n=100 开发流程,没有专属存档文件。好在它只是"第一个信号",后续 #11/#14/#15/#18 已用更大样本坐实。</li>
+  <li><b>#13 Stage4 数据散落在 <code>benchmark/</code></b>,不在 gestalt_live,且文件名不带日期/实验号。易在整理时漏掉。</li>
+  <li><b>结构性脆弱:管线用固定文件名覆盖写</b>。stage2_live.json 已被覆盖,靠手动备份 <code>_original_backup</code> 才保住。早期数据能留下来全靠人工备份,<b>没有系统化版本化归档</b>。对顶刊 reproducibility 是隐患。</li>
+</ol>
+</div>
+
+<h2>✅ 建议:建统一版本化原始数据归档</h2>
+<p>把 <code>gestalt_live/</code> + <code>benchmark/</code> + <code>archive/</code> 里所有真数据收拢进一个文件夹,每个 run 一个文件,命名含 <b>实验号+日期+配置</b>(如 <code>exp14_condC_2026-08-09_k3_n500.json</code>),并附一份 <code>MANIFEST.csv</code>(实验号→文件→细节条数→状态)。这样论文 reproducibility 无懈可击,也彻底回答"所有数据是否还在"。</p>
+<p class="muted">注:midhard/hard 基准数据存在但 12/12 金标准错误,已正确排除,不计入上述清单。</p>
+</body>
+</html>

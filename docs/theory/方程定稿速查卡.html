@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格式塔方程 · 最终定稿速查卡</title>
+<style>
+  body{font-family:-apple-system,"Microsoft YaHei",sans-serif;max-width:880px;margin:24px auto;padding:0 18px;color:#1a1a1a;background:#fafafa;line-height:1.6}
+  h1{font-size:22px;border-bottom:3px solid #2563eb;padding-bottom:8px}
+  h2{font-size:17px;margin-top:26px}
+  .card{border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin:12px 0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .bad{ border-left:5px solid #dc2626 }
+  .fix{ border-left:5px solid #16a34a }
+  .final{ border-left:5px solid #2563eb;background:#f0f7ff }
+  .eq{font-family:"Cambria Math","Times New Roman",serif;font-size:19px;text-align:center;padding:10px;background:#f8fafc;border-radius:8px;margin:8px 0}
+  .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 4px}
+  .frac .num{border-bottom:1px solid #333;padding:0 6px}
+  .frac .den{padding:0 6px}
+  sup{font-size:.72em}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}
+  td,th{border:1px solid #cbd5e1;padding:7px 9px;vertical-align:top;text-align:left}
+  th{background:#eef2ff}
+  code{background:#eef2ff;padding:1px 5px;border-radius:4px;font-size:13px}
+  .path{font-size:13px;color:#475569;background:#f1f5f9;padding:8px 12px;border-radius:6px;margin-top:10px}
+  .muted{color:#64748b;font-size:13px}
+</style>
+</head>
+<body>
+<h1>格式塔方程 · 最终定稿速查卡</h1>
+<p class="muted">生成日期 2026-08-11 · 权威源：<code>D:\方程验证\OSF_v2_corrigendum_2026-08-09.md</code> §6</p>
+
+<div class="card final">
+  <h2>🎯 最终统一方程（你要用的 / 现在所有实验都在用）</h2>
+  <div class="eq">
+    M(W) = b + γ · <span class="frac"><span class="num">W</span><span class="den">W<sub>c</sub></span></span> · e<sup>1 − W/W<sub>c</sub></sup>
+  </div>
+  <p style="text-align:center">当前标定 <b>b = 0.50, γ = 0.25</b> ，故 M ∈ [0.50, 0.75]</p>
+  <p>展开式：<b>M(W) = 0.50 + 0.25 · (W/W<sub>c</sub>) · e<sup>(1 − W/W<sub>c</sub>)</sup></b></p>
+  <p>新星核 Nov(W) = (W/W<sub>c</sub>)·e<sup>(1−W/W<sub>c</sub>)</sup> ∈ [0,1]，唯一内峰 ≡ 1 恰在 W = W<sub>c</sub>。</p>
+  <p>涌现判据保留：<b>G = collective − best_single</b>（杨智杰贡献）。</p>
+</div>
+
+<div class="card bad">
+  <h2>❌ 原错误方程（2026-08-07 预注册，已废弃）</h2>
+  <div class="eq">M = Σ s<sub>i</sub> + Σ (α<sub>m</sub> − β<sub>m</sub>) Ẇ<sup>2m</sup> ， 临界公式 W<sub>c</sub> = √(α<sub>1</sub>/α<sub>2</sub>) = 1.491</div>
+  <p><b>为什么错（友人独立核验）：</b></p>
+  <ul>
+    <li>净增益真峰在 <b>0.623</b>，不在 1.491；</li>
+    <li>β = 0 时函数单调、无内峰；</li>
+    <li>公式还指到 [0,1] 区间外，实验根本扫不到 → 这是此前一直"撞墙"找不到 W<sub>c</sub> 的根因。</li>
+  </ul>
+</div>
+
+<div class="card fix">
+  <h2>✅ 友人修正方程（有界单峰 kernel）</h2>
+  <div class="eq">M(W) = 0.50 + 0.25 · <span class="frac"><span class="num">W</span><span class="den">W<sub>c</sub></span></span> · e<sup>1 − W/W<sub>c</sub></sup></div>
+  <p>把无界幂级数替换为<b>有界单峰核</b>；W<sub>c</sub> 重新定义为<b>峰位本身</b>；机制升级为 Condorcet 陪审团；Lean 部分机器证明。</p>
+</div>
+
+<div class="card">
+  <h2>🔧 "合出来"是怎么改的（不是两式相加！）</h2>
+  <table>
+    <tr><th>来源</th><th>保留 / 改动</th><th>落点</th></tr>
+    <tr><td><b>杨智杰（物理骨架）</b></td><td>继承未动：协作增益、临界峰+过密回落、β抑制涌现、"集体&gt;单体"判据、跨层乘法 H(L3)×H(L2|L3)×H(L1|L2)</td><td>机制与判据</td></tr>
+    <tr><td><b>友人（数学国面）</b></td><td>重写：无界错峰幂级数→有界单峰核；W<sub>c</sub>=峰位；Condorcet；机器证明</td><td>方程形式</td></tr>
+    <tr><td>原 (α−β) 净增益思想</td><td>重编码进振幅</td><td>γ = 0.25</td></tr>
+    <tr><td>原 Σs<sub>i</sub> 加性基线思想</td><td>重编码进地板</td><td>b = 0.50</td></tr>
+  </table>
+  <p class="muted">说明：相加会破坏有界性，故采用"概念继承 + 形式替换"。叫"完成"而非"推翻"。</p>
+</div>
+
+<div class="card">
+  <h2>📐 五个可证性质（靠它发顶刊）</h2>
+  <ol>
+    <li>有界：M ∈ [0.50, 0.75] ⊂ (0,1)，永不超合法准确率；</li>
+    <li>唯一内峰恰在 W = W<sub>c</sub>；</li>
+    <li>非单调：W&lt;W<sub>c</sub> 升、W&gt;W<sub>c</sub> 降，留 0.50 地板；</li>
+    <li>无悬空公式：W<sub>c</sub> 即峰位，消除"公式峰≠真峰"矛盾；</li>
+    <li>冗余阻尼：β 越大 → γ 越小 → 涌现被正确抑制。</li>
+  </ol>
+</div>
+
+<div class="path">
+  📂 权威文件位置：<br>
+  • <code>D:\方程验证\OSF_v2_corrigendum_2026-08-09.md</code>（可编辑源，§6 即最终方程）<br>
+  • <code>D:\方程验证\OSF_v2_corrigendum_2026-08-09.docx</code>（正式存档，含三方公式对照）<br>
+  • 本速查卡：<code>D:\方程验证\方程定稿速查卡.html</code>
+</div>
+</body>
+</html>

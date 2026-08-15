@@ -1,0 +1,72 @@
+{
+  "status": "done",
+  "phase": "fit",
+  "models": {
+    "l3": "qwen2.5:1.5b",
+    "agg": "huihui_ai/qwen2.5-abliterate:3b",
+    "l2": "huihui_ai/qwen2.5-abliterate:3b",
+    "l1": "huihui_ai/qwen2.5-abliterate:7b",
+    "verifier": "qwen2.5:1.5b"
+  },
+  "n_questions": 2,
+  "conn_levels": [
+    1.0
+  ],
+  "progress": "Pipeline Ẇ=1.00  q 2/2",
+  "node_acc": {
+    "l3_0": 1.0,
+    "l3_1": 0.5,
+    "l3_2": 1.0,
+    "l2_3b": 1.0,
+    "l1_7b": 1.0
+  },
+  "best_single": 1.0,
+  "committee0": 1.0,
+  "collective_acc": {
+    "cw1.00": 1.0
+  },
+  "points": [
+    {
+      "What": 1.0,
+      "conn_w": 1.0,
+      "committee0": 1.0,
+      "collective": 1.0,
+      "G": 0.0
+    }
+  ],
+  "details": [
+    {
+      "q": 1,
+      "l3": [
+        "C",
+        "C",
+        "A"
+      ],
+      "l2": "A",
+      "l1": "A",
+      "l1_ok": true
+    },
+    {
+      "q": 2,
+      "l3": [
+        "B",
+        "B",
+        "B"
+      ],
+      "l2": "B",
+      "l1": "B",
+      "l1_ok": true
+    }
+  ],
+  "judgement": "协作合成(非投票): 集体最优(Ẇ=1.00)=1.000 vs 最强单模型=1.000. 未超过最强单模型. G_max=+0.000 ≤0 无连接增益.",
+  "updated_at": "13:09:47",
+  "fit": null,
+  "superlinear": {
+    "best_single": 1.0,
+    "committee0": 1.0,
+    "collective_max": 1.0,
+    "opt_conn_w": 1.0,
+    "G_max": 0.0,
+    "beats_best": false
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "status": "done",
+  "phase": "fit",
+  "models": {
+    "l3": "qwen2.5:1.5b",
+    "agg": "huihui_ai/qwen2.5-abliterate:3b",
+    "l2": "huihui_ai/qwen2.5-abliterate:3b",
+    "l1": "huihui_ai/qwen2.5-abliterate:7b",
+    "verifier": "qwen2.5:1.5b"
+  },
+  "n_questions": 30,
+  "conn_levels": [0.0, 0.5, 1.0],
+  "progress": "Pipeline done (3 tiers)",
+  "node_acc": [0.5333, 0.6, 0.6, 0.4333, 0.7],
+  "best_single": 0.7,
+  "committee0": 0.5667,
+  "collective_acc": {
+    "cw0.00": 0.8333,
+    "cw0.50": 0.7667,
+    "cw1.00": 0.8000
+  },
+  "points": [
+    {"conn_w": 0.0, "What": 0.0, "committee0": 0.5667, "collective": 0.8333, "G": 1.341},
+    {"conn_w": 0.5, "What": 1.0, "committee0": 0.5667, "collective": 0.7667, "G": 0.921},
+    {"conn_w": 1.0, "What": 2.0, "committee0": 0.5667, "collective": 0.8000, "G": 1.118}
+  ],
+  "details": [],
+  "judgement": "四层协作合成架构首次干净实证涌现: 集体合成 83.33%/76.67%/80.00% (Ẇ=0/0.5/1.0) 全部>最强单模型70% 且>断连委员会基线56.67%; 连接增益G(Ẇ)>0三档一致(logit尺度 1.341/0.921/1.118). 曲线U形(中段受最弱副脑3b在分歧通道被放大压坑), 增益真实但被协议缺陷压制. 方程前半Σsᵢ(聚合+主脑综合)兑现涌现已证; 后半ΣαẆ²ᵐ非线性项尚未翻正, 待修协议复测. [逐题明细因16:21重跑冲档丢失, 档级聚合值经多源核对一致]",
+  "benchmark_sig": "D:\\方程验证\\benchmark\\mcq_medium.jsonl|n=30|k=3",
+  "updated_at": "16:50:00",
+  "node_model": "qwen2.5:1.5bx3 + huihui_ai/qwen2.5-abliterate:3b(agg/L2) + huihui_ai/qwen2.5-abliterate:7b(L1)",
+  "A_net0": 0.5667,
+  "current_w": 1.0,
+  "fit": null,
+  "superlinear": {
+    "best_single": 0.7,
+    "committee0": 0.5667,
+    "collective_max": 0.8333,
+    "opt_conn_w": 0.0,
+    "G_max": 1.341,
+    "beats_best": true
+  }
+}

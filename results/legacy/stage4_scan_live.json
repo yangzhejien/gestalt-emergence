@@ -1,0 +1,76 @@
+{
+  "status": "done",
+  "phase": "scan complete",
+  "progress": "tree/mesh/full 三档完成",
+  "current_topo": "full",
+  "n_l3": 20,
+  "n": 50,
+  "solo_7b": 0.74,
+  "topos": {
+    "tree": {
+      "topology": "tree",
+      "topo_desc": {
+        "topology": "tree",
+        "lateral_edges": 0,
+        "cross_layer_hops": 1,
+        "note": "树状分层(无跨组/集群内连接)"
+      },
+      "collective": 0.74,
+      "committee0_L3vote": 0.5,
+      "committee0_firstpass_L3vote": 0.5,
+      "G_collective_minus_comm0": 0.24,
+      "best_single_7b": 0.74,
+      "delta_vs_7b": 0.0,
+      "n_l3": 20,
+      "n_groups": 7,
+      "n": 50,
+      "lateral_edges": 0,
+      "cross_layer_hops": 1
+    },
+    "mesh": {
+      "topology": "mesh",
+      "topo_desc": {
+        "topology": "mesh",
+        "lateral_edges": 42,
+        "l2_lateral_edges": 42,
+        "l3_lateral_edges": 0,
+        "cross_layer_hops": 2,
+        "note": "L2副脑全连 + 主脑多跳(深度2)"
+      },
+      "collective": 0.74,
+      "committee0_L3vote": 0.5,
+      "committee0_firstpass_L3vote": 0.5,
+      "G_collective_minus_comm0": 0.24,
+      "best_single_7b": 0.74,
+      "delta_vs_7b": 0.0,
+      "n_l3": 20,
+      "n_groups": 7,
+      "n": 50,
+      "lateral_edges": 42,
+      "cross_layer_hops": 2
+    },
+    "full": {
+      "topology": "full",
+      "topo_desc": {
+        "topology": "full",
+        "lateral_edges": 80,
+        "l2_lateral_edges": 42,
+        "l3_lateral_edges": 38,
+        "cross_layer_hops": 2,
+        "note": "L2副脑全连 + 主脑多跳(深度2) + L3集群内全连"
+      },
+      "collective": 0.58,
+      "committee0_L3vote": 0.5,
+      "committee0_firstpass_L3vote": 0.5,
+      "G_collective_minus_comm0": 0.08,
+      "best_single_7b": 0.74,
+      "delta_vs_7b": -0.16,
+      "n_l3": 20,
+      "n_groups": 7,
+      "n": 50,
+      "lateral_edges": 80,
+      "cross_layer_hops": 2
+    }
+  },
+  "updated_at": "06:52:23"
+}

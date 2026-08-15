@@ -1,0 +1,85 @@
+{
+  "status": "done",
+  "phase": "fit",
+  "models": {
+    "l3": "qwen2.5:1.5b",
+    "agg": "qwen2.5:3b",
+    "l2": "qwen2.5:3b",
+    "orchestrator": "qwen2.5:3b",
+    "l1_original": "qwen2.5:7b",
+    "participants": [
+      "qwen2.5:7b"
+    ],
+    "verifier": "qwen2.5:1.5b"
+  },
+  "n_questions": 2,
+  "conn_levels": [
+    1.0
+  ],
+  "progress": "Pipeline Ẇ=1.00  q 2/2 (done 2)",
+  "node_acc": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "best_single": 1.0,
+  "committee0": 0.0,
+  "collective_acc": {
+    "cw1.00": 0.5
+  },
+  "points": [
+    {
+      "w": 1.0,
+      "What": 1.0,
+      "A_net0": 0.0,
+      "A_net_w": 0.5,
+      "G": 6.906754778648554,
+      "conn_w": 1.0,
+      "committee0": 0.0,
+      "collective": 0.5
+    }
+  ],
+  "details": [
+    {
+      "q": "q1",
+      "l3": [
+        "B",
+        "B",
+        "B",
+        "A"
+      ],
+      "l2": "B",
+      "l1": "B",
+      "l1_ok": true
+    },
+    {
+      "q": "q2",
+      "l3": [
+        "B",
+        "B",
+        "B",
+        "A"
+      ],
+      "l2": "A",
+      "l1": "A",
+      "l1_ok": true
+    }
+  ],
+  "judgement": "协作合成(非投票): 集体最优(Ẇ=1.00)=0.500 vs 最强单模型=1.000. 未超过最强单模型, 无涌现. G_max=+0.500 为集体-委员会0固定基线差(恒定时不代表随Ẇ增强的涌现增益).",
+  "benchmark_sig": "D:\\方程验证\\benchmark\\mcq_medium_clean.jsonl|n=2|k=3",
+  "updated_at": "01:17:26",
+  "node_model": "qwen2.5:1.5bx3 + qwen2.5:3b(agg/L2) + qwen2.5:3b(主脑) + 参与者['qwen2.5:7b'] [ablation=demote]",
+  "A_net0": 0.0,
+  "current_w": 1.0,
+  "fit": null,
+  "superlinear": {
+    "best_single": 1.0,
+    "committee0": 0.0,
+    "collective_max": 0.5,
+    "opt_conn_w": 1.0,
+    "G_max": 0.5,
+    "beats_best": false
+  }
+}

@@ -1,0 +1,28 @@
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Microsoft YaHei,sans-serif">
+  <rect width="720" height="420" fill="#ffffff"/>
+  <text x="360" y="26" fill="#0f172a" font-size="15" font-weight="700" text-anchor="middle">图 1 · 理论预测：净涌现随拓扑连接密度 Ŵ 的非单调曲线</text>
+  <!-- axes -->
+  <line x1="80" y1="40" x2="80" y2="360" stroke="#334155" stroke-width="1.5"/>
+  <line x1="80" y1="360" x2="670" y2="360" stroke="#334155" stroke-width="1.5"/>
+  <!-- gridlines / zero -->
+  <line x1="80" y1="182.3" x2="670" y2="182.3" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="74" y="186" fill="#64748b" font-size="11" text-anchor="end">0</text>
+  <text x="74" y="44" fill="#64748b" font-size="11" text-anchor="end">+0.20</text>
+  <text x="74" y="364" fill="#64748b" font-size="11" text-anchor="end">-0.25</text>
+  <text x="375" y="392" fill="#334155" font-size="12.5" text-anchor="middle">拓扑连接密度 Ŵ （tree → mesh → full@12 → full@20，归一化）</text>
+  <text x="22" y="200" fill="#334155" font-size="12.5" text-anchor="middle" transform="rotate(-90 22 200)">净涌现 Δ = 集体 − 最强单体</text>
+
+  <!-- predicted curve -->
+  <path d="M 80,217.8 L 312,253.4 L 486,274.7 L 544,267.6 C 575,235 580,160 590.4,146.7 C 605,120 625,85 631,75.6 C 645,95 655,105 660,111.2"
+        fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- Wc line -->
+  <line x1="544" y1="44" x2="544" y2="360" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="544" y="38" fill="#d97706" font-size="12.5" text-anchor="middle" font-weight="700">Wc = √(α₁/α₂)</text>
+
+  <!-- region labels -->
+  <text x="300" y="345" fill="#64748b" font-size="12" text-anchor="middle">◀ 亚临界区（Δ&lt;0，无涌现）</text>
+  <text x="612" y="64" fill="#64748b" font-size="11.5" text-anchor="middle">超临界峰值</text>
+  <text x="690" y="120" fill="#64748b" font-size="11.5" text-anchor="middle">过密回落</text>
+
+  <text x="660" y="300" fill="#2563eb" font-size="11.5" text-anchor="end">Σ(αₘ−βₘ) Ŵ²ᵐ</text>
+</svg>

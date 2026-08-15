@@ -1,0 +1,48 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<title>格式塔方程验证 · C vs D 最终报告 (N=500)</title>
+<style>
+ body{background:#0e1116;color:#e6edf3;font:14px/1.6 -apple-system,Segoe UI,Roboto,monospace;margin:0;padding:24px}
+ h1{font-size:20px;margin:0 0 6px} .sub{color:#8b949e;font-size:12px;margin-bottom:20px}
+ .grid{display:flex;gap:16px;flex-wrap:wrap} .card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px;min-width:340px;flex:1}
+ .card h2{font-size:14px;color:#58a6ff;margin:0 0 10px}
+ table{border-collapse:collapse;width:100%;font-size:13px} th,td{border:1px solid #30363d;padding:7px 9px;text-align:center}
+ th{background:#21262d;color:#8b949e} .big{font-size:22px;color:#7ee787;font-weight:bold}
+ .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px}
+ .sig{background:#23863633;color:#7ee787} .nsig{background:#9e6a0333;color:#e3b341}
+ .note{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px 16px;margin-top:16px;line-height:1.7}
+ .warn{color:#e3b341} .ok{color:#7ee787}
+</style></head><body>
+<h1>格式塔方程验证 · C(clean) vs D(demote) 最终报告</h1>
+<div class="sub">N=500 · 中等难度基准 (mcq_medium_clean.jsonl) · Ẇ=1.00 · 状态: 两者均 done</div>
+
+<div class="grid">
+ <div class="card"><h2>C · clean（7B 主脑）</h2>
+  <div class="big">0.9320</div>
+  <table>
+   <tr><th>对照</th><th>差距</th><th>z</th><th>p</th><th>判定</th></tr>
+   <tr><td>vs 7B单体(0.838)</td><td>+0.094</td><td>4.71</td><td>2.47e-06</td><td><span class="pill sig">强显著</span></td></tr>
+   <tr><td>vs 弱投票(0.576)</td><td>+0.356</td><td>14.35</td><td>≈0</td><td><span class="pill sig">强显著</span></td></tr>
+  </table>
+  <div style="margin-top:10px;color:#8b949e">node_acc = [0.57, 0.548, 0.608, 0.748, 0.838]</div>
+  <div style="color:#8b949e">G(logit增益) = 2.311</div>
+ </div>
+
+ <div class="card"><h2>D · demote（3B 主脑 / 7B 降级）</h2>
+  <div class="big">0.8640</div>
+  <table>
+   <tr><th>对照</th><th>差距</th><th>z</th><th>p</th><th>判定</th></tr>
+   <tr><td>vs 7B单体(0.838)</td><td>+0.026</td><td>1.16</td><td>0.248</td><td><span class="pill nsig">不显著</span></td></tr>
+   <tr><td>vs 弱投票(0.576)</td><td>+0.288</td><td>10.71</td><td>≈0</td><td><span class="pill sig">强显著</span></td></tr>
+  </table>
+  <div style="margin-top:10px;color:#8b949e">node_acc = [0.57, 0.548, 0.608, 0.748, 0.838]</div>
+  <div style="color:#8b949e">G(logit增益) = 1.543</div>
+ </div>
+</div>
+
+<div class="note">
+ <b>核心发现（消融）：</b> clean 0.932 → demote 0.864，<b>落差 +0.068</b>，z=3.58，<span class="pill sig">p=3.50e-04 强显著</span>。<br>
+ 这一落差就是 <b>「7B 坐主脑/综合位」角色的贡献</b>。把 7B 从主脑撸成普通参与者后，群体对最强单体的优势从 +0.094（强显著）塌缩到 +0.026（不显著）。<br><br>
+ <span class="warn">含义：</span> clean 那场大胜有一大半是 <b>7B 当老板带着打</b>，并非纯分布式涌现；demote 没有「消除带飞」，而是把它<b>量化</b>了。但群体仍方向性高于 7B 单体、且碾压弱投票——架构合成真实，只是高度依赖主脑够强。<br><br>
+ <span class="ok">边界：</span> 两实验均在 <b>Ẇ&lt;Wc 无涌现区</b>，坐实的是 Σsᵢ（加性合成，主脑角色关键），<b>非</b> ΣαₘẆ²ᵐ 超线性涌现。真正分水岭在扩节点（3→20+）触 Wc。
+</div>
+</body></html>

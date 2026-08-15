@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+env/
+
+# 模型权重 / 大模型（不入库，约 15GB+）
+*.gguf
+*.bin
+*.safetensors
+*.gguf.*
+models/
+.ollama/
+
+# 日志 / 临时
+*.log
+.workbuddy/
+__pycache__/
+
+# 备份文件（版本控制已涵盖历史）
+*.bak
+*.bak2
+*.bak3
+*.bak_ctrl
+*.bak_premerge
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.vscode/
+.idea/

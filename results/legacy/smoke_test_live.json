@@ -1,0 +1,72 @@
+{
+  "status": "running",
+  "phase": "pipeline Ẇ=0.00",
+  "models": {
+    "l3": "qwen2.5:1.5b",
+    "agg": "huihui_ai/qwen2.5-abliterate:3b",
+    "l2": "huihui_ai/qwen2.5-abliterate:3b",
+    "l1": "huihui_ai/qwen2.5-abliterate:7b",
+    "verifier": "qwen2.5:1.5b"
+  },
+  "n_questions": 3,
+  "conn_levels": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "progress": "Pipeline Ẇ=0.00  q 3/3 (done 3)",
+  "node_acc": [
+    0.3333,
+    0.6667,
+    0.6667,
+    0.0,
+    0.6667
+  ],
+  "best_single": 0.6667,
+  "committee0": 0.6667,
+  "collective_acc": {
+    "cw0.00": 0.6667
+  },
+  "points": [],
+  "details": [
+    {
+      "q": "q1",
+      "l3": [
+        "B",
+        "C",
+        "B"
+      ],
+      "l2": "C",
+      "l1": "C",
+      "l1_ok": true
+    },
+    {
+      "q": "q2",
+      "l3": [
+        "B",
+        "B",
+        "B"
+      ],
+      "l2": "B",
+      "l1": "B",
+      "l1_ok": true
+    },
+    {
+      "q": "q3",
+      "l3": [
+        "B",
+        "D",
+        "D"
+      ],
+      "l2": "D",
+      "l1": "D",
+      "l1_ok": true
+    }
+  ],
+  "judgement": "",
+  "benchmark_sig": "D:\\方程验证\\benchmark\\mcq_medium.jsonl|n=3|k=3",
+  "updated_at": "21:17:19",
+  "node_model": "qwen2.5:1.5bx3 + huihui_ai/qwen2.5-abliterate:3b(agg/L2) + huihui_ai/qwen2.5-abliterate:7b(L1)",
+  "A_net0": 0.6667,
+  "current_w": 0.0
+}

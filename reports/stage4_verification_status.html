@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>格式塔方程 · 当前实验验证状态（2026-08-07）</title>
+<style>
+  :root{ --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --blue:#2563eb; --amber:#d97706; --red:#dc2626; --green:#16a34a; }
+  *{ box-sizing:border-box; }
+  body{ font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; color:var(--ink); max-width:880px; margin:0 auto; padding:28px 26px 60px; line-height:1.6; background:#fff; }
+  h1{ font-size:22px; margin:0 0 4px; }
+  .sub{ color:var(--muted); font-size:13px; margin-bottom:22px; }
+  .eqbox{ background:#f8fafc; border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin:18px 0; font-size:16px; }
+  .eq{ font-family:"Cambria Math","Latin Modern Math",Georgia,serif; margin:8px 0; }
+  .what{ position:relative; display:inline-block; padding:0 1px; }
+  .what::after{ content:"ˆ"; position:absolute; top:-0.62em; left:0; right:0; text-align:center; font-size:0.72em; }
+  sub,sup{ font-size:0.72em; }
+  svg{ width:100%; height:auto; display:block; }
+  table{ width:100%; border-collapse:collapse; margin:18px 0; font-size:14px; }
+  th,td{ border:1px solid var(--line); padding:9px 11px; text-align:left; vertical-align:top; }
+  th{ background:#f1f5f9; font-weight:600; }
+  .tag{ display:inline-block; padding:2px 9px; border-radius:999px; font-size:12px; font-weight:600; }
+  .ok{ background:#dcfce7; color:#166534; }
+  .warn{ background:#fef3c7; color:#92400e; }
+  .pend{ background:#fee2e2; color:#991b1b; }
+  .bottom{ background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:16px 18px; margin-top:20px; }
+  .bottom h3{ margin:0 0 8px; color:#92400e; }
+  .foot{ color:var(--muted); font-size:12px; margin-top:24px; border-top:1px solid var(--line); padding-top:12px; }
+  code{ background:#f1f5f9; padding:1px 5px; border-radius:4px; font-size:13px; }
+</style>
+</head>
+<body>
+
+<h1>格式塔方程 · 当前实验验证状态</h1>
+<div class="sub">截至 2026-08-07 ｜ 拓扑密度扫描（stage4）｜ 基准 mcq_midhard_clean（250题，band_ok）｜ 模型 qwen2.5 1.5b/3b/7b</div>
+
+<div class="eqbox">
+  <div class="eq"><b>核心方程：</b> M = &Sigma;<sub>i</sub> s<sub>i</sub> + &Sigma;<sub>m</sub> (&alpha;<sub>m</sub> &minus; &beta;<sub>m</sub>)&thinsp;<span class="what">W</span><sup>2m</sup></div>
+  <div class="eq"><b>临界点：</b> <span class="what">W</span><sub>c</sub> = &radic;(&alpha;<sub>1</sub> / &alpha;<sub>2</sub>) &nbsp;（净涌现在此处出现峰值，过密区 &beta; 反超回落）</div>
+  <div class="eq"><b>跨层乘法（结构性涌现，与密度无关）：</b> H<sub>total</sub> = H(L3) &times; H(L2&nbsp;|&nbsp;L3) &times; H(L1&nbsp;|&nbsp;L2)</div>
+  <div style="font-size:12.5px;color:var(--muted);margin-top:6px;">纵轴净涌现 &Delta; = 集体准确率 &minus; 最强单体（solo 7B = 0.74）。&Delta;&lt;0：未涌现（亚临界）；&Delta;&gt;0：涌现（超临界）。</div>
+</div>
+
+<svg viewBox="0 0 760 420" role="img" aria-label="净涌现随拓扑密度变化">
+  <!-- axes -->
+  <line x1="80" y1="40" x2="80" y2="380" stroke="#334155" stroke-width="1.5"/>
+  <line x1="80" y1="380" x2="710" y2="380" stroke="#334155" stroke-width="1.5"/>
+  <!-- zero line -->
+  <line x1="80" y1="153.3" x2="710" y2="153.3" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="74" y="157" fill="#64748b" font-size="11" text-anchor="end">0</text>
+  <text x="74" y="46" fill="#64748b" font-size="11" text-anchor="end">+0.15</text>
+  <text x="74" y="384" fill="#64748b" font-size="11" text-anchor="end">-0.30</text>
+  <!-- axis labels -->
+  <text x="395" y="408" fill="#334155" font-size="13" text-anchor="middle">拓扑连接密度 W （tree → mesh → full@12 → full@20，归一化；W 带帽表示跨层连接密度）</text>
+  <text x="22" y="210" fill="#334155" font-size="13" text-anchor="middle" transform="rotate(-90 22 210)">净涌现 &Delta; = 集体 − solo 7B</text>
+
+  <!-- predicted theoretical curve (dashed) -->
+  <path d="M 90,255 C 300,266 460,250 560,235 C 600,205 645,110 690,68"
+        fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 5" opacity="0.8"/>
+  <text x="120" y="248" fill="#2563eb" font-size="11.5">理论涌现曲线（Wc 处先升后压、出现峰值）</text>
+
+  <!-- Wc line -->
+  <line x1="588.4" y1="44" x2="588.4" y2="380" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="588.4" y="38" fill="#d97706" font-size="12" text-anchor="middle">Wc = &radic;(&alpha;₁/&alpha;₂)</text>
+
+  <!-- region shading labels -->
+  <text x="300" y="372" fill="#64748b" font-size="12" text-anchor="middle">◀ 亚临界区（&Delta;&lt;0，无涌现）</text>
+  <text x="660" y="372" fill="#64748b" font-size="12" text-anchor="middle">超临界区（&Delta;&gt;0，涌现）▶</text>
+
+  <!-- measured points (n=50, tight CI) -->
+  <!-- tree@12 -->
+  <line x1="191.6" y1="170.7" x2="191.6" y2="377.7" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="191.6" cy="274.2" r="6" fill="#16a34a"/>
+  <text x="191.6" y="294" fill="#166534" font-size="11.5" text-anchor="middle">tree@12</text>
+  <text x="191.6" y="392" fill="#16a34a" font-size="10.5" text-anchor="middle">n=50, Δ=−0.16</text>
+
+  <!-- mesh@12 -->
+  <line x1="359" y1="215.3" x2="359" y2="380" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="359" cy="319.6" r="6" fill="#16a34a"/>
+  <text x="359" y="339" fill="#166534" font-size="11.5" text-anchor="middle">mesh@12</text>
+  <text x="359" y="392" fill="#16a34a" font-size="10.5" text-anchor="middle">n=50, Δ=−0.22</text>
+
+  <!-- full@12 (49/50) -->
+  <line x1="514" y1="123.9" x2="514" y2="324.8" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="514" cy="224.4" r="6" fill="#16a34a"/>
+  <text x="514" y="244" fill="#166534" font-size="11.5" text-anchor="middle">full@12</text>
+  <text x="514" y="392" fill="#16a34a" font-size="10.5" text-anchor="middle">n=49, Δ=−0.09</text>
+
+  <!-- full@20 stage3 anchor (n=6, wide CI) -->
+  <line x1="650.4" y1="40" x2="650.4" y2="215.3" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 3"/>
+  <circle cx="650.4" cy="92.9" r="6" fill="#dc2626"/>
+  <text x="650.4" y="112" fill="#991b1b" font-size="11.5" text-anchor="middle">full@20</text>
+  <text x="650.4" y="392" fill="#dc2626" font-size="10.5" text-anchor="middle">stage3 锚点 n=6, Δ≈+0.08</text>
+</svg>
+
+<table>
+  <tr><th style="width:38%">方程主张</th><th style="width:14%">状态</th><th>证据</th><th style="width:8%">n</th></tr>
+  <tr>
+    <td>① 跨层乘法结构涌现<br><span style="color:var(--muted);font-size:12px">H<sub>total</sub>=H(L3)×H(L2|L3)×H(L1|L2)</span></td>
+    <td><span class="tag ok">已验证</span></td>
+    <td>集体准确率在 tree/mesh/full@12 均 &gt; 纯 L3 投票（comm0）：+0.08 / +0.02 / +0.15</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>② 亚临界预测<br><span style="color:var(--muted);font-size:12px">密度&lt;Wc 时净涌现&lt;0（集体不超最强单体）</span></td>
+    <td><span class="tag warn">与假设一致·Wc未定位</span></td>
+    <td>tree/mesh/full@12 的 &Delta;<sub>vs 7B</sub> 全为负：−0.16 / −0.22 / −0.09，与亚临界假设一致（Wc 尚未定位）</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>③ 临界相变（方程护城河）<br><span style="color:var(--muted);font-size:12px">密度达 Wc 时净涌现转正、出现峰值（超线性项激活）</span></td>
+    <td><span class="tag warn">待定</span></td>
+    <td>仅 stage3 探索性锚点 +0.08（置信区间 ±0.30，极宽）；<b>清洁 full@20（n=50）扫描尚未完成</b></td>
+    <td>6 → 待50</td>
+  </tr>
+</table>
+
+<div class="bottom">
+  <h3>给导师的答复（可直接发送）</h3>
+  <p><b>公式能否验证？目前结论：数学结构已证毕，实验上"半验证"，决定性证据尚缺——与您"数据不完备、无法彻底验证"的判断一致。</b></p>
+  <ul style="margin:6px 0;padding-left:20px;">
+    <li><b>数学上：</b>由对称性约束（涨落正负对称）导出方程须写为带符号项 &Sigma;(&alpha;<sub>m</sub>&minus;&beta;<sub>m</sub>)<span class="what">W</span><sup>2m</sup>，净涌现非单调，峰值落在 <span class="what">W</span><sub>c</sub>=&radic;(&alpha;<sub>1</sub>/&alpha;<sub>2</sub>)。该形状已多方向证毕。</li>
+    <li><b>实验·已坐实：</b>亚临界半侧用清洁 n=50、三拓扑（tree/mesh/full@12）全部复现"净涌现&lt;0、集体不超最强单体"，与预测完全吻合；跨层乘法结构涌现（集体&gt;纯投票）在所有密度下均成立。</li>
+    <li><b>实验·缺口：</b>超临界相变（集体转正、出现峰值）目前只有一个 <b>n=6</b> 的探索性锚点（±0.30 置信区间，几乎不具统计意义）。清洁的 full@20（n=50）密度扫描是补齐这块拼图的关键一步，尚未执行。</li>
+    <li><b>下一步：</b>立即跑清洁 full@20（n=50）。若 &Delta;<sub>vs 7B</sub> 转正并越过 Wc，则方程的"拓扑诱导临界相变涌现"主张被数据坐实；若仍≤0，则需修正 &alpha;/&beta; 或 Wc 定位。无论哪种结果，都是可发表的经验定律候选。</li>
+  </ul>
+</div>
+
+<div class="foot">
+  说明：① 理论曲线为示意（峰值置于 Wc，形状由 &alpha;&minus;&beta; 竞争决定，非拟合实测）；② 实点均为清洁 n=50 落盘数据（95% CI ≈ ±0.13），红点为探索性 n=6 锚点（CI ≈ ±0.30）；③ full@12 为 49/50（96%，即将收尾，最终值偏差 &lt;1pp）；④ "公式已验证"的断言须待清洁 full@20 出齐后方可成立，现阶段仅可称"与全部现有数据一致、亚临界半侧已验证"。
+</div>
+
+</body>
+</html>

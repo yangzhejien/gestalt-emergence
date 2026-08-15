@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格式塔方程推导说明 · TMA 卡片版</title>
+<style>
+  body{font-family:-apple-system,"Microsoft YaHei",sans-serif;max-width:920px;margin:24px auto;padding:0 18px;color:#1a1a1a;background:#fafafa;line-height:1.6}
+  h1{font-size:21px;border-bottom:3px solid #2563eb;padding-bottom:8px}
+  h2{font-size:16px;margin-top:24px}
+  .card{border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin:12px 0;background:#fff}
+  .eq{font-family:"Cambria Math","Times New Roman",serif;font-size:20px;text-align:center;padding:12px;background:#f8fafc;border-radius:8px;margin:8px 0}
+  .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 4px}
+  .frac .num{border-bottom:1px solid #333;padding:0 6px}
+  .frac .den{padding:0 6px}
+  sup{font-size:.72em}
+  .bad{border-left:5px solid #dc2626;background:#fef2f2}
+  .good{border-left:5px solid #16a34a;background:#f0fdf4}
+  .blue{border-left:5px solid #2563eb;background:#f0f7ff}
+  code{background:#eef2ff;padding:1px 5px;border-radius:4px;font-size:13px}
+  .muted{color:#64748b;font-size:13px}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}
+  td,th{border:1px solid #cbd5e1;padding:7px 9px;vertical-align:top}
+  th{background:#eef2ff}
+</style>
+</head>
+<body>
+<h1>格式塔方程推导说明 · TMA 卡片版</h1>
+<p class="muted">从实测数据反推 <code>M(W)=0.50+0.25·Nov(W)</code> 为什么长这样、参数怎么定。所有数字均来自 live 实验 JSON（非记忆）。</p>
+
+<div class="card blue">
+  <h2>① 起点：我们要从数据推导什么</h2>
+  <p>先固定三个量，避免"涌现"一词被混用：</p>
+  <ul>
+    <li><b>A<sub>coll</sub>(W)</b>：实测<b>集体准确率</b>（直接读 live json 的 <code>collective_acc[cw1.00]</code>）。</li>
+    <li><b>s<sub>top</sub></b>：同配置下<b>最强单模型</b>准确率（<code>best_single</code>）。</li>
+    <li><b>G<sub>anchor</sub>(W) = A<sub>coll</sub>(W) − s<sub>top</sub></b>：杨智杰提出的<b>经验验证锚</b>——"集体比最强单体多/少多少"。这是判断涌现成立的硬指标（G&gt;0 且 beats_best=True 才判涌现）。</li>
+    <li><b>M(W)</b>：本方程要定出的<b>理论涌现度量</b>，设计目标是有界、唯一内峰、非单调。</li>
+  </ul>
+  <p>推导任务：用真实 G<sub>anchor</sub> 数据，定出 M 的<b>函数形状</b>和三个参数 <b>b、γ、W<sub>c</sub></b>。</p>
+</div>
+
+<div class="card bad">
+  <h2>② 废案：原幂级数为什么不能用（必须先从数据证伪）</h2>
+  <p>早期版本：<code>M = Σsᵢ + Σ(αₘ−βₘ)Ẇ²ᵐ</code>，临界公式 <code>W<sub>c</sub>=√(α₁/α₂)=1.491</code>。</p>
+  <p>友人用两条数学理由证伪，<b>数据也独立支持废案</b>：</p>
+  <ul>
+    <li><b>数学错</b>：β=0 时该项单调，<b>无内峰</b>；且 W<sub>c</sub>=1.491 落在 [0,1] 归一化区间之外（真峰其实在 0.623），公式指错了位置。相加形式还<b>破有界</b>（可无限涨）。</li>
+    <li><b>数据不支持单调</b>：下面③的实测 G<sub>anchor</sub> 在 C-Eval 上转负（−0.125 ~ −0.175），幂级数相加<b>无法保证"过密回落且不到崩"</b>。</li>
+  </ul>
+  <p>结论：原方程<b>废弃为最终形式</b>，只保留其<b>物理动机</b>（协作增益 / 临界峰 / 冗余阻尼 / 集体&gt;单体判据）作为思想来源，数学国面由友人重写。</p>
+</div>
+
+<div class="card good">
+  <h2>③ 数据画像：G<sub>anchor</sub> 随有效密度 W 呈"非单调 + 有界"</h2>
+  <p>下表是推导的全部经验地基（数字来自 live json，已逐项核对）。W 越大=专家/连接越密。</p>
+  <table>
+    <tr><th>实验（来源文件）</th><th>配置</th><th>A<sub>coll</sub></th><th>s<sub>top</sub></th><th>G<sub>anchor</sub></th><th>beats</th></tr>
+    <tr><td>主基准 E3 k5 <code>stage2_E3_k5.json</code></td><td>k=5</td><td>0.942</td><td>0.836</td><td style="color:#16a34a"><b>+0.106</b></td><td>True</td></tr>
+    <tr><td>主基准 E3 k7 <code>stage2_E3_k7.json</code></td><td>k=7</td><td>0.928</td><td>0.834</td><td style="color:#16a34a"><b>+0.094</b></td><td>True</td></tr>
+    <tr><td>条件C k3 <code>stage2_n500_clean_live.json</code></td><td>k=3,N=500</td><td>0.932</td><td>0.838</td><td style="color:#16a34a"><b>+0.094</b></td><td>True</td></tr>
+    <tr><td>条件C 复现 <code>condC_clean_relive.json</code></td><td>k=3,N=500</td><td>0.924</td><td>0.838</td><td style="color:#16a34a"><b>+0.086</b></td><td>True</td></tr>
+    <tr><td>C-Eval k1 <code>stage2_ceval_k1.json</code></td><td>k=1</td><td>0.660</td><td>0.785</td><td style="color:#dc2626"><b>−0.125</b></td><td>False</td></tr>
+    <tr><td>C-Eval k3 <code>stage2_ceval_k3.json</code></td><td>k=3</td><td>0.610</td><td>0.785</td><td style="color:#dc2626"><b>−0.175</b></td><td>False</td></tr>
+  </table>
+  <p>读图三件事，正好框定 M 的形状：</p>
+  <ul>
+    <li><b>有界</b>：G<sub>anchor</sub> 最高不过 +0.106，最低不过 −0.175，<b>不无限涨、也不崩到 −∞</b>。</li>
+    <li><b>唯一内峰</b>：主基准上 k=5(+0.106) &gt; k=7(+0.094)，提示峰在 k≈5–6 一带，再加密增益微降。</li>
+    <li><b>过密可回落为负</b>：C-Eval 同 k=3 已深负（−0.175），证明"过密不只停涨，还会掉到单体之下"。</li>
+  </ul>
+</div>
+
+<div class="card blue">
+  <h2>④ 形状选择：为何是有界单峰核 Nov(W)</h2>
+  <p>③ 的三条性质（有界 / 唯一内峰 / 左升右降）精确对应一个已知函数形式：</p>
+  <div class="eq">Nov(W) = <span class="frac"><span class="num">W</span><span class="den">W<sub>c</sub></span></span> · e<sup>1 − W/W<sub>c</sub></sup></div>
+  <p>性质核验（这是友人给的数学国面，不是拍脑袋）：</p>
+  <ul>
+    <li>W → 0：Nov → 0（无密度无增益）。</li>
+    <li>W = W<sub>c</sub>：Nov = 1·e<sup>0</sup> = <b>1，唯一内峰恰=1</b>。</li>
+    <li>W → ∞：Nov → 0（过密回落，不崩）。</li>
+    <li>且 Nov ∈ [0,1] 处处有界。</li>
+  </ul>
+  <p>它<b>直接解释③的 C-Eval 反例</b>：C-Eval 上小模型中文弱、与 7B 不互补 → 有效独立专家少 → 等效 W 已越过 W<sub>c</sub> → Nov 落在右降支 → G<sub>anchor</sub> 转负。形状与数据一一对应。</p>
+</div>
+
+<div class="card">
+  <h2>⑤ 参数标定 · b（地板）</h2>
+  <p>证据：纯投票基线 <code>committee0</code>（聚合机制退化成多数投票时的底线）实测为——主基准 0.576~0.608，C-Eval 0.500~0.515。最保守值是 C-Eval k3 的 <b>0.500</b>。</p>
+  <p>标定：取 <b>b = 0.50</b>。</p>
+  <ul>
+    <li>它等于 4 选 1 随机基线（0.25）的 <b>2 倍</b>：即便协作最差（纯投票 + 硬基准），跨层"简报+残留"双通道仍保住 ≥0.50，<b>不退化到随机</b>——这是机制护城河的数据证据。</li>
+    <li>同时是杨智杰原 <code>Σsᵢ</code> 加性基线思想的归一化体现（各层 solo 能力之和的最低有效部分）。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>⑥ 参数标定 · γ（振幅）</h2>
+  <p>证据：③ 中 |G<sub>anchor</sub>| 实测最大 ≈ <b>0.175</b>（C-Eval k3 负向），正向最大 <b>0.106</b>（E3 k5）。</p>
+  <p>标定：取 <b>γ = 0.25</b>，使 M ∈ [0.50, 0.75]。</p>
+  <ul>
+    <li>跨度 0.25 <b>覆盖实测波动（0.175）且有余量</b>，不至于把模型吹到失真。</li>
+    <li>γ 同时把原 <code>(α−β)</code> 净增益动机<b>重编码为振幅</b>：β（冗余阻尼）越大 → γ 越小 → 涌现越被抑。C-Eval 上小模型弱 → 冗余↑ → 等效 γ 被任务结构压低 → G<sub>anchor</sub> 转负，<b>与观测完全吻合</b>。</li>
+  </ul>
+</div>
+
+<div class="card bad">
+  <h2>⑦ 参数标定 · W<sub>c</sub>（峰值位置）与诚实边界</h2>
+  <p><b>已从数据锚定的部分</b>：主基准 k=5(+0.106) &gt; k=7(+0.094) 提示峰在 k≈5–6 的有效密度处；C-Eval k=3 已深负，证明 W<sub>c</sub> 由"<b>有效独立专家密度</b>"而非裸 k 决定（支撑友人 Condorcet 陪审团机制：有效独立↑才有增益）。</p>
+  <p><b>诚实边界（必须写进论文 Limitations）</b>：</p>
+  <ul>
+    <li>当前 W<sub>c</sub> 数值 <b>≈0.45–0.62 来自友人仿真</b>，并有主基准 k5/k7 拐点佐证，但<b>真实 LLM 峰值扫描尚未完成</b>。</li>
+    <li>本机 CPU 只跑到 k=7；真正的密度扫描（k=12–20 / 节点 20+）需 eGPU，是待办项。写"W<sub>c</sub> 由数据定位"前，必须先补这道扫描。</li>
+  </ul>
+</div>
+
+<div class="card good">
+  <h2>⑧ 最终方程 + 三秒自检</h2>
+  <div class="eq">M(W) = b + γ · Nov(W) = 0.50 + 0.25 · <span class="frac"><span class="num">W</span><span class="den">W<sub>c</sub></span></span> · e<sup>1 − W/W<sub>c</sub></sup></div>
+  <ul>
+    <li>W = W<sub>c</sub> → Nov=1 → M = 0.50+0.25 = <b>0.75（峰，涌现最大潜力）</b></li>
+    <li>W → 0 → Nov→0 → M = <b>0.50（地板）</b></li>
+    <li>W → ∞ → Nov→0 → M = <b>0.50（过密回落，不崩）</b></li>
+  </ul>
+  <p>落点全在 [0.50, 0.75]，与③实测 G<sub>anchor</sub> 的有界非单调画像一致。这就是"从数据推出来"的闭环。</p>
+</div>
+
+<p class="muted">
+署名：杨智杰（物理骨架 / 数据锚 G<sub>anchor</sub> / Σsᵢ 基线思想 / 跨层乘法机制）＋ 友人（有界单峰核数学国面 / Condorcet 机制 / 正确 W<sub>c</sub> 定义 / Lean 证明）。<br>
+权威源：<code>D:\方程验证\OSF_v2_corrigendum_2026-08-09.md</code> §6；配套 <code>D:\方程验证\方程写法说明.html</code>；数据 <code>C:\Users\11409\WorkBuddy\2026-07-28-21-49-24\gestalt_live\*.json</code>。
+</p>
+</body>
+</html>

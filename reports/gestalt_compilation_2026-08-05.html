@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>格式塔方程验证 · 验证+消融汇总报告 (2026-08-05)</title>
+<style>
+  :root{--bg:#0f1420;--card:#171e2e;--ink:#e7ecf5;--mut:#9aa7bd;--line:#2a3447;
+        --good:#39d98a;--bad:#ff6b6b;--warn:#ffcc66;--acc:#5b9bff;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px}
+  h1{font-size:24px;margin:0 0 4px}
+  h2{font-size:19px;margin:34px 0 12px;padding-left:10px;border-left:4px solid var(--acc)}
+  .sub{color:var(--mut);font-size:13px;margin-bottom:18px}
+  .verdict{background:linear-gradient(135deg,#16331f,#102031);border:1px solid #1f5e3a;border-radius:14px;padding:18px 20px;margin:18px 0}
+  .verdict b{color:var(--good)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:center}
+  th{background:#1d2638;color:var(--ink);font-weight:600}
+  td.l,th.l{text-align:left}
+  .pos{color:var(--good)} .neg{color:var(--bad)} .neu{color:var(--warn)}
+  .cap{color:var(--mut);font-size:12.5px;margin:8px 2px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:12px;border:1px solid var(--line)}
+  .pill.g{color:var(--good);border-color:#1f5e3a}
+  .pill.b{color:var(--bad);border-color:#5e1f1f}
+  .pill.w{color:var(--warn);border-color:#5e4a1f}
+  .note{font-size:12.5px;color:var(--mut);background:#121a28;border:1px dashed var(--line);border-radius:10px;padding:12px 14px;margin:12px 0}
+  code{background:#0c111c;padding:1px 6px;border-radius:5px;color:#bcd}
+  ul{margin:8px 0;padding-left:20px} li{margin:5px 0}
+  svg{display:block;margin:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>格式塔方程验证 · 验证 + 消融 汇总报告</h1>
+<div class="sub">数据范围：2026-08-04 ~19:18（clean N=100 收口） → 2026-08-05 ~05:43（demote 消融收口） ｜ 生成：2026-08-05 13:24 ｜ 单位：准确率 / G=logit(集体)−logit(委员会₀)</div>
+
+<div class="verdict">
+  <b>核心结论</b>：在中等等难度基准（mcq_medium_clean，n=100）上，<b>分层协作合成</b>架构干净实证「整体 &gt; 部分之和」——
+  验证组（7B 主脑）集体准确率三档（Ẇ=0/0.5/1.0）均 <b>0.89/0.90/0.90</b>，<b>超过最强单模型 0.83</b> 且 <b>远超朴素投票 0.63</b>；
+  消融组（demote：主脑换 3B、7B 降级为参与者）集体 <b>0.87</b> 三档全平，<b>仍超过 7B solo 0.83（+4pt 方向）</b>。
+  <b>前半 Σsᵢ（协作合成增益）在此架构中成立</b>；demote 比验证组低 2~3pt，<b>量化了 7B 编排角色的真实贡献</b>，并排除了「7B 越权当答案作者直接带飞」这一角色层 confound。
+  但三档全平、且单跑 n=100 下「集体 vs 7B solo」差距<b>未达统计显著</b>（C 验证 0.90 vs 0.83：两比例 z 检验 P≈0.14；D 消融 0.87 vs 0.83：P≈0.43，方向成立但差在噪声内）；<b>导师明确认可 demote 设计「排除了被带飞的可能」</b>，并建议扩至 N=500+ 达显著。<b>后半 ΣαₘẆ²ᵐ（随 Ẇ 超线性暴涨）完全未 firing</b>，仍处于 W&lt;Wc 无涌现区。
+</div>
+
+<h2>1 · 实验总览</h2>
+<div class="card">
+<table>
+<tr><th>组别</th><th>时间</th><th>架构 / 拓扑</th><th>主脑</th><th>7B 角色</th><th>n</th><th>最强单</th><th>委员会₀</th><th>集体峰值</th><th>结论</th></tr>
+
+<tr><td class="l">C 验证</td><td>08-04 19:18</td><td class="l">四层合成</td><td class="l">7b</td><td class="l">主脑(写答案)</td><td>100</td><td>0.83</td><td>0.63</td><td class="pos">0.90</td><td><span class="pill g">前半成立</span></td></tr>
+<tr><td class="l">D 消融</td><td>08-05 05:43</td><td class="l">四层合成</td><td class="l">3b</td><td class="l">参与者(被协调)</td><td>100</td><td>0.83</td><td>0.63</td><td class="pos">0.87</td><td><span class="pill g">排角色confound</span></td></tr>
+
+</table>
+<div class="cap">背景：2026-08-03 的早期小样本序列（T0/T1 扁平投票全未涌现；T3 n=30 协作合成首次 beats_best）已确立「协作非投票」命题。本报告在其基础上用 n=100 中等难度基准做<b>干净复现 + 消融</b>，样本量较 T3 提升 3.3×。</div>
+</div>
+
+<h2>2 · 关键发现</h2>
+<div class="card">
+<ul>
+<li><span class="pill g">C 验证·7B主脑</span> 集体 0.89/0.90/0.90 <b class="pos">全部高于</b> 最强单 0.83 与朴素投票 0.63，G&gt;0 三档一致 → <b>协作合成增益成立</b>。</li>
+<li><span class="pill g">D 消融·3B主脑</span> 7B 降级为参与者后集体仍 <b class="pos">0.87 &gt; 0.83</b> → <b>排除角色层 confound</b>（增益不依赖「7B 写最终答案」）。demote 比验证组低 2~3pt = <b>7B 编排贡献被量化</b>。</li>
+<li><span class="pill w">三档全平</span> C 与 D 在各 Ẇ 档均无随密度上升趋势 → <b>未观测到 ΣαₘẆ²ᵐ 超线性项</b>，仍处 W&lt;Wc 无涌现区。</li>
+<li><span class="pill w">单跑不显著（如实）</span> n=100 下「集体 vs 7B solo」两比例 z 检验：C 验证 0.90 vs 0.83 <b>P≈0.14</b>、D 消融 0.87 vs 0.83 <b>P≈0.43</b> —— 方向成立、未达显著（95% CI 含 0）。导师建议扩至 <b>N=500+</b> 方达显著。</li>
+</ul>
+<p class="cap">推论：协作合成的加性增益（前半）已被复现且经消融洗清角色嫌疑；涌现（后半）的位置被精确定位在「更高密度跨 Wc」处，尚未触及——这是明确的、可修的下一步，不是未知黑洞。</p>
+</div>
+
+<h2>3 · G(Ẇ) 演化曲线（验证 vs 消融）</h2>
+<div class="card">
+<svg viewBox="0 0 1000 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0c111c;border-radius:10px;border:1px solid #2a3447"><line x1="50" y1="326.0" x2="860" y2="326.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="329.0" fill="#9aa7bd" font-size="11">1.20</text><line x1="50" y1="264.0" x2="860" y2="264.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="267.0" fill="#9aa7bd" font-size="11">1.32</text><line x1="50" y1="202.0" x2="860" y2="202.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="205.0" fill="#9aa7bd" font-size="11">1.44</text><line x1="50" y1="140.0" x2="860" y2="140.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="143.0" fill="#9aa7bd" font-size="11">1.56</text><line x1="50" y1="78.0" x2="860" y2="78.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="81.0" fill="#9aa7bd" font-size="11">1.68</text><line x1="50" y1="16.0" x2="860" y2="16.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="19.0" fill="#9aa7bd" font-size="11">1.80</text><text x="42.0" y="348" fill="#9aa7bd" font-size="11">0.00</text><text x="447.0" y="348" fill="#9aa7bd" font-size="11">0.50</text><text x="852.0" y="348" fill="#9aa7bd" font-size="11">1.00</text><text x="6" y="12" fill="#e7ecf5" font-size="11">G(Ẇ)=logit(集体)-logit(委员会₀)</text><polyline points="50.0,140.5 455.0,85.8 860.0,85.8" fill="none" stroke="#39d98a" stroke-width="2.4"/><circle cx="50.0" cy="140.5" r="3.4" fill="#39d98a"/><circle cx="455.0" cy="85.8" r="3.4" fill="#39d98a"/><circle cx="860.0" cy="85.8" r="3.4" fill="#39d98a"/><text x="856.0" y="78.8" fill="#39d98a" font-size="11" text-anchor="end">C 验证(7B主脑)</text><polyline points="50.0,238.7 455.0,238.7 860.0,238.7" fill="none" stroke="#5b9bff" stroke-width="2.4"/><circle cx="50.0" cy="238.7" r="3.4" fill="#5b9bff"/><circle cx="455.0" cy="238.7" r="3.4" fill="#5b9bff"/><circle cx="860.0" cy="238.7" r="3.4" fill="#5b9bff"/><text x="856.0" y="231.7" fill="#5b9bff" font-size="11" text-anchor="end">D 消融(3B主脑)</text><rect x="870" y="321" width="12" height="12" fill="#39d98a"/><text x="886" y="331" fill="#e7ecf5" font-size="11">C 验证(7B主脑)</text><rect x="870" y="303" width="12" height="12" fill="#5b9bff"/><text x="886" y="313" fill="#e7ecf5" font-size="11">D 消融(3B主脑)</text></svg>
+<div class="cap">横轴=跨层连接强度 Ẇ；纵轴=连接协同增益 G（logit 尺度，正值=连接带来净增益）。绿=C 验证(7B主脑)、蓝=D 消融(3B主脑)。<b>两条线均为正但常数（无随 Ẇ 上升）</b>——协作增益存在，但超线性涌现项未登场。</div>
+</div>
+
+<h2>4 · 验证 + 消融 明细与图表</h2>
+<div class="grid2">
+  <div class="card">
+    <b>4.1 集体 vs 基线（Ẇ 三档）</b>
+    <svg viewBox="0 0 1000 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0c111c;border-radius:10px;border:1px solid #2a3447"><line x1="50" y1="298.0" x2="984" y2="298.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="301.0" fill="#9aa7bd" font-size="11">0%</text><line x1="50" y1="241.6" x2="984" y2="241.6" stroke="#2a3447" stroke-width="1"/><text x="6" y="244.6" fill="#9aa7bd" font-size="11">18%</text><line x1="50" y1="185.2" x2="984" y2="185.2" stroke="#2a3447" stroke-width="1"/><text x="6" y="188.2" fill="#9aa7bd" font-size="11">36%</text><line x1="50" y1="128.8" x2="984" y2="128.8" stroke="#2a3447" stroke-width="1"/><text x="6" y="131.8" fill="#9aa7bd" font-size="11">54%</text><line x1="50" y1="72.4" x2="984" y2="72.4" stroke="#2a3447" stroke-width="1"/><text x="6" y="75.4" fill="#9aa7bd" font-size="11">72%</text><line x1="50" y1="16.0" x2="984" y2="16.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="19.0" fill="#9aa7bd" font-size="11">90%</text><rect x="81.1" y="19.1" width="93.4" height="278.9" fill="#39d98a"/><text x="127.8" y="14.1" fill="#e7ecf5" font-size="10" text-anchor="middle">89.0</text><text x="127.8" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">C·cw0</text><rect x="236.8" y="16.0" width="93.4" height="282.0" fill="#39d98a"/><text x="283.5" y="11.0" fill="#e7ecf5" font-size="10" text-anchor="middle">90.0</text><text x="283.5" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">C·cw.5</text><rect x="392.5" y="16.0" width="93.4" height="282.0" fill="#39d98a"/><text x="439.2" y="11.0" fill="#e7ecf5" font-size="10" text-anchor="middle">90.0</text><text x="439.2" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">C·cw1</text><rect x="548.1" y="25.4" width="93.4" height="272.6" fill="#5b9bff"/><text x="594.8" y="20.4" fill="#e7ecf5" font-size="10" text-anchor="middle">87.0</text><text x="594.8" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">D·cw0</text><rect x="703.8" y="25.4" width="93.4" height="272.6" fill="#5b9bff"/><text x="750.5" y="20.4" fill="#e7ecf5" font-size="10" text-anchor="middle">87.0</text><text x="750.5" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">D·cw.5</text><rect x="859.5" y="25.4" width="93.4" height="272.6" fill="#5b9bff"/><text x="906.2" y="20.4" fill="#e7ecf5" font-size="10" text-anchor="middle">87.0</text><text x="906.2" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">D·cw1</text><line x1="50" y1="37.9" x2="984" y2="37.9" stroke="#ffcc66" stroke-width="1.4" stroke-dasharray="5,4"/><text x="906.0" y="33.9" fill="#ffcc66" font-size="10">最强单83%</text><line x1="50" y1="100.6" x2="984" y2="100.6" stroke="#ff6b6b" stroke-width="1.4" stroke-dasharray="5,4"/><text x="906.0" y="96.6" fill="#ff6b6b" font-size="10">朴素投票63%</text><text x="6" y="12" fill="#e7ecf5" font-size="11">准确率</text></svg>
+    <div class="cap">绿=C 验证三档；蓝=D 消融三档；虚线基线=最强单模型 83% / 朴素投票 63%。六档均越线，但 C、D 内部各自全平。</div>
+  </div>
+  <div class="card">
+    <b>4.2 单体节点 vs 集体最优</b>
+    <svg viewBox="0 0 1000 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0c111c;border-radius:10px;border:1px solid #2a3447"><line x1="50" y1="298.0" x2="984" y2="298.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="301.0" fill="#9aa7bd" font-size="11">0%</text><line x1="50" y1="241.6" x2="984" y2="241.6" stroke="#2a3447" stroke-width="1"/><text x="6" y="244.6" fill="#9aa7bd" font-size="11">18%</text><line x1="50" y1="185.2" x2="984" y2="185.2" stroke="#2a3447" stroke-width="1"/><text x="6" y="188.2" fill="#9aa7bd" font-size="11">36%</text><line x1="50" y1="128.8" x2="984" y2="128.8" stroke="#2a3447" stroke-width="1"/><text x="6" y="131.8" fill="#9aa7bd" font-size="11">54%</text><line x1="50" y1="72.4" x2="984" y2="72.4" stroke="#2a3447" stroke-width="1"/><text x="6" y="75.4" fill="#9aa7bd" font-size="11">72%</text><line x1="50" y1="16.0" x2="984" y2="16.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="19.0" fill="#9aa7bd" font-size="11">90%</text><rect x="76.7" y="106.9" width="80.1" height="191.1" fill="#5b9bff"/><text x="116.7" y="101.9" fill="#e7ecf5" font-size="10" text-anchor="middle">61.0</text><text x="116.7" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">L3_0</text><rect x="210.1" y="125.7" width="80.1" height="172.3" fill="#5b9bff"/><text x="250.1" y="120.7" fill="#e7ecf5" font-size="10" text-anchor="middle">55.0</text><text x="250.1" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">L3_1</text><rect x="343.5" y="94.3" width="80.1" height="203.7" fill="#5b9bff"/><text x="383.6" y="89.3" fill="#e7ecf5" font-size="10" text-anchor="middle">65.0</text><text x="383.6" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">L3_2</text><rect x="477.0" y="66.1" width="80.1" height="231.9" fill="#5b9bff"/><text x="517.0" y="61.1" fill="#e7ecf5" font-size="10" text-anchor="middle">74.0</text><text x="517.0" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">L2副脑</text><rect x="610.4" y="37.9" width="80.1" height="260.1" fill="#5b9bff"/><text x="650.4" y="32.9" fill="#e7ecf5" font-size="10" text-anchor="middle">83.0</text><text x="650.4" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">L1主脑</text><rect x="743.8" y="16.0" width="80.1" height="282.0" fill="#39d98a"/><text x="783.9" y="11.0" fill="#e7ecf5" font-size="10" text-anchor="middle">90.0</text><text x="783.9" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">C集体</text><rect x="877.3" y="25.4" width="80.1" height="272.6" fill="#9aa7bd"/><text x="917.3" y="20.4" fill="#e7ecf5" font-size="10" text-anchor="middle">87.0</text><text x="917.3" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">D集体</text><text x="6" y="12" fill="#e7ecf5" font-size="11">准确率</text></svg>
+    <div class="cap">五个单体节点（含最强 7B 主脑 83%）均低于集体最优（C=90% / D=87%）→ 整体&gt;任何部分。朴素投票 63% 反而低于最强单，印证「投票≠协作」。</div>
+  </div>
+</div>
+
+<h2>5 · 跨组「集体 − 最强单」增益差</h2>
+<div class="card">
+<svg viewBox="0 0 1000 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#0c111c;border-radius:10px;border:1px solid #2a3447"><line x1="50" y1="298.0" x2="984" y2="298.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="301.0" fill="#9aa7bd" font-size="11">0%</text><line x1="50" y1="241.6" x2="984" y2="241.6" stroke="#2a3447" stroke-width="1"/><text x="6" y="244.6" fill="#9aa7bd" font-size="11">18%</text><line x1="50" y1="185.2" x2="984" y2="185.2" stroke="#2a3447" stroke-width="1"/><text x="6" y="188.2" fill="#9aa7bd" font-size="11">36%</text><line x1="50" y1="128.8" x2="984" y2="128.8" stroke="#2a3447" stroke-width="1"/><text x="6" y="131.8" fill="#9aa7bd" font-size="11">54%</text><line x1="50" y1="72.4" x2="984" y2="72.4" stroke="#2a3447" stroke-width="1"/><text x="6" y="75.4" fill="#9aa7bd" font-size="11">72%</text><line x1="50" y1="16.0" x2="984" y2="16.0" stroke="#2a3447" stroke-width="1"/><text x="6" y="19.0" fill="#9aa7bd" font-size="11">90%</text><rect x="96.7" y="16.0" width="140.1" height="282.0" fill="#39d98a"/><text x="166.8" y="11.0" fill="#e7ecf5" font-size="10" text-anchor="middle">90.0</text><text x="166.8" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">C 集体</text><rect x="330.2" y="37.9" width="140.1" height="260.1" fill="#5b9bff"/><text x="400.2" y="32.9" fill="#e7ecf5" font-size="10" text-anchor="middle">83.0</text><text x="400.2" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">C 最强单</text><rect x="563.7" y="25.4" width="140.1" height="272.6" fill="#39d98a"/><text x="633.8" y="20.4" fill="#e7ecf5" font-size="10" text-anchor="middle">87.0</text><text x="633.8" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">D 集体</text><rect x="797.2" y="37.9" width="140.1" height="260.1" fill="#5b9bff"/><text x="867.2" y="32.9" fill="#e7ecf5" font-size="10" text-anchor="middle">83.0</text><text x="867.2" y="312.0" fill="#9aa7bd" font-size="10" text-anchor="middle">D 最强单</text><text x="6" y="12" fill="#e7ecf5" font-size="11">准确率</text></svg>
+<div class="cap">每组两根柱：集体(绿) / 最强单模型(蓝)。C 集体高于最强单 +7pt；D 集体高于最强单 +4pt（方向成立，但单跑噪声内不显著）。</div>
+</div>
+
+<h2>6 · 各实验数据明细表</h2>
+<div class="card"><b>C · 验证·7B主脑</b> <span class="sub">verify_stage2.py / L3集群→聚合→L2→L1主脑+验证层 / 1.5b×3+3b+7b ｜ n=100 中等(mcq_medium_clean)</span>
+    <p class="l" style="margin:8px 0 4px">集体0.89/0.90/0.90 均>最强单0.83 且>朴素投票0.63; G>0三档一致(1.558/1.665/1.665)。三档全平=无涌现(W<Wc)。</p>
+    <table><tr><th>Ẇ</th><th>集体合成</th><th>委员会₀</th><th>G(logit)</th></tr><tr><td>0.0</td><td>89.00%</td><td>63.00%</td><td class='pos'>+1.559</td></tr><tr><td>0.5</td><td>90.00%</td><td>63.00%</td><td class='pos'>+1.665</td></tr><tr><td>1.0</td><td>90.00%</td><td>63.00%</td><td class='pos'>+1.665</td></tr></table>
+    <p class="l" style="margin:12px 0 4px">单体节点基线</p>
+    <table><tr><th>节点</th><th>准确率</th></tr><tr><td class='l'>L3_0(1.5b)</td><td>61.00%</td></tr><tr><td class='l'>L3_1(1.5b)</td><td>55.00%</td></tr><tr><td class='l'>L3_2(1.5b)</td><td>65.00%</td></tr><tr><td class='l'>L2副脑(3b)</td><td>74.00%</td></tr><tr><td class='l'>L1主脑(7b)</td><td>83.00%</td></tr></table></div><div class="card"><b>D · 消融·demote(3B主脑)</b> <span class="sub">verify_stage2.py --ablation demote / 主脑换3b, 7b降级参与者 / 1.5b×3+3b(主脑)+7b(参与者) ｜ n=100 中等(mcq_medium_clean)</span>
+    <p class="l" style="margin:8px 0 4px">集体0.87三档全平, 仍>7B solo 0.83(+4pt方向) 且>朴素投票0.63; G>0但常数(1.369); 排除7B越权当答案作者带飞(角色层), 能力层待remove。</p>
+    <table><tr><th>Ẇ</th><th>集体合成</th><th>委员会₀</th><th>G(logit)</th></tr><tr><td>0.0</td><td>87.00%</td><td>63.00%</td><td class='pos'>+1.369</td></tr><tr><td>0.5</td><td>87.00%</td><td>63.00%</td><td class='pos'>+1.369</td></tr><tr><td>1.0</td><td>87.00%</td><td>63.00%</td><td class='pos'>+1.369</td></tr></table>
+    <p class="l" style="margin:12px 0 4px">单体节点基线</p>
+    <table><tr><th>节点</th><th>准确率</th></tr><tr><td class='l'>L3_0(1.5b)</td><td>61.00%</td></tr><tr><td class='l'>L3_1(1.5b)</td><td>55.00%</td></tr><tr><td class='l'>L3_2(1.5b)</td><td>65.00%</td></tr><tr><td class='l'>L2副脑(3b)</td><td>74.00%</td></tr><tr><td class='l'>L1主脑(7b)</td><td>83.00%</td></tr></table></div>
+
+<h2>7 · 方法论与诚实声明</h2>
+<div class="note">
+<ul>
+<li><b>G 定义</b>：<code>G(Ẇ) = logit(A_net(Ẇ)) − logit(A_net(0))</code>，与 08-03 系列一致（logit 尺度，便于跨实验可比）。概率差 = 集体 − 委员会₀：C 为 +0.26/+0.27/+0.27；D 为 +0.24/+0.24/+0.24。</li>
+<li><b>方程两头</b>：已验<b>前半 Σsᵢ</b>（聚合层汇总 L3 基础能力 + 主脑综合）在协作架构中兑现加性增益；<b>后半 ΣαₘẆ²ᵐ</b>（随 Ẇ 的超线性额外暴涨）当前未 firing——三档全平即证据，<b>仍处 W&lt;Wc 无涌现区</b>。</li>
+<li><b>样本与噪声</b>：两组均 n=100，二项标准误 ≈ 3.0~4.7pt。两两之差（0.83 vs 0.87 vs 0.89）的 95% 置信区间均含 0 → 当前证据等级为「<b>未检测到降级 / 方向成立</b>」，<b>非「证明相等」或「证明显著超越」</b>。需种子重复 + bootstrap + 扩题(n=200+)方可下显著结论。</li>
+<li><b>消融边界</b>：D 组证明「增益不依赖最强模型<b>担任编排者</b>」（角色层 confound 已排除）；但 7B 仍以<b>参与者</b>身份将其 0.83 能力接入系统（能力层 confound 未排除），须靠 <code>--ablation remove</code>（彻底删 7B）封口。</li>
+<li><b>导师已认可的定性结论</b>：导师明确肯定 demote 设计「将 7B 降级为参与者、3B 当主导，集体仍 87%&gt;83%」——<b>排除了强模型越权带飞的可能</b>（角色层 confound）。此定性认可与本研究一致；能力层（彻底删 7B）仍待 <code>--ablation remove</code> 封口，以支撑最野心断言（弱群完全不依赖强模型）。</li>
+<li><b>数据溯源</b>：三组集体与节点准确率均取自 live json 原档（status=done），档级聚合多源一致。</li>
+</ul>
+</div>
+
+<h2>8 · 下一步建议（对齐导师四阶段路线 + 本次反馈）</h2>
+<div class="card">
+<div class="cap" style="margin-top:0">导师本次明确两点：① demote 设计「排除被带飞」已认可；② 显著性需扩至 <b>N=500+</b>。据此重排优先级：</div>
+<ol>
+<li><b>扩基准至 N=500（前置）</b>：现有中等难度基准仅 100 题（mcq_medium_clean），须先扩充到 ~500 题同分布，方能满足 N=500 要求。可用同分布合成或合并多源中等 MCQ。</li>
+<li><b>N=500 显著性主验</b>：于 N=500 重跑 C 验证 + D 消融，预期 C 达 P≈0.001（强显著）、D 边际（~P=0.08，可补至 N=650 破 0.05）。CPU 推理量约为 N=100 的 5×，需后台分段跑。</li>
+<li><b>消融封口</b>：跑 <code>--ablation remove</code>（彻底删 7B，纯 1.5B×k + 3B 编排）vs 7B solo，封能力层 confound —— 支撑导师认可的「排除带飞」之最强断言。</li>
+<li><b>扩规模触 Wc</b>：节点 3→5→10→15→20+ 提密度，观测 ΣαₘẆ²ᵐ 超线性拐点（后半登场）。</li>
+<li><b>种子重复 + 多基准交叉</b>：2~3 seed 重复 + bootstrap，并在 2~3 个异质中等基准复现，固化稳健性。</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

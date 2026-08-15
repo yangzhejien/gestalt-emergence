@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史记录完整性审计 · 缺失 / 混乱 / 问题记录核查</title>
+<style>
+  body{font-family:-apple-system,"Microsoft YaHei",sans-serif;max-width:960px;margin:24px auto;padding:0 18px;color:#1a1a1a;background:#fafafa;line-height:1.6}
+  h1{font-size:21px;border-bottom:3px solid #2563eb;padding-bottom:8px}
+  h2{font-size:16px;margin-top:24px}
+  .card{border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin:12px 0;background:#fff}
+  .verdict{border-left:5px solid #16a34a;background:#f0fdf4;padding:12px 16px;border-radius:8px}
+  .warn{border-left:5px solid #dc2626;background:#fef2f2;padding:12px 16px;border-radius:8px}
+  .ok{border-left:5px solid #16a34a;background:#f0fdf4;padding:10px 14px;border-radius:8px;margin:8px 0}
+  .neutral{border-left:5px solid #64748b;background:#f8fafc;padding:10px 14px;border-radius:8px;margin:8px 0}
+  table{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+  td,th{border:1px solid #cbd5e1;padding:6px 8px;vertical-align:top}
+  th{background:#eef2ff}
+  code{background:#eef2ff;padding:1px 5px;border-radius:4px;font-size:12px}
+  .sev-h{color:#dc2626;font-weight:700}
+  .sev-m{color:#d97706;font-weight:700}
+  .sev-l{color:#64748b;font-weight:700}
+  .muted{color:#64748b;font-size:13px}
+</style>
+</head>
+<body>
+<h1>历史记录完整性审计</h1>
+<p class="muted">生成 2026-08-11 14:46 · 核查对象: <code>研究编年史_2026-08-11.docx</code>(10章/4表) + <code>OSF_v2_corrigendum_2026-08-09.md</code> + 磁盘原始数据</p>
+
+<div class="verdict">
+  <b>总评: 实验与问题的"记录"基本完整、且诚实。</b> 全部 <b>22 次实验(#1–#22)</b> 和全部 <b>10 项问题(P1–P10)</b> 都已录入编年史;关键负面结果(基准废题、C-Eval 反例)和 AI 自我纠错(P10)也都写了。真正的"<b>缺口</b>"只有 5 处,多为工程细节/文件保管,没有"整段实验被遗忘"的情况。
+</div>
+
+<h2>✅ 已完整记录(对照)</h2>
+<div class="ok">
+  • <b>实验 #1–#22</b>: 日期/配置/结果/状态/意义 五栏齐全,含早期失败(#2/#3 不支持、#16/#17 废题)。<br>
+  • <b>问题 P1–P10</b>: 含诚信类(P1 基准废题、P6 拟合退化、P9 阴性结果、P10 自我纠错)与工程类(P2–P5)与理论类(P7/P8)。<br>
+  • <b>方程三版演化</b>(§2) 明确区分 原错幂级数 → 友人修正 kernel → 最终统一式,避免读者误以为旧方程仍有效。
+</div>
+
+<h2>⚠️ 真实缺口(分级)</h2>
+<table>
+<tr><th>级别</th><th>缺口</th><th>说明</th><th>影响</th></tr>
+<tr><td class="sev-m">中</td><td><b>Lean 证明文件不在本项目</b></td><td>corrigendum 已诚实写明状态: 有理数核 <code>MachineProof.lean</code> 已过机检; 指数解析层 <code>GestaltAnalysis.lean</code> 待 Mathlib、<b>未</b>机检。但这两个 <code>.lean</code> 文件不在我们仓库(在友人处)。</td><td>可复现性依赖友人交付;论文须附或引用文件。</td></tr>
+<tr><td class="sev-m">中</td><td><b>Stage4 denscan 结构化扫描未入编年史</b></td><td>benchmark 里有 <code>denscan_tree/mesh/full_nl12</code> 与 <code>_nl20</code>(含 phase/progress),但编年史 #13 只写 "n_l3=20 tree/mesh/full" 一句,未引用这些更细的密度扫描数据。</td><td>非单调证据本可更厚,目前只讲了结论。</td></tr>
+<tr><td class="sev-l">低</td><td><b>实验表时间顺序小乱</b></td><td>表1 标"按时间",但 #16/#17(8/7) 排在 #15(8/10) 之后。实为"发现顺序"非严格时间序。</td><td>易让读者以为 8/7 在 8/10 后;改个表头措辞即可。</td></tr>
+<tr><td class="sev-l">低</td><td><b>旧预注册仍含错误方程</b></td><td><code>OSF_preregistration_2026-08-07.md/.docx</code> 仍是原错幂级数。编年史 §2 已解释演化,但旧文件本身是"陷阱"。</td><td>别人若直接引旧预注册会错;应加"已被 corrigendum 取代"横幅。</td></tr>
+<tr><td class="sev-l">低</td><td><b>#6 首次 beats_best 无专属原始文件</b></td><td>记录在表(#6),但原始数据并入 n=100 开发流程,无法单独复算。已在存档清单标"缺失"。</td><td>仅影响最早一个信号的可独立复现,后续大样本已坐实。</td></tr>
+</table>
+
+<h2>🔍 看似缺失、实则已诚实标注(别误判)</h2>
+<div class="neutral">
+  • <b>跨层熵乘法 H(L3)×H(L2|L3)×H(L1|L2)</b>: 你的原提案机制,编年史 §7 明确列为"未来工作:实测出图",<b>没有</b>谎称已测量。<br>
+  • <b>Wc 密度扫描(Ẇ∈{0.3,0.5,0.62,0.8})</b>: §7/§8 诚实标"现只扫 Ẇ=1.0 单点,待 eGPU"。<br>
+  • <b>单体涌现验证</b>: 标为研究纲领/未来工作,非已证结论。<br>
+  • <b>方程性质</b>: corrigendum 写明"仍是唯象定律,非第一性原理推导"——未过度宣称。
+</div>
+
+<h2>✅ 修复建议(按顺序)</h2>
+<ol>
+  <li><b>向友人索要 <code>MachineProof.lean</code> / <code>GestaltAnalysis.lean</code></b> 存入本项目(哪怕待 Mathlib 那份也先归档),并在 corrigendum 注明文件路径。</li>
+  <li><b>编年史 #13 补一句</b>指向 <code>benchmark/denscan_*.json</code>,把非单调证据写实。</li>
+  <li><b>表1 表头改</b>"按运行/发现顺序"或在 #16/#17 前插入时间注。</li>
+  <li><b>旧预注册文件顶部加横幅</b>:"已被 OSF_v2_corrigendum 取代,方程以 corrigendum §6 为准"。</li>
+  <li>本次审计结论已记入 <code>.workbuddy/memory/2026-08-11.md</code>。</li>
+</ol>
+<p class="muted">结论: 你担心的"整段历史丢失/问题没记"没有发生;剩下的是文件保管与时间序的小修,以及一份友人处的证明文件待归档。</p>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"status": "done", "phase": "probe-final", "progress": "完成: 7B=0.531 3B=0.031 1.5B=0.500 band_ok=True", "n_questions": 64, "measured_7b": 64, "node_acc": [0.53125, 0.03125, 0.5], "band_ok": true, "floor_15b_ok": true, "updated_at": "02:06:09"}

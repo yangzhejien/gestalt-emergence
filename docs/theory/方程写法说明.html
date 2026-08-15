@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>方程写法说明 · 为什么长这样 / 有几种写法</title>
+<style>
+  body{font-family:-apple-system,"Microsoft YaHei",sans-serif;max-width:920px;margin:24px auto;padding:0 18px;color:#1a1a1a;background:#fafafa;line-height:1.6}
+  h1{font-size:21px;border-bottom:3px solid #2563eb;padding-bottom:8px}
+  h2{font-size:16px;margin-top:24px}
+  .card{border:1px solid #e2e8f0;border-radius:10px;padding:14px 18px;margin:12px 0;background:#fff}
+  .eq{font-family:"Cambria Math","Times New Roman",serif;font-size:20px;text-align:center;padding:12px;background:#f8fafc;border-radius:8px;margin:8px 0}
+  .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 4px}
+  .frac .num{border-bottom:1px solid #333;padding:0 6px}
+  .frac .den{padding:0 6px}
+  sup{font-size:.72em}
+  .bad{border-left:5px solid #dc2626;background:#fef2f2}
+  .good{border-left:5px solid #16a34a;background:#f0fdf4}
+  .blue{border-left:5px solid #2563eb;background:#f0f7ff}
+  code{background:#eef2ff;padding:1px 5px;border-radius:4px;font-size:13px}
+  .muted{color:#64748b;font-size:13px}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin-top:8px}
+  td,th{border:1px solid #cbd5e1;padding:7px 9px;vertical-align:top}
+  th{background:#eef2ff}
+</style>
+</head>
+<body>
+<h1>方程写法说明 · 为什么长这样 / 有几种写法</h1>
+<p class="muted">针对你贴的 "M(W)=0.50+0.25⋅W W c e 1−W / W c" 长串混乱的解释</p>
+
+<div class="card bad">
+  <h2>① 你贴的那段为什么是一长串？</h2>
+  <p>纯文本复制会丢失<b>分数线</b>和<b>上标</b>。正确公式：</p>
+  <div class="eq">M(W) = 0.50 + 0.25 · <span class="frac"><span class="num">W</span><span class="den">W<sub>c</sub></span></span> · e<sup>1 − W/W<sub>c</sub></sup></div>
+  <p>复制成纯文本后变成 <code>M(W)=0.50+0.25·W Wc e 1−W / Wc</code> —— 分数线没了(W 和 Wc 挤成 "W Wc"),指数上标没了(e 后面那串平铺)。<b>这是显示问题,公式本身很紧凑。</b></p>
+</div>
+
+<div class="card good">
+  <h2>② 是"两种写法"吗？—— 不,是同一个方程的两种呈现</h2>
+  <p><b>写法 A（分解式 / 论文推荐）</b>：先把核函数命名，再代入</p>
+  <div class="eq">M(W) = b + γ · Nov(W)，&nbsp; 其中 Nov(W) = <span class="frac"><span class="num">W</span><span class="den">W<sub>c</sub></span></span> · e<sup>1 − W/W<sub>c</sub></sup></div>
+  <p style="text-align:center">代入 b=0.50, γ=0.25</p>
+  <p><b>写法 B（单行展开）</b>：把 Nov(W) 直接代进去</p>
+  <div class="eq">M(W) = 0.50 + 0.25 · <span class="frac"><span class="num">W</span><span class="den">W<sub>c</sub></span></span> · e<sup>1 − W/W<sub>c</sub></sup></div>
+  <p class="muted">A 和 B <b>完全等价</b>。你看到的 "M(W) 行" 和 "② Nov(W) 行" 就是写法 A 的两半——Nov(W) 被单独起名叫"新颖性核"(Novelty kernel),方便论文里把<b>形状</b>和<b>尺度参数</b>分开讲。不是两个独立方程。</p>
+</div>
+
+<div class="card blue">
+  <h2>③ 为什么这么写（结构含义）</h2>
+  <table>
+    <tr><th>部分</th><th>值</th><th>物理含义</th><th>来源</th></tr>
+    <tr><td><b>b</b>（地板）</td><td>0.50</td><td>即使密度为 0,各层自身能力保底(原 Σsᵢ 加性基线)</td><td>杨智杰</td></tr>
+    <tr><td><b>γ</b>（振幅）</td><td>0.25</td><td>协作最多能比地板高多少;编码原 (α−β) 净增益,β 大→γ 小→涌现被抑</td><td>友人重编码</td></tr>
+    <tr><td><b>Nov(W)</b>（核/形状）</td><td>∈[0,1]</td><td>有界单峰,唯一内峰恰=1 在 W=W<sub>c</sub>;W&lt;W<sub>c</sub> 升、W&gt;W<sub>c</sub> 降</td><td>友人数学国面</td></tr>
+  </table>
+  <p>这样拆开的好处: <b>M ∈ [0.50, 0.75]</b> 一眼可见(有界),且物理参数(b,γ)和数学形状(Nov)分离,审稿人好读。</p>
+</div>
+
+<div class="card bad">
+  <h2>④ 一个致命坑：指数到底是谁</h2>
+  <p>指数是 <b>e<sup>(1 − W/W<sub>c</sub>)</sup></b>，即 "e 的 (1 减去 W除以Wc) 次方"。</p>
+  <p>不是 e<sup>(1−W)/W<sub>c</sub></sup>(那会把 1−W 整体除以 Wc,峰值位置和形状全错)。你贴的纯文本 "e 1−W / W c" 极易误读成后者——<b>写代码/写论文时务必加括号</b>:</p>
+  <p style="text-align:center"><code>exp(1 - W/Wc)</code> &nbsp;← 正确 &nbsp;|&nbsp; <code>exp((1-W)/Wc)</code> &nbsp;← 错误</p>
+</div>
+
+<div class="card">
+  <h2>⑤ 三秒自检（代值验证）</h2>
+  <ul>
+    <li>W = W<sub>c</sub> → Nov=1 → M = 0.50+0.25 = <b>0.75（峰）</b></li>
+    <li>W → 0 → Nov→0 → M = <b>0.50（地板）</b></li>
+    <li>W → ∞ → Nov→0 → M = <b>0.50（回落到地板，不崩）</b></li>
+  </ul>
+  <p class="muted">落点全在 [0.50, 0.75],与"过密只回落不到崩"的预言一致。若你代出来不在区间内,就是指数写错了(见④)。</p>
+</div>
+
+<p class="muted">权威源: <code>D:\方程验证\OSF_v2_corrigendum_2026-08-09.md</code> §6;配套速查卡 <code>D:\方程验证\方程定稿速查卡.html</code></p>
+</body>
+</html>

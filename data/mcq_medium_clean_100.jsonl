@@ -1,0 +1,100 @@
+{"A": "21", "B": "84", "C": "14", "D": "42", "answer": "A", "question": "Compute 7! / (5! * 2!)."}
+{"A": "36", "B": "45", "C": "40", "D": "30", "answer": "A", "question": "What is 15% of 240?"}
+{"A": "42", "B": "13", "C": "26", "D": "21", "answer": "A", "question": "A rectangle has length 6 and width 7. What is its area?"}
+{"A": "75", "B": "40", "C": "37.5", "D": "25", "answer": "D", "question": "What is the average of 10, 25, and 40?"}
+{"A": "3", "B": "5", "C": "8", "D": "4", "answer": "D", "question": "Solve for x: 2x + 1 = 9."}
+{"A": "22", "B": "30", "C": "11", "D": "15", "answer": "B", "question": "A rectangle has length 6 and width 5. What is its area?"}
+{"A": "2^12", "B": "70", "C": "280", "D": "142", "answer": "B", "question": "A car travels 140 km in 2 hours. What is its average speed in km/h?"}
+{"A": "false", "B": "true", "C": "unknown", "D": "both true and false", "answer": "A", "question": "If 'if p then q' is true and q is false, then p is:"}
+{"A": "4", "B": "12", "C": "9", "D": "6", "answer": "D", "question": "Solve for x: 2x + 3 = 15."}
+{"A": "7", "B": "49", "C": "±7", "D": "-7", "answer": "A", "question": "If x^2 = 49 and x > 0, what is x?"}
+{"A": "110", "B": "100", "C": "80", "D": "90", "answer": "B", "question": "Boiling point of water at sea level in Celsius?"}
+{"A": "80", "B": "Yes", "C": "1280", "D": "324", "answer": "A", "question": "A car travels 320 km in 4 hours. What is its average speed in km/h?"}
+{"A": "1/6", "B": "1/9", "C": "1/12", "D": "5/36", "answer": "A", "question": "Two fair dice are rolled. What is the probability of a sum of 7?"}
+{"A": "Newton", "B": "Joule", "C": "Pascal", "D": "Watt", "answer": "A", "question": "What is the SI unit of force?"}
+{"A": "48", "B": "50", "C": "32", "D": "60", "answer": "B", "question": "A shirt costs $40 after a 20% discount. What was the original price?"}
+{"A": "60", "B": "62.5", "C": "10", "D": "40", "answer": "D", "question": "A $50 item is on sale for 20% off. What is the sale price in dollars?"}
+{"A": "1500", "B": "21", "C": "60", "D": "305", "answer": "C", "question": "A car travels 300 km in 5 hours. What is its average speed in km/h?"}
+{"A": "80", "B": "230", "C": "2880", "D": "486", "answer": "A", "question": "A car travels 480 km in 6 hours. What is its average speed in km/h?"}
+{"A": "4", "B": "12", "C": "8", "D": "6", "answer": "D", "question": "What is the atomic number of carbon?"}
+{"A": "32", "B": "36", "C": "40", "D": "24", "answer": "C", "question": "A quantity is split in ratio 3:5. If the total is 64, what is the larger part?"}
+{"A": "40", "B": "84", "C": "42", "D": "28", "answer": "D", "question": "What is the average of 20, 24, and 40?"}
+{"A": "160", "B": "72", "C": "80", "D": "48", "answer": "D", "question": "What is 40% of 120?"}
+{"A": "2520", "B": "426", "C": "18", "D": "70", "answer": "D", "question": "A car travels 420 km in 6 hours. What is its average speed in km/h?"}
+{"A": "All roses fade quickly", "B": "Some flowers are roses", "C": "Some roses fade quickly", "D": "No roses fade quickly", "answer": "B", "question": "All roses are flowers. Some flowers fade quickly. Which is certainly true?"}
+{"A": "16", "B": "17", "C": "8", "D": "3", "answer": "C", "question": "Solve for x: 2x + 9 = 25."}
+{"A": "80", "B": "486", "C": "2880", "D": "40", "answer": "A", "question": "A car travels 480 km in 6 hours. What is its average speed in km/h?"}
+{"A": "O(n)", "B": "O(log n)", "C": "O(1)", "D": "O(n^2)", "answer": "B", "question": "What is the time complexity of binary search on a sorted array?"}
+{"A": "170", "B": "235.3", "C": "30", "D": "230", "answer": "A", "question": "A $200 item is on sale for 15% off. What is the sale price in dollars?"}
+{"A": "17.5", "B": "24", "C": "12", "D": "35", "answer": "D", "question": "A rectangle has length 7 and width 5. What is its area?"}
+{"A": "Stack", "B": "Array", "C": "Tree", "D": "Queue", "answer": "A", "question": "Which data structure uses LIFO (last-in-first-out)?"}
+{"A": "Go", "B": "Au", "C": "Gd", "D": "Ag", "answer": "B", "question": "What is the chemical symbol for gold?"}
+{"A": "$1100", "B": "$2100", "C": "$1200", "D": "$1210", "answer": "D", "question": "$1000 invested at 10% annual interest compounded annually for 2 years. Final amount?"}
+{"A": "No", "B": "Maybe", "C": "Only some", "D": "Yes", "answer": "D", "question": "All Bloops are Razzies. All Razzies are Lazzies. Therefore all Bloops are Lazzies?"}
+{"A": "3e10 m/s", "B": "3e5 m/s", "C": "3e8 m/s", "D": "3e6 m/s", "answer": "C", "question": "Approximate speed of light in vacuum?"}
+{"A": "150", "B": "120", "C": "240", "D": "100", "answer": "A", "question": "40% of a number is 60. What is the number?"}
+{"A": "16", "B": "8", "C": "6", "D": "11", "answer": "B", "question": "Solve for x: 2x + 3 = 19."}
+{"A": "47.1", "B": "1440", "C": "246", "D": "40", "answer": "D", "question": "A car travels 240 km in 6 hours. What is its average speed in km/h?"}
+{"A": "76", "B": "32", "C": "25.3", "D": "38", "answer": "C", "question": "What is the average of 14, 30, and 32?"}
+{"A": "260", "B": "120", "C": "340", "D": "180", "answer": "B", "question": "What is 40% of 300?"}
+{"A": "42", "B": "85.7", "C": "18", "D": "78", "answer": "A", "question": "A $60 item is on sale for 30% off. What is the sale price in dollars?"}
+{"A": "2", "B": "-1", "C": "7", "D": "4", "answer": "A", "question": "Solve for x: 2x + 5 = 9."}
+{"A": "13", "B": "26", "C": "40", "D": "20", "answer": "C", "question": "A rectangle has length 8 and width 5. What is its area?"}
+{"A": "94.1", "B": "68", "C": "92", "D": "12", "answer": "B", "question": "A $80 item is on sale for 15% off. What is the sale price in dollars?"}
+{"A": "71", "B": "23.7", "C": "35", "D": "35.5", "answer": "B", "question": "What is the average of 12, 24, and 35?"}
+{"A": "180", "B": "190", "C": "20", "D": "210", "answer": "C", "question": "What is 10% of 200?"}
+{"A": "Some A are not C", "B": "No A are C", "C": "Some A are C", "D": "All A are C", "answer": "A", "question": "Some A are B. No B are C. Which follows?"}
+{"A": "All swans are black", "B": "No swans are white", "C": "Some swans are white", "D": "Some swans are not white", "answer": "D", "question": "It is not true that 'all swans are white'. Which must be true?"}
+{"A": "$13", "B": "$12", "C": "$11", "D": "$15", "answer": "A", "question": "What is a 20% tip on a $65 bill?"}
+{"A": "31.5", "B": "63", "C": "32", "D": "16", "answer": "B", "question": "A rectangle has length 9 and width 7. What is its area?"}
+{"A": "-4", "B": "4", "C": "13", "D": "2", "answer": "D", "question": "Solve for x: 2x + 11 = 15."}
+{"A": "6", "B": "34", "C": "47.1", "D": "46", "answer": "B", "question": "A $40 item is on sale for 15% off. What is the sale price in dollars?"}
+{"A": "$560", "B": "$600", "C": "$500", "D": "$480", "answer": "D", "question": "A worker earns $15/hour, works 40 hours, and is taxed 20%. Take-home pay?"}
+{"A": "20", "B": "16", "C": "30", "D": "60", "answer": "C", "question": "A triangle has base 10 and height 6. What is its area?"}
+{"A": "8", "B": "2", "C": "4", "D": "7", "answer": "C", "question": "Solve for x: 2x + 3 = 11."}
+{"A": "4", "B": "44.4", "C": "44", "D": "36", "answer": "D", "question": "A $40 item is on sale for 10% off. What is the sale price in dollars?"}
+{"A": "90", "B": "72", "C": "8", "D": "70", "answer": "C", "question": "What is 10% of 80?"}
+{"A": "35", "B": "15", "C": "71.4", "D": "65", "answer": "A", "question": "A $50 item is on sale for 30% off. What is the sale price in dollars?"}
+{"A": "5", "B": "7", "C": "15", "D": "3", "answer": "D", "question": "Solve for x: 3x + 7 = 22."}
+{"A": "36", "B": "24", "C": "32", "D": "72", "answer": "B", "question": "What is the average of 18, 22, and 32?"}
+{"A": "27", "B": "40.5", "C": "81", "D": "36", "answer": "A", "question": "What is the average of 15, 30, and 36?"}
+{"A": "45", "B": "22.5", "C": "28", "D": "14", "answer": "A", "question": "A rectangle has length 9 and width 5. What is its area?"}
+{"A": "275", "B": "75", "C": "225", "D": "325", "answer": "B", "question": "What is 25% of 300?"}
+{"A": "212.5", "B": "235", "C": "37.5", "D": "265", "answer": "C", "question": "What is 15% of 250?"}
+{"A": "244", "B": "13", "C": "60", "D": "960", "answer": "C", "question": "A car travels 240 km in 4 hours. What is its average speed in km/h?"}
+{"A": "52", "B": "57.1", "C": "12", "D": "28", "answer": "D", "question": "A $40 item is on sale for 30% off. What is the sale price in dollars?"}
+{"A": "26", "B": "40", "C": "13", "D": "45", "answer": "B", "question": "A rectangle has length 8 and width 5. What is its area?"}
+{"A": "18", "B": "9", "C": "81", "D": "27", "answer": "D", "question": "A cube has side length 3. What is its volume?"}
+{"A": "15", "B": "13", "C": "12", "D": "11", "answer": "B", "question": "Next in sequence 1, 1, 2, 3, 5, 8, ?"}
+{"A": "3", "B": "8", "C": "5", "D": "4", "answer": "D", "question": "Solve for x: 2x + 1 = 9."}
+{"A": "Golgi apparatus", "B": "Mitochondria", "C": "Nucleus", "D": "Ribosome", "answer": "B", "question": "What is the 'powerhouse of the cell'?"}
+{"A": "3", "B": "2", "C": "1", "D": "4", "answer": "B", "question": "Solve: 2(x - 3) = 4x - 10."}
+{"A": "240", "B": "40", "C": "160", "D": "250", "answer": "C", "question": "A $200 item is on sale for 20% off. What is the sale price in dollars?"}
+{"A": "186", "B": "1080", "C": "$600", "D": "30", "answer": "D", "question": "A car travels 180 km in 6 hours. What is its average speed in km/h?"}
+{"A": "15", "B": "30", "C": "54", "D": "27", "answer": "C", "question": "A rectangle has length 9 and width 6. What is its area?"}
+{"A": "315", "B": "45", "C": "255", "D": "285", "answer": "B", "question": "What is 15% of 300?"}
+{"A": "15", "B": "18", "C": "16", "D": "17", "answer": "D", "question": "Three consecutive integers sum to 51. What is the middle integer?"}
+{"A": "12", "B": "20", "C": "8", "D": "10", "answer": "D", "question": "What is the decimal value of binary 1010?"}
+{"A": "324", "B": "290", "C": "1280", "D": "80", "answer": "D", "question": "A car travels 320 km in 4 hours. What is its average speed in km/h?"}
+{"A": "30", "B": "270", "C": "310", "D": "290", "answer": "A", "question": "What is 10% of 300?"}
+{"A": "17.5", "B": "35", "C": "12", "D": "24", "answer": "B", "question": "A rectangle has length 7 and width 5. What is its area?"}
+{"A": "50", "B": "60", "C": "30", "D": "45", "answer": "A", "question": "A car travels 150 km in 3 hours. What is its average speed in km/h?"}
+{"A": "14", "B": "18", "C": "7", "D": "1", "answer": "C", "question": "Solve for x: 2x + 11 = 25."}
+{"A": "+10%", "B": "0%", "C": "-5%", "D": "+5%", "answer": "B", "question": "A number is increased by 25% then decreased by 20%. What is the net change?"}
+{"A": "Chlorine", "B": "Hydrogen", "C": "Oxygen", "D": "Neon", "answer": "D", "question": "Which of these is a noble gas?"}
+{"A": "Vinegar", "B": "Pure water", "C": "Lemon juice", "D": "Bleach", "answer": "D", "question": "Which substance has the highest pH?"}
+{"A": "36", "B": "25.3", "C": "38", "D": "76", "answer": "B", "question": "What is the average of 18, 22, and 36?"}
+{"A": "23.3", "B": "35", "C": "36", "D": "70", "answer": "A", "question": "What is the average of 12, 22, and 36?"}
+{"A": "29.3", "B": "88", "C": "40", "D": "44", "answer": "A", "question": "What is the average of 18, 30, and 40?"}
+{"A": "18", "B": "20", "C": "24", "D": "32", "answer": "D", "question": "What comes next: 2, 4, 8, 16, ?"}
+{"A": "195", "B": "105", "C": "214.3", "D": "45", "answer": "B", "question": "A $150 item is on sale for 30% off. What is the sale price in dollars?"}
+{"A": "160", "B": "120", "C": "180", "D": "150", "answer": "D", "question": "At 60 km/h, how far do you travel in 2.5 hours?"}
+{"A": "21", "B": "13", "C": "42", "D": "26", "answer": "C", "question": "A rectangle has length 6 and width 7. What is its area?"}
+{"A": "290", "B": "100", "C": "210", "D": "150", "answer": "B", "question": "What is 40% of 250?"}
+{"A": "E", "B": "A", "C": "C", "D": "D", "answer": "A", "question": "A is taller than B, B than C, C than D, D than E. Who is shortest?"}
+{"A": "32", "B": "21.3", "C": "64", "D": "45", "answer": "B", "question": "What is the average of 10, 22, and 32?"}
+{"A": "2^7", "B": "4^7", "C": "2^6", "D": "2^12", "answer": "A", "question": "Simplify 2^3 * 2^4."}
+{"A": "20", "B": "13", "C": "26", "D": "40", "answer": "D", "question": "A rectangle has length 8 and width 5. What is its area?"}
+{"A": "Hydrogen", "B": "Oxygen", "C": "Nitrogen", "D": "Carbon dioxide", "answer": "D", "question": "What gas do plants primarily absorb for photosynthesis?"}
+{"A": "1", "B": "10", "C": "5", "D": "12", "answer": "C", "question": "Solve for x: 2x + 7 = 17."}
+{"A": "200", "B": "270", "C": "50", "D": "230", "answer": "C", "question": "What is 20% of 250?"}
