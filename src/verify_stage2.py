@@ -35,7 +35,8 @@ from pathlib import Path
 import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = Path(r"C:/Users/11409/WorkBuddy/2026-07-28-21-49-24/gestalt_live")
+# OUT 默认放在仓库内 results/live (可复现、不依赖本机路径); 可用 --out 覆盖
+OUT = ROOT / "results" / "live"
 LIVE_PATH = OUT / "stage2_live.json"
 SOLO_CACHE = OUT / "solo_checkpoint.json"
 
@@ -55,7 +56,7 @@ DEFAULT_CFG = {
     "l1_model": "qwen2.5:7b",
     "verifier_model": "qwen2.5:1.5b",
     "k": 3,
-    "benchmark": "benchmark/mcq_medium_clean.jsonl",
+    "benchmark": "data/mcq_medium_clean.jsonl",
     "n_questions": 500,
     "temperature": 0.0,
     "ollama_url": "http://127.0.0.1:11434/api/generate",
