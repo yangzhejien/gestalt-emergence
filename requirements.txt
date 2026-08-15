@@ -1,0 +1,5 @@
+# 格式塔涌现复现依赖
+# 安装: pip install -r requirements.txt
+numpy>=1.24
+# 仅 W 轴补扫出图需要:
+matplotlib>=3.7
