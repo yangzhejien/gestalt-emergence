@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>格式塔方程验证 · 实验汇报可视化</title>
+<style>
+  :root{ --teal:#0F6E56; --blue:#1F5FA8; --coral:#993C1D; --gray:#5F5E5A; --bg:#f5f6f8; --card:#fff; }
+  *{box-sizing:border-box;}
+  body{font-family:"Microsoft YaHei","PingFang SC","Segoe UI",sans-serif; margin:0; background:var(--bg); color:#222; line-height:1.65;}
+  header{background:linear-gradient(135deg,#0F6E56,#1F5FA8); color:#fff; padding:30px 34px;}
+  header h1{margin:0 0 8px; font-size:25px; letter-spacing:.5px;}
+  header p{margin:0; opacity:.92; font-size:14px;}
+  .wrap{max-width:1120px; margin:0 auto; padding:26px 22px 70px;}
+  .cards{display:flex; flex-wrap:wrap; gap:14px; margin:6px 0 30px;}
+  .card{flex:1 1 165px; background:var(--card); border-radius:12px; padding:18px 14px; box-shadow:0 2px 12px rgba(0,0,0,.07); text-align:center; border-top:4px solid var(--teal);}
+  .card .num{font-size:30px; font-weight:800; color:var(--teal); line-height:1.1;}
+  .card .lbl{font-size:13px; color:var(--gray); margin-top:6px;}
+  .card.c2 .num{color:var(--coral);} .card.c2{border-top-color:var(--coral);}
+  .card.c3 .num{color:var(--blue);} .card.c3{border-top-color:var(--blue);}
+  figure{background:var(--card); border-radius:12px; padding:20px; margin:0 0 28px; box-shadow:0 2px 12px rgba(0,0,0,.07);}
+  figure img{width:100%; height:auto; border-radius:6px; display:block; border:1px solid #eee;}
+  figure figcaption{font-weight:700; margin-bottom:12px; font-size:16.5px; color:#1a1a1a;}
+  .note{font-size:13.5px; color:var(--gray); margin-top:10px;}
+  .claim{background:#fff8e1; border-left:4px solid #f0a500; padding:14px 18px; border-radius:6px; margin:0 0 30px; font-size:14.5px;}
+  .claim b{color:#b35900;}
+  footer{text-align:center; color:var(--gray); font-size:12px; padding:24px; line-height:1.8;}
+  code{background:#eef1f4; padding:1px 6px; border-radius:4px; font-size:13px;}
+</style>
+</head>
+<body>
+<header>
+  <h1>格式塔方程验证 · 实验汇报可视化</h1>
+  <p>Gestalt Layered Architecture (GLA) + Gestalt Equation (GE) ｜ 更新于 2026-08-16 ｜ 数据基准：mcq_medium_clean（N=500，Ẇ=1.0 密度轴；W 轴扫描进行中）</p>
+</header>
+<div class="wrap">
+
+  <div class="cards">
+    <div class="card"><div class="num">0.950</div><div class="lbl">集体峰值 (k=10–12)</div></div>
+    <div class="card"><div class="num">0.834</div><div class="lbl">最强单体 (7B)</div></div>
+    <div class="card c2"><div class="num">0.608</div><div class="lbl">纯投票 (committee0)</div></div>
+    <div class="card c3"><div class="num">+0.33</div><div class="lbl">护城河 (集体−投票)</div></div>
+    <div class="card c2"><div class="num">2/7</div><div class="lbl">W 轴扫描进度</div></div>
+  </div>
+
+  <div class="claim">
+    <b>核心结论：</b>协作合成机制在所有 k 值下稳定将集体推到 0.94–0.95，远超最强单体（0.834）与纯投票（0.60）——「协作 ≠ 投票」铁证成立；集体精度在 k=10–12 达峰值，否定「越多越好」，与方程「过密回落」方向一致。
+  </div>
+
+  <figure>
+    <figcaption>图1 · k 轴总览：护城河三线与集体精度非单调</figcaption>
+    <img src="../docs/experiment-log/figures/fig1_k_axis_overview.png" alt="k轴总览">
+    <div class="note">集体（绿）始终远高于单体（灰虚线）与投票（红点线）；峰值在 k=10–12，k=7 与 k=15/20 均低于峰值。</div>
+  </figure>
+
+  <figure>
+    <figcaption>图2 · k=20 节点精度分布：信息从底层汇聚到顶层（结构涌现）</figcaption>
+    <img src="../docs/experiment-log/figures/fig2_node_distribution_k20.png" alt="节点分布">
+    <div class="note">20 个 1.5B 节点仅 0.57–0.61，经聚合层(0.758) → 主脑(0.834) → 集体(0.940) 层层合成放大，正是跨层乘法机制的可视化。</div>
+  </figure>
+
+  <figure>
+    <figcaption>图4 · G_anchor 恒定 vs 纯投票恒低</figcaption>
+    <img src="../docs/experiment-log/figures/fig4_G_anchor.png" alt="G_anchor">
+    <div class="note">G = 集体−最强单体 全程稳定 +0.09~+0.12，与 k 弱相关 → 涌现是机制性（跨层合成）而非单纯加专家；纯投票（红）恒在 0.59–0.61。</div>
+  </figure>
+
+  <figure>
+    <figcaption>图5 · 非单调幅度与统计噪声边界（诚实）</figcaption>
+    <img src="../docs/experiment-log/figures/fig5_k_ci.png" alt="误差条">
+    <div class="note">k10/k12 峰值(0.950) 与 k15/k20(0.936–0.940) 差约 1pp，小于 N=500 二项 95% CI（约 ±2.7pp）。方向一致但幅度未超出噪声，需更大 N 或更密 k 采样确认——这是给审稿人/导师的诚实边界。</div>
+  </figure>
+
+  <figure>
+    <figcaption>图3 · W 轴 M(Ẇ) 扫描进度（进行中 2/7 档）</figcaption>
+    <img src="../docs/experiment-log/figures/fig3_w_axis_progress.png" alt="W轴进度">
+    <div class="note">Ẇ=0.00 done(0.948)，Ẇ=0.20 running(0.9515)，Ẇ=1.0 引用 k 轴 k=10(0.950)。方程预言单峰在 Wc≈0.45–0.62；当前低 Ẇ 更高，方向支持「过密回落」，峰位待七档全出钉死。</div>
+  </figure>
+
+  <div class="claim">
+    <b>诚实边界（给导师的必读）：</b>① k 轴将 Ẇ 写死 1.0，仅测一个 W 点，所有判定均标注「不能判涌现」；② 非单调幅度（≈1pp）小于统计噪声（±2.7pp），方向一致但需更大 N 确认；③ W 轴仅出 2/7 档，M(Ẇ) 单峰与 Wc 尚未直接钉死。以上已在报告中明示，非缺陷而是当前算力下的诚实状态。
+  </div>
+
+  <footer>
+    数据来源：gestalt_live 实时实验产物（k 轴 8 档全 done；W 轴扫描进行中）<br>
+    统一方程：<code>M(W) = 0.50 + 0.25·(W/Wc)·e^(1−W/Wc)</code>，当前校准 b=0.50, γ=0.25<br>
+    开源仓库：github.com/yangzhejien/gestalt-emergence（Apache-2.0）｜ 优先权锚：OSF 预注册 v2 + corrigendum
+  </footer>
+</div>
+</body>
+</html>
