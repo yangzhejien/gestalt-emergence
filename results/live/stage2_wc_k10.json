@@ -20,7 +20,7 @@
     0.8,
     1.0
   ],
-  "progress": "Pipeline Ẇ=0.20  q 124/500 (done 124)",
+  "progress": "Pipeline Ẇ=0.20  q 173/500 (done 173)",
   "node_acc": [
     0.572,
     0.57,
@@ -39,7 +39,7 @@
   "committee0": 0.592,
   "collective_acc": {
     "cw0.00": 0.948,
-    "cw0.20": 0.9516
+    "cw0.20": 0.9538
   },
   "points": [],
   "details": [
@@ -9046,7 +9046,7 @@
   ],
   "judgement": "",
   "benchmark_sig": "D:\\方程验证\\benchmark\\mcq_medium_clean.jsonl|n=500|k=10",
-  "updated_at": "18:34:07",
+  "updated_at": "19:15:47",
   "node_model": "qwen2.5:1.5bx10 + qwen2.5:3b(agg/L2) + qwen2.5:7b(主脑) + 参与者[] [ablation=none]",
   "A_net0": 0.592,
   "current_w": 0.2
