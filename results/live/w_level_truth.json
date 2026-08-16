@@ -1,0 +1,17 @@
+{
+  "0.4": {
+    "acc": 0.968,
+    "n": 500,
+    "verified_from": "tier_file+monitor@07:25"
+  },
+  "0.0": {
+    "acc": 0.966,
+    "n": 500,
+    "verified_from": "tier_file@07:36"
+  },
+  "0.2": {
+    "acc": 0.968,
+    "n": 500,
+    "verified_from": "tier_file@07:36"
+  }
+}
