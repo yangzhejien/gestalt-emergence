@@ -25,7 +25,7 @@
   OUT/wc_scan_k{K}.png           (M(Ẇ) 曲线图)
   OUT/wc_scan_report_k{K}.md     (各档表 + 判定说明)
 """
-import json, subprocess, sys, time, os, urllib.request
+import json, subprocess, sys, time, os, urllib.request, argparse
 from pathlib import Path
 
 # 仓库根 = 本脚本上级目录 (src/ 的父目录)
