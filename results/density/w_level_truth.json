@@ -1,0 +1,6 @@
+{
+  "0.0": {"acc": 0.966, "n": 500, "verified_from": "tiers/stage2_wc_k10_cw0.00.jsonl l1_ok recompute (2026-08-17)"},
+  "0.2": {"acc": 0.968, "n": 500, "verified_from": "tiers/stage2_wc_k10_cw0.20.jsonl l1_ok recompute (2026-08-17)"},
+  "0.4": {"acc": 0.968, "n": 500, "verified_from": "tiers/stage2_wc_k10_cw0.40.jsonl l1_ok recompute (2026-08-17)"},
+  "0.5": {"acc": 0.968, "n": 500, "verified_from": "tiers/stage2_wc_k10_cw0.50.jsonl l1_ok recompute (2026-08-17)"}
+}
