@@ -1,6 +1,37 @@
 {
-  "0.0": {"acc": 0.966, "n": 500, "verified_from": "tiers/stage2_wc_k10_cw0.00.jsonl l1_ok recompute (2026-08-17)"},
-  "0.2": {"acc": 0.968, "n": 500, "verified_from": "tiers/stage2_wc_k10_cw0.20.jsonl l1_ok recompute (2026-08-17)"},
-  "0.4": {"acc": 0.968, "n": 500, "verified_from": "tiers/stage2_wc_k10_cw0.40.jsonl l1_ok recompute (2026-08-17)"},
-  "0.5": {"acc": 0.968, "n": 500, "verified_from": "tiers/stage2_wc_k10_cw0.50.jsonl l1_ok recompute (2026-08-17)"}
+  "0.0": {
+    "acc": 0.966,
+    "n": 500,
+    "verified_from": "tiers/stage2_wc_k10_cw0.00.jsonl l1_ok recompute (2026-08-17)"
+  },
+  "0.2": {
+    "acc": 0.968,
+    "n": 500,
+    "verified_from": "tiers/stage2_wc_k10_cw0.20.jsonl l1_ok recompute (2026-08-17)"
+  },
+  "0.4": {
+    "acc": 0.968,
+    "n": 500,
+    "verified_from": "tiers/stage2_wc_k10_cw0.40.jsonl l1_ok recompute (2026-08-17)"
+  },
+  "0.5": {
+    "acc": 0.968,
+    "n": 500,
+    "verified_from": "tiers/stage2_wc_k10_cw0.50.jsonl l1_ok recompute (2026-08-17)"
+  },
+  "0.6": {
+    "acc": 0.97,
+    "n": 500,
+    "verified_from": "tiers/stage2_wc_k10_cw0.60.jsonl l1_ok recompute (auto-capture, 2026-08-18)"
+  },
+  "0.8": {
+    "acc": 0.97,
+    "n": 500,
+    "verified_from": "tiers/stage2_wc_k10_cw0.80.jsonl l1_ok recompute (auto-detect complete, 2026-08-18)"
+  },
+  "1.0": {
+    "acc": 0.968,
+    "n": 500,
+    "verified_from": "tiers/stage2_wc_k10_cw1.00.jsonl l1_ok recompute (auto-detect complete, 2026-08-18)"
+  }
 }
